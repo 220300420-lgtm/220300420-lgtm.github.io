@@ -124,11 +124,11 @@ em { font-style: normal; color: var(--blue); }
 }
 
 @media (min-width: 900px) {
-  .nav-logo-img { height: 64px; }
+  .nav-logo-img { height: 100px; }
   .nav-inner { padding: 1rem 1.2rem; }
 }
 .nav-logo { display: flex; align-items: center; }
-.nav-logo-img { height: 48px; width: auto; display: block; }
+.nav-logo-img { height: 80px; width: auto; display: block; }
 
 .nav-links {
   display: flex;
