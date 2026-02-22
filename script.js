@@ -63,25 +63,25 @@ navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMob
 
 /* ===================== ACTIVE NAV ===================== */
 const navLinkEls = document.querySelectorAll('.nav-link');
-new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) navLinkEls.forEach(l => l.classList.toggle('active', l.getAttribute('href') === `#${e.target.id}`));
-  });
-}, { threshold: 0.35 }).observe
-? (() => {
-  const o = new IntersectionObserver(entries => {
+const hasIntersectionObserver = 'IntersectionObserver' in window;
+if (hasIntersectionObserver) {
+  const navObs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) navLinkEls.forEach(l => l.classList.toggle('active', l.getAttribute('href') === `#${e.target.id}`));
     });
   }, { threshold: 0.35 });
-  document.querySelectorAll('section[id]').forEach(s => o.observe(s));
-})() : null;
+  document.querySelectorAll('section[id]').forEach(s => navObs.observe(s));
+}
 
 /* ===================== SCROLL REVEAL ===================== */
-const revealObs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+if (hasIntersectionObserver) {
+  const revealObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+} else {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+}
 
 /* ===================== WORD-BY-WORD REVEAL ===================== */
 const heroH1 = document.querySelector('.hero-text h1');
@@ -189,16 +189,20 @@ function animateCounter(el) {
   requestAnimationFrame(tick);
 }
 
-const counterObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting && !e.target.dataset.animated) {
-      e.target.dataset.animated = 'true';
-      animateCounter(e.target);
-    }
-  });
-}, { threshold: 0.5 });
+if (hasIntersectionObserver) {
+  const counterObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting && !e.target.dataset.animated) {
+        e.target.dataset.animated = 'true';
+        animateCounter(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
 
-document.querySelectorAll('.stat-num[data-target], .impact-num[data-target]').forEach(el => counterObs.observe(el));
+  document.querySelectorAll('.stat-num[data-target], .impact-num[data-target]').forEach(el => counterObs.observe(el));
+} else {
+  document.querySelectorAll('.stat-num[data-target], .impact-num[data-target]').forEach(el => animateCounter(el));
+}
 
 /* ===================== PARALLAX HERO ===================== */
 const heroBg = document.querySelector('.hero-bg');
@@ -212,16 +216,21 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 /* ===================== CONNECTOR LINE ANIMATION ===================== */
-const connectorObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.querySelectorAll('.connector-path').forEach(p => p.classList.add('drawn'));
-      e.target.querySelectorAll('.connector-arrow').forEach(a => a.classList.add('drawn'));
-      connectorObs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.5 });
-document.querySelectorAll('.steps-row').forEach(el => connectorObs.observe(el));
+if (hasIntersectionObserver) {
+  const connectorObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.connector-path').forEach(p => p.classList.add('drawn'));
+        e.target.querySelectorAll('.connector-arrow').forEach(a => a.classList.add('drawn'));
+        connectorObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.steps-row').forEach(el => connectorObs.observe(el));
+} else {
+  document.querySelectorAll('.connector-path').forEach(p => p.classList.add('drawn'));
+  document.querySelectorAll('.connector-arrow').forEach(a => a.classList.add('drawn'));
+}
 
 /* ===================== 3D TILT ===================== */
 function addTilt(selector, intensity = 5) {
@@ -269,9 +278,13 @@ function selectPackage(pkgName) {
 const form = document.getElementById('contact-form');
 const successDiv = document.getElementById('form-success');
 const statusMsg = document.getElementById('form-status');
+codex/analyze-website-code-and-provide-feedback-9k4dt1
+const CONTACT_FORM_ID = 'contact-form';
+=======
 codex/analyze-website-code-and-provide-feedback-1mmv9n
 const CONTACT_FORM_ID = 'contact-form';
 main
+ main
 function showError(id, msg) {
   const e = document.getElementById(`err-${id}`), f = document.getElementById(id);
   if (e) e.textContent = msg; if (f) f.classList.toggle('invalid', !!msg);
@@ -325,6 +338,13 @@ form.addEventListener('submit', e => {
     form.classList.add('hidden');
     successDiv.classList.add('show');
     showFormStatus('');
+ codex/analyze-website-code-and-provide-feedback-9k4dt1
+    pushDataLayer('lead_form_submit_success', { form_id: CONTACT_FORM_ID });
+  })
+  .catch(() => {
+    showFormStatus('No pudimos enviar tu solicitud en este momento. Intenta de nuevo en unos minutos.', 'error');
+    pushDataLayer('lead_form_submit_error', { form_id: CONTACT_FORM_ID });
+=======
 codex/analyze-website-code-and-provide-feedback-1mmv9n
     pushDataLayer('lead_form_submit_success', { form_id: CONTACT_FORM_ID });
   })
@@ -341,8 +361,6 @@ codex/analyze-website-code-and-provide-feedback-wf5rqx
   })
   .catch(() => {
     showFormStatus('No pudimos enviar tu solicitud en este momento. Intenta de nuevo en unos minutos.', 'error');
-main
-main
 main
     btn.textContent = 'Solicitar diagnóstico';
     btn.disabled = false;
