@@ -45,9 +45,13 @@ document.body.appendChild(overlay);
 
 window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 30), { passive: true });
 
+hamburger.setAttribute('aria-controls', 'nav-links');
+hamburger.setAttribute('aria-expanded', 'false');
+
 hamburger.addEventListener('click', () => {
   const open = navLinks.classList.toggle('open');
   hamburger.classList.toggle('active', open);
+  hamburger.setAttribute('aria-expanded', String(open));
   overlay.classList.toggle('show', open);
   document.body.style.overflow = open ? 'hidden' : '';
 });
@@ -55,10 +59,12 @@ overlay.addEventListener('click', closeMobileMenu);
 function closeMobileMenu() {
   navLinks.classList.remove('open');
   hamburger.classList.remove('active');
+  hamburger.setAttribute('aria-expanded', 'false');
   overlay.classList.remove('show');
   document.body.style.overflow = '';
 }
 navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileMenu));
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && navLinks.classList.contains('open')) closeMobileMenu(); });
 
 /* ===================== ACTIVE NAV ===================== */
 const navLinkEls = document.querySelectorAll('.nav-link');
@@ -279,8 +285,9 @@ function selectPackage(pkgName) {
   const sel = document.getElementById('paquete');
   if (sel) sel.value = pkgName;
   pushDataLayer('package_selected', { package_name: pkgName });
-  document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
-  setTimeout(() => { sel.style.boxShadow = '0 0 0 3px rgba(0,114,255,0.35)'; setTimeout(() => sel.style.boxShadow = '', 1500); }, 700);
+  const contacto = document.getElementById('contacto');
+  if (contacto) contacto.scrollIntoView({ behavior: 'smooth' });
+  if (sel) setTimeout(() => { sel.style.boxShadow = '0 0 0 3px rgba(0,114,255,0.35)'; setTimeout(() => sel.style.boxShadow = '', 1500); }, 700);
 }
 
 /* ===================== FORM VALIDATION ===================== */
@@ -306,7 +313,6 @@ function showFormStatus(message, type) {
 }
 
 form.addEventListener('submit', e => {
-  e.preventDefault();
   clearErrors();
   let valid = true;
 
@@ -319,33 +325,15 @@ form.addEventListener('submit', e => {
   if (!document.getElementById('empleados').value) { showError('empleados', 'Selecciona el número de empleados.'); valid = false; }
   if (!v('problema')) { showError('problema', 'Describe tu reto principal.'); valid = false; }
 
-  if (!valid) return;
+  if (!valid) { e.preventDefault(); return; }
 
   document.getElementById('fecha-hidden').value = new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' });
+  pushDataLayer('lead_form_submit_attempt', { form_id: 'contact-form' });
 
   const btn = form.querySelector('[type="submit"]');
   btn.textContent = 'Enviando…';
   btn.disabled = true;
   showFormStatus('Estamos enviando tu solicitud…');
-
-  fetch(form.action, {
-    method: 'POST',
-    body: new FormData(form),
-    headers: { 'Accept': 'application/json' }
-  })
-  .then(response => {
-    if (!response.ok) throw new Error('HTTP ' + response.status);
-    form.classList.add('hidden');
-    successDiv.classList.add('show');
-    showFormStatus('');
-    pushDataLayer('lead_form_submit_success', { form_id: 'contact-form' });
-  })
-  .catch(() => {
-    showFormStatus('No pudimos enviar tu solicitud en este momento. Intenta de nuevo en unos minutos.', 'error');
-    pushDataLayer('lead_form_submit_error', { form_id: 'contact-form' });
-    btn.textContent = 'Solicitar diagnóstico';
-    btn.disabled = false;
-  });
 });
 
 ['empresa','responsable','email','tipo','empleados','problema'].forEach(id => {
