@@ -19,6 +19,9 @@ const TRANSLATIONS = {
     'how.tag':'Metodología','how.h2':'Cómo trabajamos',
     'how.p':'Un proceso simple y probado para transformar tu operación.',
     'how.s1':'Diagnóstico','how.s2':'Implementación','how.s3':'Optimización',
+    'how.step1.p':'Analizamos tu operación actual, identificamos cuellos de botella y oportunidades de mejora concretas.',
+    'how.step2.p':'Configuramos e implementamos las herramientas digitales correctas para tu negocio, contigo, no para ti.',
+    'how.step3.p':'Medimos resultados, ajustamos procesos y te dejamos con indicadores claros para seguir creciendo.',
     'cases.tag':'Casos de éxito','cases.h2':'Resultados reales',
     'cases.p':'Lo que logramos con nuestros clientes, en números concretos.',
     'about.tag':'Nosotros','about.h2':'Consultoría que entiende tu negocio',
@@ -56,6 +59,9 @@ const TRANSLATIONS = {
     'how.tag':'Methodology','how.h2':'How we work',
     'how.p':'A simple, proven process to transform your operation.',
     'how.s1':'Diagnosis','how.s2':'Implementation','how.s3':'Optimization',
+    'how.step1.p':'We analyze your current operation, identify bottlenecks and concrete improvement opportunities.',
+    'how.step2.p':'We configure and implement the right digital tools for your business, with you, not for you.',
+    'how.step3.p':'We measure results, adjust processes and leave you with clear indicators to keep growing.',
     'cases.tag':'Success stories','cases.h2':'Real results',
     'cases.p':'What we achieve with our clients, in concrete numbers.',
     'about.tag':'About us','about.h2':'Consulting that understands your business',
@@ -136,8 +142,7 @@ function applyLang(lang, skipH1Anim) {
 /* ===================== INIT LANGUAGE ===================== */
 (function initLang() {
   const stored = localStorage.getItem('lang');
-  const browserLang = (navigator.language || '').split('-')[0];
-  const lang = stored || (browserLang === 'en' ? 'en' : 'es');
+  const lang = stored || 'es';
   // Apply non-default lang early (before word animation runs below)
   if (lang !== 'es') applyLang(lang, true);
 

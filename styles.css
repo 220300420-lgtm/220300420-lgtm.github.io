@@ -921,8 +921,10 @@ html.js .reveal.visible { opacity: 1; transform: translateY(0); }
   /* Tools grid: 1 columna en pantallas muy pequeñas, 2 en medianas */
   .tools-grid { gap: .75rem; }
   .tool-card { padding: 1rem; gap: .75rem; }
-  /* Steps apilados */
-  .step { min-width: 0; width: 100%; max-width: 100%; }
+  /* Steps apilados en 1 columna */
+  .steps-row { flex-direction: column; align-items: stretch; gap: 1rem; }
+  .step { flex: none; min-width: 0; width: 100%; max-width: 100%; }
+  .step h3 { word-wrap: break-word; overflow-wrap: break-word; }
   /* Hero stats en 2x2 */
   .mockup-content { gap: .5rem; padding: .75rem; }
   /* Botones hero apilados */
