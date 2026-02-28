@@ -37,6 +37,7 @@
 </head>
 <body>
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8QR732V" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <div class="noise-overlay" aria-hidden="true"></div>
 
   <!-- NAV -->
   <nav class="navbar" id="navbar">
@@ -48,12 +49,13 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="nav-links">
-        <li><a href="#inicio" class="nav-link">Inicio</a></li>
-        <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
-        <li><a href="#servicios" class="nav-link">Servicios</a></li>
-        <li><a href="#paquetes" class="nav-link">Paquetes</a></li>
-        <li><a href="#contacto" class="nav-link">Contacto</a></li>
-        <li><a href="#contacto" class="btn btn-nav">Solicitar diagnóstico</a></li>
+        <li><a href="#inicio" class="nav-link" data-i18n="nav.inicio">Inicio</a></li>
+        <li><a href="#nosotros" class="nav-link" data-i18n="nav.nosotros">Nosotros</a></li>
+        <li><a href="#servicios" class="nav-link" data-i18n="nav.servicios">Servicios</a></li>
+        <li><a href="#paquetes" class="nav-link" data-i18n="nav.paquetes">Paquetes</a></li>
+        <li><a href="#contacto" class="nav-link" data-i18n="nav.contacto">Contacto</a></li>
+        <li><a href="#contacto" class="btn btn-nav" data-i18n="nav.cta">Solicitar diagnóstico</a></li>
+        <li><button class="lang-toggle" id="lang-toggle" aria-label="Switch language / Cambiar idioma"><span class="lang-current">ES</span></button></li>
       </ul>
     </div>
   </nav>
@@ -68,14 +70,14 @@
     </div>
     <div class="container hero-content">
       <div class="hero-text reveal">
-        <span class="tag">Consultoría Digital Automotriz</span>
-        <h1>Digitaliza tu operación automotriz<br><em>en semanas.</em></h1>
+        <span class="tag" data-i18n="hero.tag">Consultoría Digital Automotriz</span>
+        <h1 data-i18n-html="hero.h1">Digitaliza tu operación automotriz<br><em>en semanas.</em></h1>
         <!-- Typewriter -->
         <p class="typewriter-line"><span id="typewriter"></span><span class="cursor">|</span></p>
-        <p class="hero-sub">Hacemos un diagnóstico real de tu negocio, implementamos las herramientas correctas y te acompañamos hasta ver resultados medibles. Sin complicaciones.</p>
+        <p class="hero-sub" data-i18n="hero.sub">Hacemos un diagnóstico real de tu negocio, implementamos las herramientas correctas y te acompañamos hasta ver resultados medibles. Sin complicaciones.</p>
         <div class="hero-ctas">
-          <a href="#contacto" class="btn btn-primary">Solicitar diagnóstico</a>
-          <a href="#paquetes" class="btn btn-ghost">Ver paquetes →</a>
+          <a href="#contacto" class="btn btn-primary" data-i18n="hero.cta1">Solicitar diagnóstico</a>
+          <a href="#paquetes" class="btn btn-ghost" data-i18n="hero.cta2">Ver paquetes →</a>
         </div>
       </div>
       <div class="hero-visual reveal reveal-delay">
@@ -140,19 +142,19 @@
     <div class="container impact-grid">
       <div class="impact-item reveal">
         <span class="impact-num" data-target="47" data-suffix="+">0+</span>
-        <span class="impact-label">Procesos mapeados</span>
+        <span class="impact-label" data-i18n="impact.l1">Procesos mapeados</span>
       </div>
       <div class="impact-item reveal reveal-delay">
         <span class="impact-num" data-target="12" data-suffix="">0</span>
-        <span class="impact-label">Talleres digitalizados</span>
+        <span class="impact-label" data-i18n="impact.l2">Talleres digitalizados</span>
       </div>
       <div class="impact-item reveal reveal-delay2">
         <span class="impact-num" data-target="98" data-suffix="%">0%</span>
-        <span class="impact-label">Satisfacción de clientes</span>
+        <span class="impact-label" data-i18n="impact.l3">Satisfacción de clientes</span>
       </div>
       <div class="impact-item reveal reveal-delay3">
         <span class="impact-num" data-target="3" data-suffix="x">0x</span>
-        <span class="impact-label">Más eficiencia operativa</span>
+        <span class="impact-label" data-i18n="impact.l4">Más eficiencia operativa</span>
       </div>
     </div>
   </section>
@@ -161,14 +163,14 @@
   <section class="how-section" id="como">
     <div class="container">
       <div class="section-header reveal">
-        <span class="tag">Metodología</span>
-        <h2>Cómo trabajamos</h2>
-        <p>Un proceso simple y probado para transformar tu operación.</p>
+        <span class="tag" data-i18n="how.tag">Metodología</span>
+        <h2 data-i18n="how.h2">Cómo trabajamos</h2>
+        <p data-i18n="how.p">Un proceso simple y probado para transformar tu operación.</p>
       </div>
       <div class="steps-row">
         <div class="step reveal">
           <div class="step-num">01</div>
-          <h3>Diagnóstico</h3>
+          <h3 data-i18n="how.s1">Diagnóstico</h3>
           <p>Analizamos tu operación actual, identificamos cuellos de botella y oportunidades de mejora concretas.</p>
         </div>
         <div class="step-connector">
@@ -179,7 +181,7 @@
         </div>
         <div class="step reveal reveal-delay">
           <div class="step-num">02</div>
-          <h3>Implementación</h3>
+          <h3 data-i18n="how.s2">Implementación</h3>
           <p>Configuramos e implementamos las herramientas digitales correctas para tu negocio, contigo, no para ti.</p>
         </div>
         <div class="step-connector">
@@ -190,7 +192,7 @@
         </div>
         <div class="step reveal reveal-delay2">
           <div class="step-num">03</div>
-          <h3>Optimización</h3>
+          <h3 data-i18n="how.s3">Optimización</h3>
           <p>Medimos resultados, ajustamos procesos y te dejamos con indicadores claros para seguir creciendo.</p>
         </div>
       </div>
@@ -204,9 +206,9 @@
   <section class="cases-section">
     <div class="container">
       <div class="section-header reveal">
-        <span class="tag">Casos de éxito</span>
-        <h2>Resultados reales</h2>
-        <p>Lo que logramos con nuestros clientes, en números concretos.</p>
+        <span class="tag" data-i18n="cases.tag">Casos de éxito</span>
+        <h2 data-i18n="cases.h2">Resultados reales</h2>
+        <p data-i18n="cases.p">Lo que logramos con nuestros clientes, en números concretos.</p>
       </div>
       <div class="cases-grid">
         <div class="case-card reveal">
@@ -273,8 +275,8 @@
         </div>
       </div>
       <div class="about-text reveal reveal-delay">
-        <span class="tag">Nosotros</span>
-        <h2>Consultoría que entiende tu negocio</h2>
+        <span class="tag" data-i18n="about.tag">Nosotros</span>
+        <h2 data-i18n="about.h2">Consultoría que entiende tu negocio</h2>
         <div class="mv-block">
           <h4>Misión</h4>
           <p>Brindar acompañamiento estratégico basado en datos para que las PyMEs del sector automotriz implementen soluciones digitales prácticas, optimicen sus procesos operativos y mejoren su control, eficiencia y rentabilidad.</p>
@@ -297,8 +299,8 @@
   <section class="services-section" id="servicios">
     <div class="container">
       <div class="section-header reveal">
-        <span class="tag">Servicios</span>
-        <h2>Qué implementamos</h2>
+        <span class="tag" data-i18n="services.tag">Servicios</span>
+        <h2 data-i18n="services.h2">Qué implementamos</h2>
         <p>Herramientas y procesos pensados para el sector automotriz. Sin complejidad innecesaria.</p>
       </div>
       <div class="services-main reveal reveal-delay">
@@ -328,8 +330,8 @@
   <section class="packages-section" id="paquetes">
     <div class="container">
       <div class="section-header reveal">
-        <span class="tag">Paquetes</span>
-        <h2>Elige tu punto de partida</h2>
+        <span class="tag" data-i18n="packages.tag">Paquetes</span>
+        <h2 data-i18n="packages.h2">Elige tu punto de partida</h2>
         <p>Todos los paquetes incluyen acompañamiento personalizado. Sin precios ocultos.</p>
       </div>
       <div class="packages-grid">
@@ -345,7 +347,7 @@
             <li>Implementación de 1 herramienta digital básica</li>
             <li>Reporte ejecutivo con hallazgos y plan de mejora</li>
           </ul>
-          <button class="btn btn-outline" onclick="selectPackage('Start')">Quiero este paquete</button>
+          <button class="btn btn-outline" data-i18n="pkg.btn" onclick="selectPackage('Start')">Quiero este paquete</button>
         </div>
         <div class="pkg-card featured reveal reveal-delay">
           <div class="pkg-badge">Más popular</div>
@@ -358,7 +360,7 @@
             <li>Automatización básica de seguimiento a clientes</li>
             <li>Indicadores de desempeño (KPIs operativos)</li>
           </ul>
-          <button class="btn btn-primary" onclick="selectPackage('Pro')">Quiero este paquete</button>
+          <button class="btn btn-primary" data-i18n="pkg.btn" onclick="selectPackage('Pro')">Quiero este paquete</button>
         </div>
         <div class="pkg-card reveal reveal-delay2">
           <div class="pkg-tier">Elite</div>
@@ -373,7 +375,7 @@
             <li>Seguimiento de impacto operativo</li>
             <li>Medición de retorno operativo</li>
           </ul>
-          <button class="btn btn-outline" onclick="selectPackage('Elite')">Quiero este paquete</button>
+          <button class="btn btn-outline" data-i18n="pkg.btn" onclick="selectPackage('Elite')">Quiero este paquete</button>
         </div>
       </div>
       <div class="pkg-cta reveal">
@@ -386,9 +388,9 @@
   <section class="contact-section" id="contacto">
     <div class="container">
       <div class="section-header reveal">
-        <span class="tag">Contacto</span>
-        <h2>Comienza tu diagnóstico</h2>
-        <p>Cuéntanos sobre tu negocio y te contactamos en menos de 24 horas.</p>
+        <span class="tag" data-i18n="contact.tag">Contacto</span>
+        <h2 data-i18n="contact.h2">Comienza tu diagnóstico</h2>
+        <p data-i18n="contact.p">Cuéntanos sobre tu negocio y te contactamos en menos de 24 horas.</p>
       </div>
       <div class="contact-card reveal">
         <form id="contact-form" action="https://formsubmit.co/220300510@ucaribe.edu.mx" method="POST" novalidate>
@@ -408,26 +410,26 @@
           <input type="hidden" name="referrer" id="referrer-hidden">
           <input type="hidden" name="landing_page" id="landing-hidden">
           <div class="form-row">
-            <div class="form-group"><label for="empresa">Empresa *</label><input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" required /><span class="error-msg" id="err-empresa"></span></div>
-            <div class="form-group"><label for="responsable">Responsable *</label><input type="text" id="responsable" name="responsable" placeholder="Tu nombre completo" required /><span class="error-msg" id="err-responsable"></span></div>
+            <div class="form-group"><label for="empresa" data-i18n="form.empresa">Empresa *</label><input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" data-i18n-ph="form.empresa.ph" required /><span class="error-msg" id="err-empresa"></span></div>
+            <div class="form-group"><label for="responsable" data-i18n="form.responsable">Responsable *</label><input type="text" id="responsable" name="responsable" placeholder="Tu nombre completo" data-i18n-ph="form.responsable.ph" required /><span class="error-msg" id="err-responsable"></span></div>
           </div>
           <div class="form-row">
-            <div class="form-group"><label for="email">Email *</label><input type="email" id="email" name="email" placeholder="correo@empresa.com" required /><span class="error-msg" id="err-email"></span></div>
-            <div class="form-group"><label for="telefono">Teléfono</label><input type="tel" id="telefono" name="telefono" placeholder="+52 55 0000 0000" /></div>
+            <div class="form-group"><label for="email" data-i18n="form.email">Email *</label><input type="email" id="email" name="email" placeholder="correo@empresa.com" data-i18n-ph="form.email.ph" required /><span class="error-msg" id="err-email"></span></div>
+            <div class="form-group"><label for="telefono" data-i18n="form.telefono">Teléfono</label><input type="tel" id="telefono" name="telefono" placeholder="+52 55 0000 0000" data-i18n-ph="form.telefono.ph" /></div>
           </div>
           <div class="form-row">
-            <div class="form-group"><label for="tipo">Tipo de negocio *</label><select id="tipo" name="tipo" required><option value="" disabled selected>Selecciona…</option><option>Taller mecánico</option><option>Taller de carrocería y pintura</option><option>Concesionaria</option><option>Distribuidor de refacciones</option><option>Servicio rápido / alineación</option><option>Otro</option></select><span class="error-msg" id="err-tipo"></span></div>
-            <div class="form-group"><label for="empleados">Número de empleados *</label><select id="empleados" name="empleados" required><option value="" disabled selected>Selecciona…</option><option>1–5</option><option>6–15</option><option>16–30</option><option>31–50</option><option>Más de 50</option></select><span class="error-msg" id="err-empleados"></span></div>
+            <div class="form-group"><label for="tipo" data-i18n="form.tipo">Tipo de negocio *</label><select id="tipo" name="tipo" required><option value="" disabled selected>Selecciona…</option><option>Taller mecánico</option><option>Taller de carrocería y pintura</option><option>Concesionaria</option><option>Distribuidor de refacciones</option><option>Servicio rápido / alineación</option><option>Otro</option></select><span class="error-msg" id="err-tipo"></span></div>
+            <div class="form-group"><label for="empleados" data-i18n="form.empleados">Número de empleados *</label><select id="empleados" name="empleados" required><option value="" disabled selected>Selecciona…</option><option>1–5</option><option>6–15</option><option>16–30</option><option>31–50</option><option>Más de 50</option></select><span class="error-msg" id="err-empleados"></span></div>
           </div>
-          <div class="form-group"><label for="paquete">Paquete de interés</label><select id="paquete" name="paquete"><option value="" disabled selected>Selecciona un paquete (opcional)</option><option value="Start">Adaptia Start</option><option value="Pro">Adaptia Pro</option><option value="Elite">Adaptia Elite</option><option value="No sé aún">No sé aún</option></select></div>
-          <div class="form-group"><label for="problema">¿Cuál es tu principal reto operativo? *</label><textarea id="problema" name="problema" rows="4" placeholder="Ej. No tengo control de mis órdenes de servicio, pierdo piezas de inventario, no sé cuánto gano al mes…" required></textarea><span class="error-msg" id="err-problema"></span></div>
+          <div class="form-group"><label for="paquete" data-i18n="form.paquete">Paquete de interés</label><select id="paquete" name="paquete"><option value="" disabled selected>Selecciona un paquete (opcional)</option><option value="Start">Adaptia Start</option><option value="Pro">Adaptia Pro</option><option value="Elite">Adaptia Elite</option><option value="No sé aún">No sé aún</option></select></div>
+          <div class="form-group"><label for="problema" data-i18n="form.problema">¿Cuál es tu principal reto operativo? *</label><textarea id="problema" name="problema" rows="4" placeholder="Ej. No tengo control de mis órdenes de servicio, pierdo piezas de inventario, no sé cuánto gano al mes…" data-i18n-ph="form.problema.ph" required></textarea><span class="error-msg" id="err-problema"></span></div>
           <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-          <button type="submit" class="btn btn-primary btn-full">Solicitar diagnóstico</button>
+          <button type="submit" class="btn btn-primary btn-full" data-i18n="form.submit">Solicitar diagnóstico</button>
         </form>
         <div class="form-success" id="form-success">
           <div class="success-icon">✓</div>
-          <h3>¡Mensaje recibido!</h3>
-          <p>Gracias por contactarnos. Nuestro equipo revisará tu caso y te responderá en menos de 24 horas.</p>
+          <h3 data-i18n="success.h3">¡Mensaje recibido!</h3>
+          <p data-i18n="success.p">Gracias por contactarnos. Nuestro equipo revisará tu caso y te responderá en menos de 24 horas.</p>
         </div>
       </div>
     </div>
