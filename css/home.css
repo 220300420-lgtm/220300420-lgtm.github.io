@@ -273,13 +273,14 @@
   border: 1px solid var(--border);
   color: var(--text-faint);
   background: transparent;
-  transition: all 0.25s;
+  transition: all 0.2s var(--ease-out);
   cursor: pointer;
 }
 .phase-btn:hover {
   border-color: var(--blue-border);
   color: var(--text-muted);
 }
+.phase-btn:active { transform: scale(0.94); }
 .phase-btn.active {
   background: var(--blue-subtle);
   border-color: var(--blue-border);
@@ -349,8 +350,14 @@
   display: flex; align-items: center; justify-content: center;
   color: var(--blue);
   margin-bottom: 1.5rem;
+  transition: background 0.35s var(--ease-out), border-color 0.35s var(--ease-out), transform 0.4s var(--ease-out);
 }
 .why__icon svg { flex-shrink: 0; }
+.why__card:hover .why__icon {
+  background: rgba(14,165,233,0.16);
+  border-color: rgba(14,165,233,0.42);
+  transform: rotate(-7deg) scale(1.10);
+}
 .why__title {
   font-family: var(--font-display);
   font-size: 1.1rem;
@@ -396,8 +403,58 @@
   color: var(--text-faint);
 }
 
-/* ─── RESPONSIVE ─── */
-@media (max-width: 1024px) {
+/* ─── BARCO NAVEGANTE ─── */
+.hero__boat {
+  position: absolute;
+  bottom: 11%;         /* alineado sobre la ola superior (offset 0.86) */
+  left: 0;
+  width: 100%;
+  z-index: 4;          /* encima de depth(1) grid(2) y horizon(3) */
+  pointer-events: none;
+}
+
+/* Envoltorio que realiza el viaje horizontal */
+.hero__boat-sail {
+  position: absolute;
+  animation: boatSail 70s linear -18s infinite;
+  will-change: transform;
+}
+
+/* SVG del barco — realiza el balanceo */
+.hero__boat-svg {
+  display: block;
+  width: clamp(54px, 7vw, 110px);
+  height: auto;
+  animation: boatBob 5s ease-in-out infinite;
+  transform-origin: 50% 85%;
+  filter: drop-shadow(0 4px 12px rgba(14,165,233,0.35))
+          drop-shadow(0 0 24px rgba(14,165,233,0.18));
+  will-change: transform;
+}
+
+@keyframes boatSail {
+  from { transform: translateX(-130px); }
+  to   { transform: translateX(calc(100vw + 130px)); }
+}
+
+@keyframes boatBob {
+  0%,100% { transform: rotate(-1.8deg) translateY(0); }
+  28%     { transform: rotate(1.2deg)  translateY(-10px); }
+  55%     { transform: rotate(-0.8deg) translateY(-14px); }
+  78%     { transform: rotate(1.5deg)  translateY(-7px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__boat-sail { animation: none; transform: translateX(22vw); }
+  .hero__boat-svg  { animation: none; }
+}
+
+@media (max-width: 640px) {
+  .hero__boat { bottom: 9%; }
+  .hero__boat-svg { width: clamp(44px, 10vw, 70px); }
+}
+
+
   .stats__grid        { grid-template-columns: repeat(2, 1fr); }
   .products__grid     { grid-template-columns: repeat(2, 1fr); }
   .why__grid          { grid-template-columns: repeat(2, 1fr); }

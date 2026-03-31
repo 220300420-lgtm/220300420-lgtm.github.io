@@ -213,6 +213,7 @@ window.initOcean = function(canvasId) {
   const ctx = canvas.getContext('2d');
   let W, H, t = 0;
   let mouse = { x: 0.5, y: 0.5 };
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function resize() {
     W = canvas.width  = window.innerWidth;
@@ -311,7 +312,7 @@ window.initOcean = function(canvasId) {
     ctx.fillStyle = surfaceGrad;
     ctx.fillRect(0, surfaceY - 30, W, 60);
 
-    t += 0.009;
+    if (!reducedMotion) t += 0.009;
     requestAnimationFrame(frame);
   }
 

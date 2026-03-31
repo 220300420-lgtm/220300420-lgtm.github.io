@@ -44,6 +44,41 @@
   <div class="hero__grid"></div>
   <div class="hero__horizon"></div>
 
+  <!-- Barco navegante — z-index 4, encima de las capas de oscuridad -->
+  <div class="hero__boat" aria-hidden="true">
+    <div class="hero__boat-sail">
+      <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg" class="hero__boat-svg">
+        <defs>
+          <linearGradient id="boat-hull" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%"   stop-color="rgba(14,165,233,0.90)"/>
+            <stop offset="50%"  stop-color="rgba(3,105,161,0.93)"/>
+            <stop offset="100%" stop-color="rgba(2,58,100,0.96)"/>
+          </linearGradient>
+          <linearGradient id="boat-sail-main" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%"   stop-color="rgba(224,242,254,0.78)"/>
+            <stop offset="55%"  stop-color="rgba(14,165,233,0.48)"/>
+            <stop offset="100%" stop-color="rgba(3,105,161,0.20)"/>
+          </linearGradient>
+        </defs>
+        <!-- Casco -->
+        <path d="M10 46 Q6 56 8 60 L112 60 Q114 56 110 46 Q64 42 10 46Z"
+              fill="url(#boat-hull)" stroke="rgba(200,230,255,0.30)" stroke-width="0.8"/>
+        <!-- Línea de flotación -->
+        <line x1="20" y1="52" x2="100" y2="52"
+              stroke="rgba(200,230,255,0.16)" stroke-width="0.8"/>
+        <!-- Mástil -->
+        <line x1="56" y1="46" x2="56" y2="4"
+              stroke="rgba(220,240,255,0.85)" stroke-width="1.6"/>
+        <!-- Vela mayor -->
+        <path d="M56 4 Q92 24 88 46 L56 46Z"
+              fill="url(#boat-sail-main)" stroke="rgba(200,230,255,0.22)" stroke-width="0.7"/>
+        <!-- Foque -->
+        <path d="M56 16 L18 46 L56 46Z"
+              fill="rgba(200,230,255,0.30)" stroke="rgba(200,230,255,0.14)" stroke-width="0.6"/>
+      </svg>
+    </div>
+  </div>
+
   <div class="hero__content">
     <div class="hero__badge">
       <span class="hero__badge-dot"></span>
