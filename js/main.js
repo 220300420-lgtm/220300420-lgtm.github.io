@@ -93,10 +93,17 @@
   }
 
   /* Active link based on current page */
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const pathname = window.location.pathname.replace(/\/$/, '') || '/';
   document.querySelectorAll('.nav-link').forEach(link => {
     const href = link.getAttribute('href');
-    if (href && href.includes(currentPage)) link.classList.add('active');
+    if (!href) return;
+    const linkPath = href.replace(/\/$/, '') || '/';
+    const isExact = linkPath === pathname;
+    const isPrefix = linkPath !== '/' && (
+      pathname === linkPath ||
+      pathname.startsWith(linkPath + '/')
+    );
+    if (isExact || isPrefix) link.classList.add('active');
   });
 })();
 
@@ -256,7 +263,7 @@ window.initOcean = function(canvasId) {
 
       ctx.beginPath();
       ctx.arc(b.x * W, b.y * H, b.r, 0, Math.PI * 2);
-      ctx.strokeStyle = `rgba(14,165,233,${b.opacity})`;
+      ctx.strokeStyle = `rgba(0,71,171,${b.opacity})`;
       ctx.lineWidth = 0.8;
       ctx.stroke();
     });
@@ -266,8 +273,8 @@ window.initOcean = function(canvasId) {
     const cx = W * (0.5 + (mouse.x - 0.5) * 0.15);
     const cy = H * 0.15;
     const gradient = ctx.createRadialGradient(cx, cy, 0, cx, cy, H * 0.8);
-    gradient.addColorStop(0,   'rgba(14,165,233,0.04)');
-    gradient.addColorStop(0.4, 'rgba(14,165,233,0.015)');
+    gradient.addColorStop(0,   'rgba(0,71,171,0.06)');
+    gradient.addColorStop(0.4, 'rgba(0,71,171,0.02)');
     gradient.addColorStop(1,   'transparent');
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, W, H);
@@ -286,21 +293,21 @@ window.initOcean = function(canvasId) {
 
     drawRays();
 
-    /* Capas de olas — de atrás hacia adelante */
-    drawWaves(0,        H * 0.04,  0.4,  'rgba(3,15,40,0.7)',   0.72);
-    drawWaves(2.1,      H * 0.055, 0.55, 'rgba(4,18,50,0.8)',   0.75);
-    drawWaves(Math.PI,  H * 0.07,  0.65, 'rgba(5,22,60,0.85)',  0.78);
-    drawWaves(1.5,      H * 0.09,  0.75, 'rgba(6,25,70,0.88)',  0.82);
-    drawWaves(0.8,      H * 0.11,  0.9,  'rgba(4,20,55,0.92)',  0.86);
+    /* Capas de olas — de atrás hacia adelante, color ADAPTIA #0047AB */
+    drawWaves(0,        H * 0.04,  0.4,  'rgba(0,30,80,0.7)',    0.72);
+    drawWaves(2.1,      H * 0.055, 0.55, 'rgba(0,40,110,0.8)',   0.75);
+    drawWaves(Math.PI,  H * 0.07,  0.65, 'rgba(0,50,130,0.85)',  0.78);
+    drawWaves(1.5,      H * 0.09,  0.75, 'rgba(0,60,150,0.88)',  0.82);
+    drawWaves(0.8,      H * 0.11,  0.9,  'rgba(0,71,171,0.92)',  0.86);
 
     drawBubbles();
 
     /* Reflexión de luz en superficie */
     const surfaceY = H * 0.72;
     const surfaceGrad = ctx.createLinearGradient(0, surfaceY - 30, 0, surfaceY + 30);
-    surfaceGrad.addColorStop(0, 'rgba(14,165,233,0)');
-    surfaceGrad.addColorStop(0.5, `rgba(14,165,233,${0.03 + Math.sin(t * 0.8) * 0.01})`);
-    surfaceGrad.addColorStop(1, 'rgba(14,165,233,0)');
+    surfaceGrad.addColorStop(0, 'rgba(0,71,171,0)');
+    surfaceGrad.addColorStop(0.5, `rgba(0,71,171,${0.05 + Math.sin(t * 0.8) * 0.02})`);
+    surfaceGrad.addColorStop(1, 'rgba(0,71,171,0)');
     ctx.fillStyle = surfaceGrad;
     ctx.fillRect(0, surfaceY - 30, W, 60);
 
