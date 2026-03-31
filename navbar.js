@@ -14,7 +14,7 @@
       <div class="container">
         <div class="navbar__inner">
 
-          <a href="../index.html" class="navbar__logo">
+          <a href="index.html" class="navbar__logo">
             <div class="navbar__logo-mark">
               <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="10" cy="32" r="6" fill="#0EA5E9"/>
@@ -28,7 +28,7 @@
           </a>
 
           <ul class="navbar__links">
-            <li><a href="../index.html" class="nav-link" data-page="index">Inicio</a></li>
+            <li><a href="index.html" class="nav-link" data-page="index">Inicio</a></li>
             <li><a href="entregables.html" class="nav-link" data-page="entregables">Entregables</a></li>
             <li><a href="metodologia.html" class="nav-link" data-page="metodologia">Metodología</a></li>
             <li><a href="nosotros.html"    class="nav-link" data-page="nosotros">Nosotros</a></li>
@@ -55,7 +55,7 @@
 
     <!-- Mobile menu -->
     <div class="navbar__mobile-menu" id="mobileMenu">
-      <a href="../index.html"       class="nav-link">Inicio</a>
+      <a href="index.html"       class="nav-link">Inicio</a>
       <a href="entregables.html"    class="nav-link">Entregables</a>
       <a href="metodologia.html"    class="nav-link">Metodología</a>
       <a href="nosotros.html"       class="nav-link">Nosotros</a>
