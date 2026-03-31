@@ -246,6 +246,106 @@
   box-shadow: 0 0 12px var(--blue);
 }
 
+/* ─── BOAT ANIMATION (reemplaza el radar en Nosotros) ─── */
+.nosotros-boat-visual {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nosotros-boat-scene {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: linear-gradient(
+    180deg,
+    var(--bg-abyss) 0%,
+    var(--bg-deep) 40%,
+    rgba(0, 30, 60, 0.8) 70%,
+    rgba(0, 50, 100, 0.6) 100%
+  );
+  box-shadow: var(--shadow-glow-lg);
+}
+
+.nosotros-boat-sky {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 20%,
+    rgba(14, 165, 233, 0.06) 0%,
+    transparent 70%
+  );
+}
+
+/* Wrapper con overflow:hidden para clip de la animación */
+.nosotros-boat-wrapper {
+  position: absolute;
+  inset: 0;
+  bottom: 56px; /* above water layer */
+}
+
+/* Sail container — realiza el viaje horizontal */
+.nosotros-boat-sail {
+  position: absolute;
+  bottom: 0;
+  animation: nbBoatSail 18s linear 0s infinite;
+  will-change: transform;
+}
+
+/* SVG del barco — realiza el balanceo */
+.nosotros-boat-svg {
+  display: block;
+  width: clamp(60px, 10vw, 90px);
+  height: auto;
+  animation: nbBoatBob 5s ease-in-out infinite;
+  transform-origin: 50% 85%;
+  filter: drop-shadow(0 4px 10px rgba(14, 165, 233, 0.4))
+          drop-shadow(0 0 20px rgba(14, 165, 233, 0.2));
+  will-change: transform;
+}
+
+@keyframes nbBoatSail {
+  from { transform: translateX(-110px); }
+  to   { transform: translateX(800px); }
+}
+
+@keyframes nbBoatBob {
+  0%,100% { transform: rotate(-1.5deg) translateY(0); }
+  28%     { transform: rotate(1.0deg)  translateY(-6px); }
+  55%     { transform: rotate(-0.8deg) translateY(-9px); }
+  78%     { transform: rotate(1.3deg)  translateY(-4px); }
+}
+
+/* Water / waves */
+.nosotros-boat-water {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 60px;
+}
+
+.nosotros-wave-svg {
+  width: 200%;
+  height: 100%;
+  display: block;
+  animation: nbWaveScroll 9s linear infinite;
+}
+
+@keyframes nbWaveScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nosotros-boat-sail { animation: none; transform: translateX(200px); }
+  .nosotros-boat-svg  { animation: none; }
+  .nosotros-wave-svg  { animation: none; }
+}
+
 /* Diferenciadores Nosotros */
 .nosotros-diff {
   padding: var(--space-xl) 0;
@@ -426,8 +526,34 @@
   .metod-phase:nth-child(even) .metod-phase__visual { order: 2; }
   .nosotros-intro    { grid-template-columns: 1fr; gap: 3rem; }
   .contact-grid      { grid-template-columns: 1fr; gap: 3rem; }
-  .nosotros-mv       { grid-template-columns: 1fr; }
+  .nosotros-mv       { grid-template-columns: 1fr 1fr; }
+  .nosotros-boat-scene { height: 220px; }
+}
+@media (max-width: 768px) {
+  /* Nosotros values grid: 3-col → 2-col */
+  .nosotros-diff > .container > div[style*="repeat(3"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .nosotros-intro { padding: var(--space-lg) 0; }
 }
 @media (max-width: 640px) {
   .form-row { grid-template-columns: 1fr; }
+  .nosotros-mv { grid-template-columns: 1fr; }
+  /* Nosotros values grid: 2-col → 1-col */
+  .nosotros-diff > .container > div[style*="repeat(3"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* Presence grid */
+  .nosotros-diff ~ section [style*="repeat(3,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+  .nosotros-boat-scene { height: 180px; }
+  .page-hero { padding: 7rem 0 3.5rem; }
+  .page-hero__content { padding: 0 0.25rem; }
+}
+@media (max-width: 480px) {
+  /* Presence cards */
+  [style*="repeat(3,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
 }

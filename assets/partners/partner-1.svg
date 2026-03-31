@@ -1,0 +1,8 @@
+<svg viewBox="0 0 160 60" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <rect width="160" height="60" rx="6" fill="rgba(14,165,233,0.08)" stroke="rgba(14,165,233,0.20)" stroke-width="1"/>
+  <path d="M18 30 L14 22 L22 22 Z" fill="rgba(14,165,233,0.7)"/>
+  <line x1="18" y1="22" x2="18" y2="14" stroke="rgba(14,165,233,0.7)" stroke-width="1.5"/>
+  <path d="M18 14 Q26 18 25 22 L18 22Z" fill="rgba(224,242,254,0.6)"/>
+  <text x="36" y="25" font-family="'Outfit',system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="0.08em" fill="rgba(224,242,254,0.85)">MARINA</text>
+  <text x="36" y="39" font-family="'Outfit',system-ui,sans-serif" font-size="8" font-weight="500" letter-spacing="0.12em" fill="rgba(14,165,233,0.75)">GROUP</text>
+</svg>

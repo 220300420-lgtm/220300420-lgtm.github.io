@@ -15,7 +15,7 @@
         <div class="navbar__inner">
 
           <a href="/" class="navbar__logo">
-            <img src="/assets/icons/android-chrome-512x512.png"
+            <img src="/assets/img/logo.png"
                  alt="ADAPTIA Logo"
                  class="navbar__logo-img" />
             <span class="navbar__logo-text">ADAPT<em>IA</em></span>
@@ -34,7 +34,7 @@
               <button class="lang-btn active" data-lang="es">ES</button>
               <button class="lang-btn"        data-lang="en">EN</button>
             </div>
-            <a href="https://wa.me/${waNumber}?text=Hola%2C%20quiero%20agendar%20una%20sesión%20de%20diagnóstico%20gratuita%20con%20ADAPTIA"
+            <a href="https://wa.me/${waNumber}?text=Hola%2C%20quiero%20agendar%20una%20sesión%20con%20ADAPTIA"
                target="_blank" class="btn btn-primary btn-sm">
               Agendar sesión →
             </a>
