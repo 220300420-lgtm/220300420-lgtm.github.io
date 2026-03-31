@@ -1,0 +1,188 @@
+/* ═══════════════════════════════════════════════════════════════
+   ADAPTIA — entregables.css
+   Estilos exclusivos de entregables.html
+═══════════════════════════════════════════════════════════════ */
+
+/* ─── PAGE HERO ─── */
+.page-hero {
+  padding: 10rem 0 5rem;
+  position: relative;
+  overflow: hidden;
+}
+.page-hero__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 80% at 50% 0%, rgba(14,165,233,0.07), transparent 65%),
+    linear-gradient(180deg, var(--bg-abyss) 0%, var(--bg-deep) 100%);
+}
+.page-hero__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--blue-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--blue-border) 1px, transparent 1px);
+  background-size: 55px 55px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 0%, black 0%, transparent 70%);
+  opacity: 0.4;
+}
+.page-hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+.page-hero h1  { margin: 0.75rem 0 1.25rem; }
+.page-hero p   { color: var(--text-muted); max-width: 520px; }
+
+/* ─── FILTERS ─── */
+.filters-bar {
+  position: sticky;
+  top: 72px;
+  z-index: 600;
+  background: rgba(2,12,27,0.9);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
+  margin-bottom: 0;
+}
+.filters-bar__inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.filters-bar__left {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.45rem 1rem;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  color: var(--text-faint);
+  background: transparent;
+  transition: all 0.22s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.filter-btn .count {
+  font-size: 0.65rem;
+  background: var(--bg-card);
+  border-radius: 4px;
+  padding: 0.1rem 0.35rem;
+  color: var(--text-faint);
+}
+.filter-btn:hover {
+  border-color: var(--border-mid);
+  color: var(--text-muted);
+}
+.filter-btn.active {
+  border-color: var(--blue-border);
+  background: var(--blue-subtle);
+  color: var(--blue);
+}
+.filter-btn.active .count {
+  background: rgba(14,165,233,0.15);
+  color: var(--blue);
+}
+
+.filters-bar__right {
+  display: flex;
+  gap: 0.5rem;
+}
+.type-btn {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 0.4rem 0.85rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  color: var(--text-faint);
+  background: transparent;
+  transition: all 0.22s;
+  cursor: pointer;
+}
+.type-btn.active {
+  background: rgba(255,255,255,0.06);
+  color: var(--text-primary);
+  border-color: var(--border-mid);
+}
+
+/* ─── CATÁLOGO ─── */
+.catalog {
+  padding: 3rem 0 var(--space-xl);
+}
+
+.catalog__phase-section {
+  margin-bottom: 4rem;
+}
+.catalog__phase-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+.catalog__phase-num {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.phase-1-num { background: rgba(56,189,248,0.12); color: #38bdf8; border: 1px solid rgba(56,189,248,0.25); }
+.phase-2-num { background: rgba(52,211,153,0.12); color: #34d399; border: 1px solid rgba(52,211,153,0.25); }
+.phase-3-num { background: rgba(167,139,250,0.12); color: #a78bfa; border: 1px solid rgba(167,139,250,0.25); }
+.phase-4-num { background: rgba(251,146,60,0.12);  color: #fb923c; border: 1px solid rgba(251,146,60,0.25);  }
+
+.catalog__phase-info {}
+.catalog__phase-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+.catalog__phase-desc {
+  font-size: 0.82rem;
+  color: var(--text-faint);
+  margin-top: 0.2rem;
+}
+
+.catalog__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+/* En modo "full" la card muestra descripción */
+.catalog__grid .p-card { height: 100%; display: flex; flex-direction: column; }
+.catalog__grid .p-card .p-card__desc { display: block; flex: 1; }
+.catalog__grid .p-card .p-card__cta  { display: block; }
+
+/* ─── HIDDEN WHEN FILTERED ─── */
+.catalog__phase-section.hidden { display: none; }
+.p-card.filtered-out {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.95);
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1200px) {
+  .catalog__grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 900px)  {
+  .catalog__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 580px)  {
+  .catalog__grid { grid-template-columns: 1fr; }
+  .filters-bar__inner { flex-direction: column; align-items: flex-start; }
+}

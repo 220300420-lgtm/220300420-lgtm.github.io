@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ADAPTIA Consultoría — Transformación digital para tu negocio náutico. 20 entregables reales, 4 fases metodológicas, acompañamiento continuo." />
+  <title>ADAPTIA Consultoría — Transformación Digital Náutica</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/globals.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/cards.css" />
+</head>
+<body>
+
+<!-- LAYOUT PLACEHOLDERS (inyectados por navbar.js) -->
+<div id="nav-placeholder"></div>
+<div id="wa-placeholder"></div>
+<div id="modal-placeholder"></div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════════════════════ -->
+<section class="hero" id="inicio">
+  <canvas id="ocean-canvas"></canvas>
+  <div class="hero__depth"></div>
+  <div class="hero__grid"></div>
+  <div class="hero__horizon"></div>
+
+  <div class="hero__content">
+    <div class="hero__badge">
+      <span class="hero__badge-dot"></span>
+      <span class="label" style="color:inherit;font-size:0.7rem;">
+        Consultoría Especializada · Sector Náutico Recreativo
+      </span>
+    </div>
+
+    <h1 class="hero__title display-xl">
+      <span class="line"><span>Transformación</span></span>
+      <span class="line"><span>digital para tu <span class="accent">negocio</span></span></span>
+    </h1>
+
+    <p class="hero__sub body-lg">
+      Llevamos PyMEs náuticas del caos operativo a la claridad digital.
+      Diagnóstico profundo, capacitación con IA y 20 entregables reales
+      que transforman tu marina, club o tour marino.
+    </p>
+
+    <div class="hero__actions">
+      <a href="pages/entregables.html" class="btn btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <path d="M9 18l6-6-6-6"/>
+        </svg>
+        Ver los 20 productos
+      </a>
+      <a href="pages/metodologia.html" class="btn btn-ghost">
+        Conocer la metodología
+      </a>
+    </div>
+  </div>
+
+  <div class="hero__scroll">
+    <span>Scroll</span>
+    <div class="hero__scroll-line"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     STATS
+══════════════════════════════════════════════════════════════ -->
+<section class="stats">
+  <div class="container">
+    <div class="stats__grid reveal">
+      <div class="stats__item">
+        <span class="stats__num" data-count="20">0</span>
+        <span class="stats__label">Productos entregables</span>
+      </div>
+      <div class="stats__item">
+        <span class="stats__num" data-count="4">0</span>
+        <span class="stats__label">Fases metodológicas</span>
+      </div>
+      <div class="stats__item">
+        <span class="stats__num">⚓</span>
+        <span class="stats__label">Sector náutico especializado</span>
+      </div>
+      <div class="stats__item">
+        <span class="stats__num">100%</span>
+        <span class="stats__label">Orientado a PyMEs</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PRODUCTOS — PREVIEW (8 cards)
+══════════════════════════════════════════════════════════════ -->
+<section class="products" id="productos">
+  <div class="container">
+
+    <div class="products__header">
+      <div class="products__header-left reveal">
+        <span class="label">Catálogo Técnico</span>
+        <h2 class="display-md">Nuestros productos</h2>
+        <p class="body-md" style="color:var(--text-muted);max-width:480px;margin-top:0.75rem;">
+          Cada entregable es un producto concreto con herramienta digital específica.
+          Sin ambigüedad, sin promesas vacías.
+        </p>
+      </div>
+      <a href="pages/entregables.html" class="btn btn-ghost reveal">
+        Ver los 20 completos →
+      </a>
+    </div>
+
+    <!-- Phase filter (home) -->
+    <div class="phases-nav reveal">
+      <button class="phase-btn active" data-phase="all">Todos</button>
+      <button class="phase-btn" data-phase="1">Diagnóstico</button>
+      <button class="phase-btn" data-phase="2">Capacitación</button>
+      <button class="phase-btn" data-phase="3">Digitalización</button>
+      <button class="phase-btn" data-phase="4">Implementación</button>
+    </div>
+
+    <div class="products__grid reveal" id="home-products-grid">
+      <!-- Inyectado por products.js -->
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     POR QUÉ ADAPTIA
+══════════════════════════════════════════════════════════════ -->
+<section class="why" id="diferenciadores">
+  <div class="container">
+    <div style="text-align:center;max-width:620px;margin:0 auto;" class="reveal">
+      <span class="label">¿Por qué elegirnos?</span>
+      <h2 class="display-md" style="margin:0.75rem 0 1rem;">
+        Lo que nos hace diferentes
+      </h2>
+      <p class="body-md" style="color:var(--text-muted);">
+        No somos una consultora genérica. Entendemos la operación náutica
+        desde adentro y construimos soluciones que funcionan en el agua.
+      </p>
+    </div>
+
+    <div class="why__grid">
+      <div class="why__card reveal delay-1">
+        <div class="why__icon">⚓</div>
+        <h3 class="why__title">Sector Náutico Especializado</h3>
+        <p class="why__desc">Somos pioneros en consultoría para marinas, clubes de yates y tours marinos. Conocemos tu industria: amarres, temporadas, mantenimiento, regulaciones y la dinámica del cliente náutico.</p>
+      </div>
+      <div class="why__card reveal delay-2">
+        <div class="why__icon">🤖</div>
+        <h3 class="why__title">Capacitación Potenciada por IA</h3>
+        <p class="why__desc">Implementamos chatbots internos entrenados con los procesos de tu empresa. Tu equipo tiene respuestas instantáneas, estén en muelle o en oficina, las 24 horas.</p>
+      </div>
+      <div class="why__card reveal delay-3">
+        <div class="why__icon">🔁</div>
+        <h3 class="why__title">Modalidad Híbrida</h3>
+        <p class="why__desc">Actuamos en el nivel estratégico (KPIs, roadmap, diagnóstico) y en el operativo (implementación de herramientas, automatizaciones, ERP). Somos parte de tu equipo.</p>
+      </div>
+      <div class="why__card reveal delay-1">
+        <div class="why__icon">📊</div>
+        <h3 class="why__title">Acompañamiento Continuo</h3>
+        <p class="why__desc">No entregamos un documento y desaparecemos. Te acompañamos mes a mes con reportes de KPIs, análisis de desviaciones y ajustes de la estrategia digital.</p>
+      </div>
+      <div class="why__card reveal delay-2">
+        <div class="why__icon">🌎</div>
+        <h3 class="why__title">Visión Internacional</h3>
+        <p class="why__desc">Desde Cancún construimos metodologías escalables con proyección hacia marinas del Caribe, Golfo de México y Latinoamérica. Diseñado para crecer contigo.</p>
+      </div>
+      <div class="why__card reveal delay-3">
+        <div class="why__icon">⚡</div>
+        <h3 class="why__title">Herramientas Reales</h3>
+        <p class="why__desc">Clientify, Make, Kommo, Looker Studio, n8n. Herramientas probadas en entornos reales. No teoria: implementación concreta con resultados medibles desde el mes uno.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CTA FINAL
+══════════════════════════════════════════════════════════════ -->
+<section class="cta-final">
+  <div class="cta-final__bg"></div>
+  <div class="container">
+    <div class="cta-final__inner reveal">
+      <span class="label">Siguiente paso</span>
+      <h2 class="display-md">
+        ¿Listo para navegar en la dirección correcta?
+      </h2>
+      <p class="body-lg">
+        Agenda una sesión de diagnóstico sin costo. En 45 minutos identificamos
+        tus principales áreas de oportunidad y te presentamos una propuesta priorizada.
+      </p>
+      <div class="cta-final__actions">
+        <a href="https://wa.me/52XXXXXXXXXX?text=Hola%2C%20quiero%20agendar%20una%20sesión%20de%20diagnóstico%20gratuita%20con%20ADAPTIA%20Consultoría"
+           target="_blank" class="btn btn-primary" style="font-size:1rem;padding:1rem 2.25rem;">
+          💬 Agendar por WhatsApp
+        </a>
+        <a href="pages/contacto.html" class="btn btn-ghost" style="font-size:1rem;padding:1rem 2.25rem;">
+          Ver formulario de contacto
+        </a>
+      </div>
+      <p class="cta-final__location">
+        📍 Cancún, Quintana Roo, México &nbsp;·&nbsp; Atención en Español e Inglés
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+
+<!-- ─── SCRIPTS ─── -->
+<script src="js/navbar.js"></script>
+<script src="js/products.js"></script>
+<script src="js/main.js"></script>
+<script>
+  /* Iniciar ocean canvas */
+  window.initOcean('ocean-canvas');
+
+  /* Render preview de productos */
+  ADAPTIA.renderHomeGrid('home-products-grid');
+
+  /* Filtros rápidos en home */
+  document.querySelectorAll('.phase-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.phase-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const phase = btn.dataset.phase;
+      const grid  = document.getElementById('home-products-grid');
+      const slice = phase === 'all'
+        ? ADAPTIA.products.slice(0, 8)
+        : ADAPTIA.products.filter(p => String(p.phaseNum) === phase).slice(0, 8);
+      grid.innerHTML = slice.map(p => ADAPTIA.renderCard(p, { full: false })).join('');
+    });
+  });
+</script>
+
+</body>
+</html>
