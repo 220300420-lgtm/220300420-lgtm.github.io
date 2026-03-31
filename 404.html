@@ -6,8 +6,12 @@
   <title>ADAPTIA Consultoría</title>
   <script>
     /* GitHub Pages Clean URL Redirect
-       Encodes the full path into a query string and redirects to index.html,
-       which will decode it and push the correct history state.
+       Encodes the full path into a query string and redirects to the root,
+       which handles the navigation via the page subdirectory structure.
+       Works for:
+         - User/org pages (username.github.io)  → segmentCount = 0
+         - Project pages (username.github.io/repo) → segmentCount = 1
+       This site uses segmentCount = 0 (user/org page with custom domain).
        Technique: https://github.com/rafgraph/spa-github-pages            */
     (function() {
       var l = window.location;

@@ -98,9 +98,12 @@
     const href = link.getAttribute('href');
     if (!href) return;
     const linkPath = href.replace(/\/$/, '') || '/';
-    if (linkPath === pathname || (linkPath !== '/' && pathname.startsWith(linkPath))) {
-      link.classList.add('active');
-    }
+    const isExact = linkPath === pathname;
+    const isPrefix = linkPath !== '/' && (
+      pathname === linkPath ||
+      pathname.startsWith(linkPath + '/')
+    );
+    if (isExact || isPrefix) link.classList.add('active');
   });
 })();
 
