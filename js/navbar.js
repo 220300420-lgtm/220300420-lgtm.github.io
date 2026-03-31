@@ -15,7 +15,7 @@
         <div class="navbar__inner">
 
           <a href="/" class="navbar__logo">
-            <img src="/assets/icons/android-chrome-512x512.png"
+            <img src="/assets/img/logo.png"
                  alt="ADAPTIA Logo"
                  class="navbar__logo-img" />
             <span class="navbar__logo-text">ADAPT<em>IA</em></span>
@@ -27,6 +27,7 @@
             <li><a href="/metodologia" class="nav-link" data-page="metodologia">Metodología</a></li>
             <li><a href="/nosotros"    class="nav-link" data-page="nosotros">Nosotros</a></li>
             <li><a href="/contacto"    class="nav-link" data-page="contacto">Contacto</a></li>
+            <li><a href="/patrocinios" class="nav-link" data-page="patrocinios">Patrocinios</a></li>
           </ul>
 
           <div class="navbar__right">
@@ -54,6 +55,7 @@
       <a href="/metodologia" class="nav-link">Metodología</a>
       <a href="/nosotros"    class="nav-link">Nosotros</a>
       <a href="/contacto"    class="nav-link">Contacto</a>
+      <a href="/patrocinios" class="nav-link">Patrocinios</a>
     </div>
   `;
 
@@ -141,6 +143,7 @@
             <ul>
               <li><a href="/nosotros">Nosotros</a></li>
               <li><a href="/metodologia">Metodología</a></li>
+              <li><a href="/patrocinios">Patrocinios</a></li>
               <li><a href="/contacto">Contacto</a></li>
             </ul>
           </div>

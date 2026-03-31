@@ -44,6 +44,37 @@
   <div class="hero__grid"></div>
   <div class="hero__horizon"></div>
 
+  <!-- Sailing boat decoration -->
+  <div class="hero__boat-wrap" aria-hidden="true">
+    <div class="hero__boat-inner">
+      <svg class="hero__boat" viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Jib (front sail) -->
+        <path d="M 74 25 L 74 57 L 35 54 Z"
+              fill="rgba(14,165,233,0.12)" stroke="rgba(14,165,233,0.38)" stroke-width="1" stroke-linejoin="round"/>
+        <!-- Main sail -->
+        <path d="M 78 9 L 78 57 L 124 52 Z"
+              fill="rgba(14,165,233,0.18)" stroke="rgba(14,165,233,0.55)" stroke-width="1" stroke-linejoin="round"/>
+        <!-- Mast -->
+        <line x1="76" y1="7" x2="76" y2="58"
+              stroke="rgba(210,240,255,0.85)" stroke-width="2" stroke-linecap="round"/>
+        <!-- Boom -->
+        <line x1="76" y1="58" x2="118" y2="62"
+              stroke="rgba(14,165,233,0.5)" stroke-width="1.2" stroke-linecap="round"/>
+        <!-- Hull -->
+        <path d="M 22 62 Q 78 70 134 58 L 126 67 Q 78 76 28 68 Z"
+              fill="rgba(1,18,55,0.92)" stroke="rgba(14,165,233,0.65)" stroke-width="1.2"/>
+        <!-- Cabin/wheelhouse -->
+        <path d="M 58 60 L 63 55 L 94 55 L 98 60 Z"
+              fill="rgba(0,38,110,0.8)" stroke="rgba(14,165,233,0.38)" stroke-width="0.8"/>
+        <!-- Cabin window (porthole) -->
+        <circle cx="78" cy="57.5" r="2.2"
+                fill="rgba(14,165,233,0.25)" stroke="rgba(14,165,233,0.5)" stroke-width="0.7"/>
+        <!-- Water reflection glow -->
+        <ellipse cx="80" cy="72" rx="54" ry="3.5" fill="rgba(0,71,171,0.14)"/>
+      </svg>
+    </div>
+  </div>
+
   <div class="hero__content">
     <div class="hero__badge">
       <span class="hero__badge-dot"></span>

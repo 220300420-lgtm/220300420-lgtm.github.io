@@ -103,8 +103,12 @@ h1, h2, h3, h4 {
 .btn:hover::before { opacity: 1; }
 .btn-primary { background: var(--blue); color: #fff; border-color: var(--blue); box-shadow: 0 2px 20px rgba(14,165,233,0.25); }
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(14,165,233,0.45); }
+.btn-primary:active { transform: translateY(0); box-shadow: 0 2px 16px rgba(14,165,233,0.3); }
+.btn-primary:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
 .btn-ghost { background: transparent; color: var(--text-muted); border-color: var(--border-mid); }
 .btn-ghost:hover { border-color: var(--blue); color: var(--text-primary); background: var(--blue-subtle); }
+.btn-ghost:active { background: rgba(14,165,233,0.12); }
+.btn-ghost:focus-visible { outline: 2px solid var(--blue-border); outline-offset: 3px; }
 .btn-sm { font-size: 0.8rem; padding: 0.6rem 1.25rem; border-radius: var(--radius-sm); }
 
 .chip { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.28rem 0.7rem; border-radius: 4px; }

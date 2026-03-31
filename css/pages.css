@@ -427,7 +427,221 @@
   .nosotros-intro    { grid-template-columns: 1fr; gap: 3rem; }
   .contact-grid      { grid-template-columns: 1fr; gap: 3rem; }
   .nosotros-mv       { grid-template-columns: 1fr; }
+  /* Nosotros grids */
+  .nosotros-values-grid  { grid-template-columns: repeat(2, 1fr) !important; }
+  .nosotros-presence-grid { grid-template-columns: repeat(3, 1fr) !important; }
 }
 @media (max-width: 640px) {
   .form-row { grid-template-columns: 1fr; }
+  /* Nosotros values: single column on small mobile */
+  .nosotros-values-grid  { grid-template-columns: 1fr !important; }
+  .nosotros-presence-grid { grid-template-columns: 1fr !important; max-width: 100% !important; }
+  /* Page hero tighter on mobile */
+  .page-hero { padding: 7rem 0 3rem; }
+  /* Nosotros intro section - center content */
+  .nosotros-intro { text-align: center; }
+  .nosotros-mv    { text-align: left; }
+  .brand-visual   { display: none; }
+  /* Metodologia phases */
+  .metod-phase    { padding: var(--space-md) 0; }
 }
+@media (max-width: 420px) {
+  .nosotros-presence-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ═══ PATROCINIOS ═══════════════════════════════════════════ */
+.sponsors {
+  padding: var(--space-xl) 0;
+}
+.sponsors__header {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 4rem;
+}
+.sponsors__header h2 { margin: 0.75rem 0 1rem; }
+.sponsors__header p  { color: var(--text-muted); }
+
+.sponsors__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 5rem;
+}
+.sponsor-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 140px;
+  transition: all 0.35s var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+.sponsor-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 60% at 50% 50%, var(--blue-glow), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.35s;
+}
+.sponsor-card:hover {
+  border-color: var(--border-mid);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow);
+}
+.sponsor-card:hover::before { opacity: 1; }
+.sponsor-card__logo {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  text-align: center;
+}
+.sponsor-card__placeholder {
+  width: 88px;
+  height: 44px;
+  background: var(--blue-subtle);
+  border: 1px dashed var(--blue-border);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sponsor-card__name {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-faint);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.sponsors__cta {
+  text-align: center;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 4rem 3rem;
+  max-width: 680px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+.sponsors__cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(14,165,233,0.05), transparent 70%);
+  pointer-events: none;
+}
+.sponsors__cta > * { position: relative; z-index: 1; }
+.sponsors__cta h3 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.sponsors__cta p {
+  color: var(--text-muted);
+  max-width: 440px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+.sponsors__tiers {
+  padding: var(--space-xl) 0;
+  background: var(--bg-mid);
+  position: relative;
+}
+.sponsors__tiers::before,
+.sponsors__tiers::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-mid), transparent);
+}
+.sponsors__tiers::before { top: 0; }
+.sponsors__tiers::after  { bottom: 0; }
+.sponsors__tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.tier-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.75rem;
+  text-align: center;
+  transition: all 0.3s var(--ease-out);
+}
+.tier-card--gold { border-color: rgba(234,179,8,0.3); }
+.tier-card--silver { border-color: rgba(148,163,184,0.3); }
+.tier-card--bronze { border-color: rgba(180,110,60,0.3); }
+.tier-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-glow); }
+.tier-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  border-radius: 100px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+.tier-card--gold   .tier-card__badge { background: rgba(234,179,8,0.12); color: #eab308; border: 1px solid rgba(234,179,8,0.25); }
+.tier-card--silver .tier-card__badge { background: rgba(148,163,184,0.1); color: #94a3b8; border: 1px solid rgba(148,163,184,0.25); }
+.tier-card--bronze .tier-card__badge { background: rgba(180,110,60,0.1); color: #b46e3c; border: 1px solid rgba(180,110,60,0.25); }
+.tier-card__title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+.tier-card__desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+.tier-card__features {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.tier-card__feature {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.tier-card__feature::before {
+  content: '✓';
+  color: var(--blue);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Sponsors responsive */
+@media (max-width: 900px) {
+  .sponsors__grid       { grid-template-columns: repeat(3, 1fr); }
+  .sponsors__tiers-grid { grid-template-columns: 1fr; gap: 1rem; }
+}
+@media (max-width: 640px) {
+  .sponsors__grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .sponsors__cta  { padding: 2.5rem 1.5rem; }
+}
+@media (max-width: 380px) {
+  .sponsors__grid { grid-template-columns: 1fr; }
+}
+
