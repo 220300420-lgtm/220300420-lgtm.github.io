@@ -14,25 +14,19 @@
       <div class="container">
         <div class="navbar__inner">
 
-          <a href="index.html" class="navbar__logo">
-            <div class="navbar__logo-mark">
-              <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="10" cy="32" r="6" fill="#0EA5E9"/>
-                <path d="M10 32 Q20 6 38 10" stroke="#0EA5E9" stroke-width="3"
-                      stroke-linecap="round" fill="none"/>
-                <path d="M16 26 Q26 12 38 10" stroke="#0EA5E9" stroke-width="1.5"
-                      stroke-linecap="round" fill="none" opacity="0.4"/>
-              </svg>
-            </div>
+          <a href="/" class="navbar__logo">
+            <img src="/assets/icons/android-chrome-512x512.png"
+                 alt="ADAPTIA Logo"
+                 class="navbar__logo-img" />
             <span class="navbar__logo-text">ADAPT<em>IA</em></span>
           </a>
 
           <ul class="navbar__links">
-            <li><a href="index.html" class="nav-link" data-page="index">Inicio</a></li>
-            <li><a href="entregables.html" class="nav-link" data-page="entregables">Entregables</a></li>
-            <li><a href="metodologia.html" class="nav-link" data-page="metodologia">Metodología</a></li>
-            <li><a href="nosotros.html"    class="nav-link" data-page="nosotros">Nosotros</a></li>
-            <li><a href="contacto.html"    class="nav-link" data-page="contacto">Contacto</a></li>
+            <li><a href="/" class="nav-link" data-page="index">Inicio</a></li>
+            <li><a href="/entregables" class="nav-link" data-page="entregables">Entregables</a></li>
+            <li><a href="/metodologia" class="nav-link" data-page="metodologia">Metodología</a></li>
+            <li><a href="/nosotros"    class="nav-link" data-page="nosotros">Nosotros</a></li>
+            <li><a href="/contacto"    class="nav-link" data-page="contacto">Contacto</a></li>
           </ul>
 
           <div class="navbar__right">
@@ -55,11 +49,11 @@
 
     <!-- Mobile menu -->
     <div class="navbar__mobile-menu" id="mobileMenu">
-      <a href="index.html"       class="nav-link">Inicio</a>
-      <a href="entregables.html"    class="nav-link">Entregables</a>
-      <a href="metodologia.html"    class="nav-link">Metodología</a>
-      <a href="nosotros.html"       class="nav-link">Nosotros</a>
-      <a href="contacto.html"       class="nav-link">Contacto</a>
+      <a href="/"            class="nav-link">Inicio</a>
+      <a href="/entregables" class="nav-link">Entregables</a>
+      <a href="/metodologia" class="nav-link">Metodología</a>
+      <a href="/nosotros"    class="nav-link">Nosotros</a>
+      <a href="/contacto"    class="nav-link">Contacto</a>
     </div>
   `;
 
@@ -135,19 +129,19 @@
           <div class="footer__col">
             <h4>Productos</h4>
             <ul>
-              <li><a href="entregables.html#fase-1">Diagnóstico (E01–E04)</a></li>
-              <li><a href="entregables.html#fase-2">Capacitación (E05–E08)</a></li>
-              <li><a href="entregables.html#fase-3">Digitalización (E09–E17)</a></li>
-              <li><a href="entregables.html#fase-4">Implementación (E18–E20)</a></li>
+              <li><a href="/entregables#fase-1">Diagnóstico (E01–E04)</a></li>
+              <li><a href="/entregables#fase-2">Capacitación (E05–E08)</a></li>
+              <li><a href="/entregables#fase-3">Digitalización (E09–E17)</a></li>
+              <li><a href="/entregables#fase-4">Implementación (E18–E20)</a></li>
             </ul>
           </div>
 
           <div class="footer__col">
             <h4>Empresa</h4>
             <ul>
-              <li><a href="nosotros.html">Nosotros</a></li>
-              <li><a href="metodologia.html">Metodología</a></li>
-              <li><a href="contacto.html">Contacto</a></li>
+              <li><a href="/nosotros">Nosotros</a></li>
+              <li><a href="/metodologia">Metodología</a></li>
+              <li><a href="/contacto">Contacto</a></li>
             </ul>
           </div>
 

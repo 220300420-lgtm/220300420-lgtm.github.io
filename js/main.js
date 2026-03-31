@@ -93,10 +93,14 @@
   }
 
   /* Active link based on current page */
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const pathname = window.location.pathname.replace(/\/$/, '') || '/';
   document.querySelectorAll('.nav-link').forEach(link => {
     const href = link.getAttribute('href');
-    if (href && href.includes(currentPage)) link.classList.add('active');
+    if (!href) return;
+    const linkPath = href.replace(/\/$/, '') || '/';
+    if (linkPath === pathname || (linkPath !== '/' && pathname.startsWith(linkPath))) {
+      link.classList.add('active');
+    }
   });
 })();
 
