@@ -160,3 +160,100 @@ h1, h2, h3, h4 {
     transform: none;
   }
 }
+
+/* ─── PRODUCT MODAL — base hidden state (injected on all pages) ─── */
+/* Full visual styles live in cards.css; this ensures it is hidden on
+   pages that do not load cards.css (metodologia, nosotros, contacto). */
+.product-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 850;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ─── FOOTER (injected on every page via navbar.js) ─── */
+.footer {
+  background: var(--bg-abyss);
+  border-top: 1px solid var(--border);
+  padding: 5rem 0 2.5rem;
+}
+.footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+.footer__brand-name {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 1rem;
+}
+.footer__brand-name em {
+  font-style: normal;
+  color: var(--blue);
+}
+.footer__tagline {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  max-width: 260px;
+  margin-bottom: 1.5rem;
+}
+.footer__social {
+  display: flex; gap: 0.75rem;
+}
+.footer__social a {
+  width: 36px; height: 36px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-faint);
+  font-size: 0.85rem;
+  transition: all 0.22s;
+}
+.footer__social a:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+  background: var(--blue-subtle);
+}
+.footer__col h4 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 1.25rem;
+}
+.footer__col ul li { margin-bottom: 0.65rem; }
+.footer__col ul li a {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+.footer__col ul li a:hover { color: var(--blue); }
+
+.footer__bottom {
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.footer__copy, .footer__location {
+  font-size: 0.78rem;
+  color: var(--text-faint);
+}
+
+@media (max-width: 1024px) {
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .footer__grid { grid-template-columns: 1fr; }
+}
