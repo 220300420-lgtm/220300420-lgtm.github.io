@@ -60,7 +60,7 @@
   /* ─── WHATSAPP FLOAT ─── */
   const waHTML = `
     <div class="wa-float">
-      <div class="wa-tooltip">¿Tienes preguntas? Conversemos ahora 🚢</div>
+      <div class="wa-tooltip">¿Tienes preguntas? Conversemos ahora</div>
       <a href="https://wa.me/${waNumber}?text=Hola%2C%20me%20interesa%20conocer%20los%20servicios%20de%20ADAPTIA%20Consultoría"
          target="_blank" class="wa-btn" aria-label="WhatsApp">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
@@ -122,7 +122,7 @@
             <div class="footer__social">
               <a href="#" aria-label="LinkedIn">in</a>
               <a href="#" aria-label="Instagram">ig</a>
-              <a href="https://wa.me/${waNumber}" target="_blank" aria-label="WhatsApp">wa</a>
+              <a href="https://wa.me/${waNumber}" target="_blank" aria-label="WhatsApp" rel="noopener noreferrer">wa</a>
             </div>
           </div>
 
@@ -158,14 +158,19 @@
 
         <div class="footer__bottom">
           <span class="footer__copy">© 2025 ADAPTIA Consultoría. Todos los derechos reservados.</span>
-          <span class="footer__location">📍 Cancún, MX — Sector Náutico Recreativo</span>
+          <span class="footer__location">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:0.3rem;" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Cancún, MX — Sector Náutico Recreativo
+          </span>
         </div>
       </div>
     </footer>
   `;
 
   /* ─── INYECCIÓN ─── */
-  document.body.insertAdjacentHTML('afterbegin', cursorHTML);
+  if (window.matchMedia('(pointer: fine)').matches) {
+    document.body.insertAdjacentHTML('afterbegin', cursorHTML);
+  }
 
   const navPlaceholder = document.getElementById('nav-placeholder');
   if (navPlaceholder) navPlaceholder.outerHTML = navbarHTML;
