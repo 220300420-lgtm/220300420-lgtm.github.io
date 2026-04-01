@@ -81,9 +81,8 @@
 
   <div class="hero__content">
     <div class="hero__badge">
-      <span class="hero__badge-dot"></span>
       <span class="label" style="color:inherit;font-size:0.7rem;">
-        Consultoría Especializada · Sector Náutico Recreativo
+        Consultoría Especializada &middot; Sector Náutico Recreativo
       </span>
     </div>
 
@@ -99,7 +98,7 @@
     </p>
 
     <div class="hero__actions">
-      <a href="/entregables" class="btn btn-primary">
+      <a href="/productos" class="btn btn-primary">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
              stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
           <path d="M9 18l6-6-6-6"/>
@@ -147,42 +146,6 @@
         <span class="stats__label">Orientado a PyMEs</span>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     PRODUCTOS — PREVIEW (8 cards)
-══════════════════════════════════════════════════════════════ -->
-<section class="products" id="productos">
-  <div class="container">
-
-    <div class="products__header">
-      <div class="products__header-left reveal">
-        <span class="label">Catálogo Técnico</span>
-        <h2 class="display-md">Nuestros productos</h2>
-        <p class="body-md" style="color:var(--text-muted);max-width:480px;margin-top:0.75rem;">
-          Cada entregable es un producto concreto con herramienta digital específica.
-          Sin ambigüedad, sin promesas vacías.
-        </p>
-      </div>
-      <a href="/entregables" class="btn btn-ghost reveal">
-        Ver los 20 completos →
-      </a>
-    </div>
-
-    <!-- Phase filter (home) -->
-    <div class="phases-nav reveal">
-      <button class="phase-btn active" data-phase="all">Todos</button>
-      <button class="phase-btn" data-phase="1">Diagnóstico</button>
-      <button class="phase-btn" data-phase="2">Capacitación</button>
-      <button class="phase-btn" data-phase="3">Digitalización</button>
-      <button class="phase-btn" data-phase="4">Implementación</button>
-    </div>
-
-    <div class="products__grid reveal" id="home-products-grid">
-      <!-- Inyectado por products.js -->
-    </div>
-
   </div>
 </section>
 
@@ -353,22 +316,7 @@
   /* Iniciar ocean canvas con color ADAPTIA (#0047AB) */
   window.initOcean('ocean-canvas');
 
-  /* Render preview de productos */
-  ADAPTIA.renderHomeGrid('home-products-grid');
-
-  /* Filtros rápidos en home */
-  document.querySelectorAll('.phase-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.phase-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const phase = btn.dataset.phase;
-      const grid  = document.getElementById('home-products-grid');
-      const slice = phase === 'all'
-        ? ADAPTIA.products.slice(0, 8)
-        : ADAPTIA.products.filter(p => String(p.phaseNum) === phase).slice(0, 8);
-      grid.innerHTML = slice.map(p => ADAPTIA.renderCard(p, { full: false })).join('');
-    });
-  });
+  /* Sección de preview de productos eliminada (BUG 3) */
 </script>
 
 </body>

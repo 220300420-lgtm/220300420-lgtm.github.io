@@ -530,12 +530,19 @@
   .products__header   { flex-direction: column; align-items: flex-start; }
 }
 @media (max-width: 640px) {
+  .hero { padding-bottom: 11vh; }
   .hero__boat { bottom: 9%; }
   .hero__boat-svg { width: clamp(44px, 10vw, 70px); }
-  .products__grid { grid-template-columns: 1fr; }
   .why__grid      { grid-template-columns: 1fr; }
   .hero__actions  { flex-direction: column; align-items: center; }
-  .hero__scroll   { bottom: 1.5rem; }
+  .hero__actions .btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+    font-size: 0.875rem;
+    padding: 0.85rem 1.5rem;
+  }
+  .hero__scroll   { bottom: 1.75rem; }
   .hero__content  { padding: 0 1rem; }
   .stats__grid    { grid-template-columns: repeat(2, 1fr); }
 }
