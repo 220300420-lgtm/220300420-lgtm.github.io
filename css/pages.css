@@ -346,6 +346,62 @@
   .nosotros-wave-svg  { animation: none; }
 }
 
+/* ─── TEAM GRID ─── */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.team-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.team-card:hover {
+  border-color: var(--blue-border);
+  box-shadow: var(--shadow-glow);
+}
+.team-card__avatar {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: rgba(14,165,233,0.12);
+  border: 2px solid rgba(14,165,233,0.28);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--blue);
+  margin: 0 auto 1.25rem;
+}
+.team-card__avatar::after {
+  content: attr(data-initials);
+}
+.team-card__name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin: 0 0 0.35rem;
+}
+.team-card__role {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--blue);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 0.85rem;
+}
+.team-card__desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
 /* Diferenciadores Nosotros */
 .nosotros-diff {
   padding: var(--space-xl) 0;
@@ -535,6 +591,7 @@
     grid-template-columns: repeat(2, 1fr) !important;
   }
   .nosotros-intro { padding: var(--space-lg) 0; }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 640px) {
   .form-row { grid-template-columns: 1fr; }
@@ -548,12 +605,16 @@
     grid-template-columns: 1fr !important;
   }
   .nosotros-boat-scene { height: 180px; }
-  .page-hero { padding: 7rem 0 3.5rem; }
-  .page-hero__content { padding: 0 0.25rem; }
+  .page-hero { padding: 8rem 0 4rem; }
+  .page-hero__content { padding: 0 0.5rem; }
+  .nosotros-intro     { gap: 2rem; }
+  .mv-card            { padding: 1.25rem; }
+  .team-grid          { grid-template-columns: 1fr; gap: 1rem; }
 }
 @media (max-width: 480px) {
   /* Presence cards */
   [style*="repeat(3,1fr)"] {
     grid-template-columns: 1fr !important;
   }
+  .page-hero { padding: 7.5rem 0 3.5rem; }
 }
