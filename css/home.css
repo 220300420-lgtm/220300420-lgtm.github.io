@@ -588,13 +588,16 @@
   .hero__boat { bottom: 9%; }
   .hero__boat-svg { width: clamp(44px, 10vw, 70px); }
   .why__grid      { grid-template-columns: 1fr; }
-  .hero__actions  { flex-direction: column; align-items: center; }
+  .hero__actions  { flex-direction: row; align-items: center; justify-content: center; }
   .hero__actions .btn {
-    width: 100%;
-    max-width: 300px;
     justify-content: center;
     font-size: 0.875rem;
-    padding: 0.85rem 1.5rem;
+    padding: 0.85rem 1.25rem;
+  }
+  .btn-ghost {
+    background: var(--blue-subtle);
+    border-color: var(--blue-border);
+    color: var(--text-primary);
   }
   .hero__scroll   { display: none; }
   .hero__content  { padding: 0 1rem; }
