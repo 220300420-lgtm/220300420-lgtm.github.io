@@ -253,10 +253,6 @@ ADAPTIA.renderCard = function(product, options = {}) {
       <span class="p-card__phase ${product.phaseColor}">${product.phase}</span>
       <div class="p-card__name">${product.name}</div>
       ${full ? `<p class="p-card__desc">${product.desc}</p>` : ''}
-      <div class="p-card__tool">
-        <div class="p-card__tool-dot"></div>
-        <span>${product.tool}</span>
-      </div>
       ${full ? `<div class="p-card__cta">Consultar por WhatsApp →</div>` : ''}
     </div>
   `;

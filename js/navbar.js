@@ -18,12 +18,11 @@
             <img src="/assets/img/logo.png"
                  alt="ADAPTIA Logo"
                  class="navbar__logo-img" />
-            <span class="navbar__logo-text">ADAPT<em>IA</em></span>
           </a>
 
           <ul class="navbar__links">
             <li><a href="/" class="nav-link" data-page="index">Inicio</a></li>
-            <li><a href="/entregables" class="nav-link" data-page="entregables">Entregables</a></li>
+            <li><a href="/productos" class="nav-link" data-page="productos">Productos</a></li>
             <li><a href="/metodologia" class="nav-link" data-page="metodologia">Metodología</a></li>
             <li><a href="/nosotros"    class="nav-link" data-page="nosotros">Nosotros</a></li>
             <li><a href="/contacto"    class="nav-link" data-page="contacto">Contacto</a></li>
@@ -50,7 +49,7 @@
     <!-- Mobile menu -->
     <div class="navbar__mobile-menu" id="mobileMenu">
       <a href="/"            class="nav-link">Inicio</a>
-      <a href="/entregables" class="nav-link">Entregables</a>
+      <a href="/productos"   class="nav-link">Productos</a>
       <a href="/metodologia" class="nav-link">Metodología</a>
       <a href="/nosotros"    class="nav-link">Nosotros</a>
       <a href="/contacto"    class="nav-link">Contacto</a>
@@ -114,7 +113,7 @@
       <div class="container">
         <div class="footer__grid">
           <div class="footer__brand">
-            <span class="footer__brand-name">ADAPT<em>IA</em></span>
+            <img src="/assets/img/logo.png" alt="ADAPTIA Consultoría" class="footer__logo" />
             <p class="footer__tagline">
               Consultoría de transformación digital especializada en PyMEs del
               sector náutico recreativo. Estrategia, tecnología y acompañamiento continuo.
@@ -129,10 +128,10 @@
           <div class="footer__col">
             <h4>Productos</h4>
             <ul>
-              <li><a href="/entregables#fase-1">Diagnóstico (E01–E04)</a></li>
-              <li><a href="/entregables#fase-2">Capacitación (E05–E08)</a></li>
-              <li><a href="/entregables#fase-3">Digitalización (E09–E17)</a></li>
-              <li><a href="/entregables#fase-4">Implementación (E18–E20)</a></li>
+              <li><a href="/productos">Diagnóstico (E01–E04)</a></li>
+              <li><a href="/productos">Capacitación (E05–E08)</a></li>
+              <li><a href="/productos">Digitalización (E09–E17)</a></li>
+              <li><a href="/productos">Implementación (E18–E20)</a></li>
             </ul>
           </div>
 
