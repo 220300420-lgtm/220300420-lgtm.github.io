@@ -87,55 +87,60 @@
         </div>
       </div>
 
-      <!-- Animación barco navegando (sustituye el radar) -->
-      <div class="nosotros-boat-visual reveal right" aria-hidden="true">
-        <div class="nosotros-boat-scene">
-          <!-- Cielo / fondo degradado -->
-          <div class="nosotros-boat-sky"></div>
-          <!-- Barco navegante -->
-          <div class="nosotros-boat-wrapper">
-            <div class="nosotros-boat-sail">
-              <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg" class="nosotros-boat-svg">
-                <defs>
-                  <linearGradient id="nb-hull" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%"   stop-color="rgba(14,165,233,0.90)"/>
-                    <stop offset="50%"  stop-color="rgba(3,105,161,0.93)"/>
-                    <stop offset="100%" stop-color="rgba(2,58,100,0.96)"/>
-                  </linearGradient>
-                  <linearGradient id="nb-sail" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0%"   stop-color="rgba(224,242,254,0.82)"/>
-                    <stop offset="55%"  stop-color="rgba(14,165,233,0.50)"/>
-                    <stop offset="100%" stop-color="rgba(3,105,161,0.22)"/>
-                  </linearGradient>
-                </defs>
-                <!-- Casco -->
-                <path d="M10 46 Q6 56 8 60 L112 60 Q114 56 110 46 Q64 42 10 46Z"
-                      fill="url(#nb-hull)" stroke="rgba(200,230,255,0.30)" stroke-width="0.8"/>
-                <!-- Línea de flotación -->
-                <line x1="20" y1="52" x2="100" y2="52"
-                      stroke="rgba(200,230,255,0.16)" stroke-width="0.8"/>
-                <!-- Mástil -->
-                <line x1="56" y1="46" x2="56" y2="4"
-                      stroke="rgba(220,240,255,0.85)" stroke-width="1.6"/>
-                <!-- Vela mayor -->
-                <path d="M56 4 Q92 24 88 46 L56 46Z"
-                      fill="url(#nb-sail)" stroke="rgba(200,230,255,0.22)" stroke-width="0.7"/>
-                <!-- Foque -->
-                <path d="M56 16 L18 46 L56 46Z"
-                      fill="rgba(200,230,255,0.30)" stroke="rgba(200,230,255,0.14)" stroke-width="0.6"/>
-              </svg>
-            </div>
-          </div>
-          <!-- Agua / ondas -->
-          <div class="nosotros-boat-water">
-            <svg class="nosotros-wave-svg" viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0,40 C200,0 400,80 600,40 C800,0 1000,80 1200,40 L1200,80 L0,80 Z"
-                    fill="rgba(14,165,233,0.18)"/>
-              <path d="M0,55 C150,25 350,75 600,50 C850,25 1050,70 1200,55 L1200,80 L0,80 Z"
-                    fill="rgba(3,105,161,0.22)"/>
-            </svg>
-          </div>
-        </div>
+      <!-- Animación Abstracta Tecnológica (Orbe de conexiones) -->
+      <div class="nosotros-boat-visual reveal right" aria-hidden="true" style="display: flex; justify-content: center; align-items: center; min-height: 400px; position: relative;">
+        
+        <!-- Efecto de resplandor de fondo -->
+        <div style="position: absolute; width: 250px; height: 250px; background: radial-gradient(circle, rgba(14,165,233,0.15) 0%, transparent 70%); border-radius: 50%; animation: pulse-glow 4s infinite alternate;"></div>
+
+        <!-- SVG animado de red digital -->
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 350px; animation: rotate-slow 20s linear infinite;">
+          <defs>
+            <linearGradient id="orb-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="rgba(224,242,254,0.9)" />
+              <stop offset="50%" stop-color="rgba(14,165,233,0.8)" />
+              <stop offset="100%" stop-color="rgba(3,105,161,0.5)" />
+            </linearGradient>
+            <style>
+              @keyframes rotate-slow { 100% { transform: rotate(360deg); } }
+              @keyframes pulse-glow { 100% { transform: scale(1.2); opacity: 0.8; } }
+              @keyframes float-node { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }
+              .node { animation: float-node 3s ease-in-out infinite; }
+              .node-1 { animation-delay: 0s; }
+              .node-2 { animation-delay: 0.5s; }
+              .node-3 { animation-delay: 1s; }
+              .node-4 { animation-delay: 1.5s; }
+            </style>
+          </defs>
+
+          <!-- Círculo base punteado -->
+          <circle cx="100" cy="100" r="80" fill="none" stroke="rgba(14,165,233,0.2)" stroke-width="1" stroke-dasharray="4 4" />
+          <circle cx="100" cy="100" r="60" fill="none" stroke="rgba(14,165,233,0.3)" stroke-width="0.5" />
+
+          <!-- Líneas de conexión (Red) -->
+          <g stroke="rgba(14,165,233,0.5)" stroke-width="1.5">
+            <line x1="100" y1="20" x2="160" y2="60" />
+            <line x1="160" y1="60" x2="140" y2="140" />
+            <line x1="140" y1="140" x2="60" y2="140" />
+            <line x1="60" y1="140" x2="40" y2="60" />
+            <line x1="40" y1="60" x2="100" y2="20" />
+            
+            <line x1="100" y1="20" x2="100" y2="100" />
+            <line x1="160" y1="60" x2="100" y2="100" />
+            <line x1="140" y1="140" x2="100" y2="100" />
+            <line x1="60" y1="140" x2="100" y2="100" />
+            <line x1="40" y1="60" x2="100" y2="100" />
+          </g>
+
+          <!-- Nodos luminosos -->
+          <circle cx="100" cy="100" r="12" fill="url(#orb-grad)" style="filter: drop-shadow(0 0 10px rgba(14,165,233,0.8));" />
+          
+          <circle cx="100" cy="20" r="6" fill="#38bdf8" class="node node-1" style="filter: drop-shadow(0 0 5px rgba(56,189,248,0.8));" />
+          <circle cx="160" cy="60" r="8" fill="#0ea5e9" class="node node-2" />
+          <circle cx="140" cy="140" r="5" fill="#bae6fd" class="node node-3" />
+          <circle cx="60" cy="140" r="7" fill="#0284c7" class="node node-4" />
+          <circle cx="40" cy="60" r="9" fill="#7dd3fc" class="node node-2" style="filter: drop-shadow(0 0 8px rgba(125,211,252,0.8));" />
+        </svg>
       </div>
 
     </div>
@@ -254,6 +259,14 @@
     </div>
   </div>
 </section>
+
+<!-- ═══ SEPARADOR LUMINOSO ════════════════════════════ -->
+<div class="container" style="padding: 2rem 0 4rem 0;">
+  <div style="height: 1px; width: 100%; background: linear-gradient(90deg, transparent, rgba(14,165,233,0.5), transparent); position: relative;">
+    <!-- Brillo central -->
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 150px; height: 2px; box-shadow: 0 0 20px 3px rgba(14,165,233,0.8); background: rgba(224,242,254,0.9); border-radius: 50%;"></div>
+  </div>
+</div>
 
 <!-- ═══ PRESENCIA ═══════════════════════════════════════ -->
 <section style="padding:var(--space-xl) 0;text-align:center;">
