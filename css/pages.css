@@ -154,6 +154,16 @@
 }
 
 /* ═══ NOSOTROS ═══════════════════════════════════════════════ */
+
+/* Separador sutil entre secciones */
+hr.separator {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-mid) 20%, var(--border-mid) 80%, transparent);
+  opacity: 0.55;
+  margin: 0;
+}
+
 .nosotros-intro {
   padding: var(--space-xl) 0;
   display: grid;
