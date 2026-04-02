@@ -5,7 +5,7 @@
 
 /* ─── PAGE HERO (compartido, sin canvas) ─── */
 .page-hero {
-  padding: 10rem 0 5rem;
+  padding: 12rem 0 5rem;
   position: relative;
   overflow: hidden;
 }
