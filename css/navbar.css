@@ -203,6 +203,7 @@
   }
 
   .navbar__burger span {
+    width: 26px;
     background: var(--text-primary);
     opacity: 1;
     height: 2.5px;
