@@ -282,6 +282,14 @@ window.initOcean = function(canvasId) {
     ctx.fillRect(0, 0, W, H);
   }
 
+  /* Pausar animación cuando el canvas no es visible */
+  let isVisible = true;
+  const canvasObserver = new IntersectionObserver(entries => {
+    isVisible = entries[0].isIntersecting;
+    if (isVisible) requestAnimationFrame(frame);
+  }, { threshold: 0 });
+  canvasObserver.observe(canvas);
+
   function frame() {
     ctx.clearRect(0, 0, W, H);
 
@@ -316,14 +324,6 @@ window.initOcean = function(canvasId) {
     if (!reducedMotion) t += 0.009;
     if (isVisible) requestAnimationFrame(frame);
   }
-
-  /* Pausar animación cuando el canvas no es visible */
-  let isVisible = true;
-  const canvasObserver = new IntersectionObserver(entries => {
-    isVisible = entries[0].isIntersecting;
-    if (isVisible) requestAnimationFrame(frame);
-  }, { threshold: 0 });
-  canvasObserver.observe(canvas);
 
   frame();
 };
