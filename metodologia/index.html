@@ -44,74 +44,117 @@
   <div class="page-hero__bg"></div>
   <div class="page-hero__grid"></div>
   <div class="container">
-    <div class="page-hero__content">
-      <span class="label reveal">Proceso de trabajo</span>
-      <h1 class="display-lg reveal delay-1">
-        Nuestra metodología<br/>en 4 fases
-      </h1>
-      <p class="body-lg reveal delay-2">
-        Un proceso sistemático y probado que lleva tu operación náutica
-        del diagnóstico inicial hasta la centralización total con ERP e integraciones.
-      </p>
+    <div class="page-hero__row">
+      <div class="page-hero__content">
+        <span class="label reveal">Proceso de trabajo</span>
+        <h1 class="display-lg reveal delay-1">
+          Nuestra metodología<br/>en 4 fases
+        </h1>
+        <p class="body-lg reveal delay-2">
+          Un proceso sistemático y probado que lleva tu operación náutica
+          del diagnóstico inicial hasta la centralización total con ERP e integraciones.
+        </p>
+      </div>
+      <!-- ── ANIMACIÓN ENGRANAJES ── -->
+      <div class="page-hero__visual reveal delay-3" aria-hidden="true">
+        <div class="hero-visual-box">
+          <svg class="hero-gears-svg" viewBox="0 0 260 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Glows -->
+            <ellipse cx="94" cy="103" rx="58" ry="58" fill="rgba(14,165,233,0.05)"/>
+            <ellipse cx="157" cy="66"  rx="38" ry="38" fill="rgba(14,165,233,0.04)"/>
+            <ellipse cx="192" cy="95"  rx="24" ry="24" fill="rgba(14,165,233,0.03)"/>
+            <!-- Ambient dots -->
+            <circle cx="22"  cy="18"  r="1.2" fill="rgba(14,165,233,0.28)"/>
+            <circle cx="238" cy="14"  r="1"   fill="rgba(14,165,233,0.22)"/>
+            <circle cx="248" cy="158" r="1.5" fill="rgba(14,165,233,0.2)"/>
+            <circle cx="14"  cy="155" r="1"   fill="rgba(14,165,233,0.18)"/>
+            <circle cx="148" cy="10"  r="1.2" fill="rgba(14,165,233,0.2)"/>
+            <!-- ─ GEAR A — 12 dientes, centro (94,103) ─ -->
+            <g transform="translate(94,103)">
+              <g class="gear-a-rot">
+                <polygon stroke-linejoin="round"
+                  fill="rgba(14,165,233,0.07)" stroke="rgba(14,165,233,0.65)" stroke-width="1.2"
+                  points="31.69,-4.45 43.83,-3.83 43.83,3.83 31.69,4.45
+                          29.68,11.99 39.88,18.59 36.04,25.24 25.22,19.70
+                          19.70,25.22 25.24,36.04 18.59,39.88 11.99,29.68
+                          4.45,31.69 3.83,43.83 -3.83,43.83 -4.45,31.69
+                          -11.99,29.68 -18.59,39.88 -25.24,36.04 -19.70,25.22
+                          -25.22,19.70 -36.04,25.24 -39.88,18.59 -29.68,11.99
+                          -31.69,4.45 -43.83,3.83 -43.83,-3.83 -31.69,-4.45
+                          -29.68,-11.99 -39.88,-18.59 -36.04,-25.24 -25.22,-19.70
+                          -19.70,-25.22 -25.24,-36.04 -18.59,-39.88 -11.99,-29.68
+                          -4.45,-31.69 -3.83,-43.83 3.83,-43.83 4.45,-31.69
+                          11.99,-29.68 18.59,-39.88 25.24,-36.04 19.70,-25.22
+                          25.22,-19.70 36.04,-25.24 39.88,-18.59 29.68,-11.99"/>
+                <circle r="32" fill="none" stroke="rgba(14,165,233,0.15)" stroke-width="0.8" stroke-dasharray="3 6"/>
+                <circle r="18" fill="rgba(14,165,233,0.05)" stroke="rgba(14,165,233,0.42)" stroke-width="1.5"/>
+                <line x1="0" y1="-18" x2="0" y2="-32"         stroke="rgba(14,165,233,0.35)" stroke-width="1.5"/>
+                <line x1="0" y1="18"  x2="0" y2="32"          stroke="rgba(14,165,233,0.35)" stroke-width="1.5"/>
+                <line x1="-18" y1="0" x2="-32" y2="0"         stroke="rgba(14,165,233,0.35)" stroke-width="1.5"/>
+                <line x1="18"  y1="0" x2="32"  y2="0"         stroke="rgba(14,165,233,0.35)" stroke-width="1.5"/>
+                <line x1="-12.73" y1="-12.73" x2="-22.63" y2="-22.63" stroke="rgba(14,165,233,0.2)" stroke-width="1"/>
+                <line x1="12.73"  y1="-12.73" x2="22.63"  y2="-22.63" stroke="rgba(14,165,233,0.2)" stroke-width="1"/>
+                <line x1="-12.73" y1="12.73"  x2="-22.63" y2="22.63"  stroke="rgba(14,165,233,0.2)" stroke-width="1"/>
+                <line x1="12.73"  y1="12.73"  x2="22.63"  y2="22.63"  stroke="rgba(14,165,233,0.2)" stroke-width="1"/>
+              </g>
+              <circle r="7" fill="rgba(14,165,233,0.18)" stroke="rgba(14,165,233,0.6)" stroke-width="1.5"/>
+              <circle r="3" fill="rgba(14,165,233,0.75)"/>
+            </g>
+            <!-- ─ GEAR B — 8 dientes, centro (157,66) ─ -->
+            <g transform="translate(157,66)">
+              <g class="gear-b-rot">
+                <polygon stroke-linejoin="round"
+                  fill="rgba(14,165,233,0.06)" stroke="rgba(14,165,233,0.55)" stroke-width="1.1"
+                  points="19.75,-3.13 27.84,-2.93 27.84,2.93 19.75,3.13
+                          16.18,11.76 21.74,17.62 17.62,21.74 11.76,16.18
+                          3.13,19.75 2.93,27.84 -2.93,27.84 -3.13,19.75
+                          -11.76,16.18 -17.62,21.74 -21.74,17.62 -16.18,11.76
+                          -19.75,3.13 -27.84,2.93 -27.84,-2.93 -19.75,-3.13
+                          -16.18,-11.76 -21.74,-17.62 -17.62,-21.74 -11.76,-16.18
+                          -3.13,-19.75 -2.93,-27.84 2.93,-27.84 3.13,-19.75
+                          11.76,-16.18 17.62,-21.74 21.74,-17.62 16.18,-11.76"/>
+                <circle r="20" fill="none" stroke="rgba(14,165,233,0.12)" stroke-width="0.8" stroke-dasharray="3 5"/>
+                <circle r="12" fill="rgba(14,165,233,0.05)" stroke="rgba(14,165,233,0.38)" stroke-width="1.2"/>
+                <line x1="0" y1="-12" x2="0" y2="-20"  stroke="rgba(14,165,233,0.3)" stroke-width="1.2"/>
+                <line x1="0" y1="12"  x2="0" y2="20"   stroke="rgba(14,165,233,0.3)" stroke-width="1.2"/>
+                <line x1="-12" y1="0" x2="-20" y2="0"  stroke="rgba(14,165,233,0.3)" stroke-width="1.2"/>
+                <line x1="12"  y1="0" x2="20"  y2="0"  stroke="rgba(14,165,233,0.3)" stroke-width="1.2"/>
+                <line x1="-8.49" y1="-8.49" x2="-14.14" y2="-14.14" stroke="rgba(14,165,233,0.18)" stroke-width="1"/>
+                <line x1="8.49"  y1="-8.49" x2="14.14"  y2="-14.14" stroke="rgba(14,165,233,0.18)" stroke-width="1"/>
+                <line x1="-8.49" y1="8.49"  x2="-14.14" y2="14.14"  stroke="rgba(14,165,233,0.18)" stroke-width="1"/>
+                <line x1="8.49"  y1="8.49"  x2="14.14"  y2="14.14"  stroke="rgba(14,165,233,0.18)" stroke-width="1"/>
+              </g>
+              <circle r="5" fill="rgba(14,165,233,0.18)" stroke="rgba(14,165,233,0.55)" stroke-width="1.2"/>
+              <circle r="2" fill="rgba(14,165,233,0.75)"/>
+            </g>
+            <!-- ─ GEAR C — 6 dientes, centro (192,95) ─ -->
+            <g transform="translate(192,95)">
+              <g class="gear-c-rot">
+                <polygon stroke-linejoin="round"
+                  fill="rgba(14,165,233,0.05)" stroke="rgba(14,165,233,0.45)" stroke-width="1"
+                  points="11.73,-2.49 17.82,-2.50 17.82,2.50 11.73,2.49
+                          8.03,8.92 11.08,14.18 6.75,16.69 3.71,11.41
+                          -3.71,11.41 -6.75,16.69 -11.08,14.18 -8.03,8.92
+                          -11.73,2.49 -17.82,2.50 -17.82,-2.50 -11.73,-2.49
+                          -8.03,-8.92 -11.08,-14.18 -6.75,-16.69 -3.71,-11.41
+                          3.71,-11.41 6.75,-16.69 11.08,-14.18 8.03,-8.92"/>
+                <circle r="12" fill="none" stroke="rgba(14,165,233,0.1)" stroke-width="0.8" stroke-dasharray="2 4"/>
+                <circle r="7" fill="rgba(14,165,233,0.04)" stroke="rgba(14,165,233,0.3)" stroke-width="1"/>
+                <line x1="0" y1="-7" x2="0"  y2="-12" stroke="rgba(14,165,233,0.25)" stroke-width="1"/>
+                <line x1="0" y1="7"  x2="0"  y2="12"  stroke="rgba(14,165,233,0.25)" stroke-width="1"/>
+                <line x1="-7" y1="0" x2="-12" y2="0"  stroke="rgba(14,165,233,0.25)" stroke-width="1"/>
+                <line x1="7"  y1="0" x2="12"  y2="0"  stroke="rgba(14,165,233,0.25)" stroke-width="1"/>
+              </g>
+              <circle r="3.5" fill="rgba(14,165,233,0.18)" stroke="rgba(14,165,233,0.45)" stroke-width="1"/>
+              <circle r="1.5" fill="rgba(14,165,233,0.75)"/>
+            </g>
+          </svg>
+        </div>
+      </div>
     </div>
   </div>
 </header>
-
-<!-- ═══ SEPARADOR ENGRANAJES ═══════════════════════════════ -->
-<section class="section-separator gears-separator reveal">
-  <div class="separator-line"></div>
-  <div class="gears-scene" aria-hidden="true">
-    <!-- Engranaje grande -->
-    <svg class="gear gear--lg" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M60 10 L65 0 H55 L60 10Z M60 110 L65 120 H55 L60 110Z M10 60 L0 55 V65 L10 60Z M110 60 L120 55 V65 L110 60Z
-            M25.86 25.86 L18.79 18.79 L25.86 25.86Z M94.14 25.86 L101.21 18.79 L94.14 25.86Z
-            M25.86 94.14 L18.79 101.21 L25.86 94.14Z M94.14 94.14 L101.21 101.21 L94.14 94.14Z"
-            stroke="var(--blue)" stroke-width="2"/>
-      <circle cx="60" cy="60" r="38" stroke="var(--blue)" stroke-width="2.5" opacity="0.6"/>
-      <circle cx="60" cy="60" r="18" stroke="var(--blue)" stroke-width="2" opacity="0.8"/>
-      <circle cx="60" cy="60" r="6" fill="var(--blue)" opacity="0.5"/>
-      <!-- Dientes del engranaje -->
-      <path d="M60 5 l6-5h-12l6 5z M60 115 l6 5h-12l6-5z M5 60 l-5-6v12l5-6z M115 60 l5-6v12l-5-6z
-            M21.72 21.72 l-4.24-7.78 8.49-0.71-4.25 8.49z M98.28 21.72 l4.24-7.78-8.49-0.71 4.25 8.49z
-            M21.72 98.28 l-4.24 7.78 8.49 0.71-4.25-8.49z M98.28 98.28 l4.24 7.78-8.49 0.71 4.25-8.49z
-            M35.5 9.5 l2-5.5h-4l2 5.5z M84.5 9.5 l2-5.5h-4l2 5.5z
-            M35.5 110.5 l2 5.5h-4l2-5.5z M84.5 110.5 l2 5.5h-4l2-5.5z
-            M9.5 35.5 l-5.5-2v4l5.5-2z M9.5 84.5 l-5.5-2v4l5.5-2z
-            M110.5 35.5 l5.5-2v4l-5.5-2z M110.5 84.5 l5.5-2v4l-5.5-2z"
-            fill="var(--blue)" opacity="0.4"/>
-    </svg>
-    <!-- Engranaje mediano -->
-    <svg class="gear gear--md" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="60" cy="60" r="32" stroke="var(--blue)" stroke-width="2.5" opacity="0.5"/>
-      <circle cx="60" cy="60" r="14" stroke="var(--blue)" stroke-width="2" opacity="0.7"/>
-      <circle cx="60" cy="60" r="5" fill="var(--blue)" opacity="0.4"/>
-      <path d="M60 8 l5-8h-10l5 8z M60 112 l5 8h-10l5-8z M8 60 l-8-5v10l8-5z M112 60 l8-5v10l-8-5z
-            M24 24 l-3-7 7 0-4 7z M96 24 l3-7-7 0 4 7z M24 96 l-3 7 7 0-4-7z M96 96 l3 7-7 0 4-7z
-            M40 10 l2-6h-4l2 6z M80 10 l2-6h-4l2 6z M40 110 l2 6h-4l2-6z M80 110 l2 6h-4l2-6z
-            M10 40 l-6-2v4l6-2z M10 80 l-6-2v4l6-2z M110 40 l6-2v4l-6-2z M110 80 l6-2v4l-6-2z"
-            fill="var(--blue)" opacity="0.35"/>
-    </svg>
-    <!-- Engranaje pequeño -->
-    <svg class="gear gear--sm" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="60" cy="60" r="28" stroke="var(--blue)" stroke-width="2" opacity="0.4"/>
-      <circle cx="60" cy="60" r="12" stroke="var(--blue)" stroke-width="1.5" opacity="0.6"/>
-      <circle cx="60" cy="60" r="4" fill="var(--blue)" opacity="0.35"/>
-      <path d="M60 12 l4-8h-8l4 8z M60 108 l4 8h-8l4-8z M12 60 l-8-4v8l8-4z M108 60 l8-4v8l-8-4z
-            M27 27 l-3-6 6 0-3 6z M93 27 l3-6-6 0 3 6z M27 93 l-3 6 6 0-3-6z M93 93 l3 6-6 0 3-6z"
-            fill="var(--blue)" opacity="0.3"/>
-    </svg>
-    <!-- Líneas de conexión decorativas -->
-    <div class="gears-particles">
-      <span class="g-particle" style="--d:0"></span>
-      <span class="g-particle" style="--d:1"></span>
-      <span class="g-particle" style="--d:2"></span>
-      <span class="g-particle" style="--d:3"></span>
-      <span class="g-particle" style="--d:4"></span>
-      <span class="g-particle" style="--d:5"></span>
-    </div>
-  </div>
-  <div class="separator-line"></div>
-</section>
+<hr class="separator">
 
 <!-- ═══ FASES ═════════════════════════════════════════════ -->
 <section class="metod-phases">
