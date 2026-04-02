@@ -44,17 +44,177 @@
   <div class="page-hero__bg"></div>
   <div class="page-hero__grid"></div>
   <div class="container">
-    <div class="page-hero__content">
-      <span class="label reveal">Quiénes somos</span>
-      <h1 class="display-lg reveal delay-1">
-        Nacimos para el<br/>sector náutico
-      </h1>
-      <p class="body-lg reveal delay-2">
-        Somos una de las primeras consultoras de transformación digital
-        especializadas en PyMEs náuticas. No vendemos consultoría genérica:
-        entendemos amarres, temporadas, marinas y la dinámica del cliente
-        náutico desde adentro.
-      </p>
+    <div class="nosotros-hero-inner">
+      <div class="page-hero__content">
+        <span class="label reveal">Quiénes somos</span>
+        <h1 class="display-lg reveal delay-1">
+          Nacimos para el<br/>sector náutico
+        </h1>
+        <p class="body-lg reveal delay-2">
+          Somos una de las primeras consultoras de transformación digital
+          especializadas en PyMEs náuticas. No vendemos consultoría genérica:
+          entendemos amarres, temporadas, marinas y la dinámica del cliente
+          náutico desde adentro.
+        </p>
+      </div>
+
+      <!-- Animación: Transformación Digital Náutica -->
+      <div class="nosotros-hero-visual reveal right" aria-hidden="true">
+        <div class="qs-glow-bg"></div>
+        <svg class="qs-svg" viewBox="0 0 360 360" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="qs-center-glow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%"   stop-color="rgba(14,165,233,0.18)"/>
+              <stop offset="100%" stop-color="rgba(14,165,233,0)"/>
+            </radialGradient>
+            <filter id="qs-blur">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="qs-blur-soft">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <style>
+              @keyframes qs-spin-cw  { from{transform:rotate(0deg)}  to{transform:rotate(360deg)}  }
+              @keyframes qs-spin-ccw { from{transform:rotate(0deg)}  to{transform:rotate(-360deg)} }
+              @keyframes qs-pulse    { 0%,100%{opacity:.85;r:5.5px} 50%{opacity:.35;r:8px}         }
+              @keyframes qs-pulse2   { 0%,100%{opacity:.7;r:4px}    50%{opacity:.25;r:6.5px}       }
+              @keyframes qs-ring     { 0%,100%{opacity:.55} 50%{opacity:.15}                        }
+              @keyframes qs-float    { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-9px)} }
+              @keyframes qs-dash     { to { stroke-dashoffset: -80 } }
+              @keyframes qs-data-in  { 0%,100%{opacity:0;transform:scale(.6)} 50%{opacity:.9;transform:scale(1)} }
+              .qs-ring-outer { animation: qs-spin-cw  32s linear infinite; transform-origin: 180px 180px; }
+              .qs-ring-mid   { animation: qs-spin-ccw 20s linear infinite; transform-origin: 180px 180px; }
+              .qs-float      { animation: qs-float    4.5s ease-in-out infinite; transform-origin: 180px 180px; }
+              .qs-node-a     { animation: qs-pulse    2.4s ease-in-out infinite; }
+              .qs-node-b     { animation: qs-pulse    2.4s ease-in-out infinite 0.6s; }
+              .qs-node-c     { animation: qs-pulse    2.4s ease-in-out infinite 1.2s; }
+              .qs-node-d     { animation: qs-pulse    2.4s ease-in-out infinite 1.8s; }
+              .qs-ring-pulse { animation: qs-ring     3s   ease-in-out infinite; }
+              .qs-data-1     { animation: qs-data-in  3.2s ease-in-out infinite 0s; transform-box: fill-box; transform-origin: center; }
+              .qs-data-2     { animation: qs-data-in  3.2s ease-in-out infinite 0.8s; transform-box: fill-box; transform-origin: center; }
+              .qs-data-3     { animation: qs-data-in  3.2s ease-in-out infinite 1.6s; transform-box: fill-box; transform-origin: center; }
+              .qs-data-4     { animation: qs-data-in  3.2s ease-in-out infinite 2.4s; transform-box: fill-box; transform-origin: center; }
+              .qs-dash-line  { animation: qs-dash     4s linear infinite; }
+              @media (prefers-reduced-motion: reduce) {
+                .qs-ring-outer,.qs-ring-mid,.qs-float,.qs-node-a,.qs-node-b,.qs-node-c,.qs-node-d,
+                .qs-ring-pulse,.qs-data-1,.qs-data-2,.qs-data-3,.qs-data-4,.qs-dash-line { animation: none; }
+              }
+            </style>
+          </defs>
+
+          <!-- Ambient center glow -->
+          <circle cx="180" cy="180" r="175" fill="url(#qs-center-glow)"/>
+
+          <!-- Outer ring (slow CW rotation) -->
+          <g class="qs-ring-outer">
+            <circle cx="180" cy="180" r="158" fill="none"
+                    stroke="rgba(14,165,233,0.18)" stroke-width="1"
+                    stroke-dasharray="5 9"/>
+            <!-- Cardinal tick marks -->
+            <rect x="177" y="20"  width="6" height="14" rx="3" fill="rgba(14,165,233,0.55)"/>
+            <rect x="177" y="326" width="6" height="14" rx="3" fill="rgba(14,165,233,0.35)"/>
+            <rect x="20"  y="177" width="14" height="6" rx="3" fill="rgba(14,165,233,0.35)"/>
+            <rect x="326" y="177" width="14" height="6" rx="3" fill="rgba(14,165,233,0.35)"/>
+          </g>
+
+          <!-- Mid orbit ring (CCW) with data nodes -->
+          <g class="qs-ring-mid">
+            <circle cx="180" cy="180" r="118" fill="none"
+                    stroke="rgba(14,165,233,0.22)" stroke-width="1.2"
+                    stroke-dasharray="10 16"/>
+            <!-- 4 orbit nodes at cardinal points on r=118 -->
+            <circle class="qs-node-a" cx="180" cy="62" r="5.5" fill="#0ea5e9" filter="url(#qs-blur)"/>
+            <circle class="qs-node-b" cx="298" cy="180" r="5.5" fill="#38bdf8" filter="url(#qs-blur)"/>
+            <circle class="qs-node-c" cx="180" cy="298" r="5.5" fill="#0ea5e9" filter="url(#qs-blur)"/>
+            <circle class="qs-node-d" cx="62"  cy="180" r="5.5" fill="#7dd3fc" filter="url(#qs-blur)"/>
+          </g>
+
+          <!-- Animated data lines between nodes (static positions, dashed motion) -->
+          <line x1="180" y1="180" x2="180" y2="68"
+                stroke="rgba(14,165,233,0.2)" stroke-width="1"
+                stroke-dasharray="4 6" class="qs-dash-line"/>
+          <line x1="180" y1="180" x2="292" y2="180"
+                stroke="rgba(14,165,233,0.15)" stroke-width="1"
+                stroke-dasharray="4 6" class="qs-dash-line"
+                style="animation-delay:-1s"/>
+
+          <!-- Inner compass circle -->
+          <circle cx="180" cy="180" r="72" fill="rgba(14,165,233,0.04)"
+                  stroke="rgba(14,165,233,0.38)" stroke-width="1.5"/>
+          <circle class="qs-ring-pulse" cx="180" cy="180" r="72" fill="none"
+                  stroke="rgba(14,165,233,0.45)" stroke-width="1"/>
+
+          <!-- Compass cardinal arms -->
+          <line x1="180" y1="108" x2="180" y2="162"
+                stroke="rgba(14,165,233,0.55)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="180" y1="198" x2="180" y2="252"
+                stroke="rgba(14,165,233,0.3)"  stroke-width="1"   stroke-linecap="round"/>
+          <line x1="108" y1="180" x2="162" y2="180"
+                stroke="rgba(14,165,233,0.3)"  stroke-width="1"   stroke-linecap="round"/>
+          <line x1="198" y1="180" x2="252" y2="180"
+                stroke="rgba(14,165,233,0.3)"  stroke-width="1"   stroke-linecap="round"/>
+          <!-- N north arrow -->
+          <polygon points="180,112 176,128 180,124 184,128"
+                   fill="#0ea5e9" filter="url(#qs-blur)"/>
+          <!-- S south arrow (muted) -->
+          <polygon points="180,248 176,234 180,237 184,234"
+                   fill="rgba(14,165,233,0.3)"/>
+
+          <!-- Diagonal compass marks -->
+          <line x1="129" y1="129" x2="155" y2="155"
+                stroke="rgba(14,165,233,0.18)" stroke-width="1" stroke-linecap="round"/>
+          <line x1="231" y1="129" x2="205" y2="155"
+                stroke="rgba(14,165,233,0.18)" stroke-width="1" stroke-linecap="round"/>
+          <line x1="129" y1="231" x2="155" y2="205"
+                stroke="rgba(14,165,233,0.18)" stroke-width="1" stroke-linecap="round"/>
+          <line x1="231" y1="231" x2="205" y2="205"
+                stroke="rgba(14,165,233,0.18)" stroke-width="1" stroke-linecap="round"/>
+
+          <!-- Center floating group (boat + circuit overlay) -->
+          <g class="qs-float">
+            <!-- Inner solid ring -->
+            <circle cx="180" cy="180" r="34" fill="rgba(4,16,32,0.9)"
+                    stroke="rgba(14,165,233,0.5)" stroke-width="1.5"/>
+
+            <!-- Boat hull -->
+            <path d="M162,182 Q166,194 180,196 Q194,194 198,182 Z"
+                  fill="rgba(14,165,233,0.18)" stroke="rgba(14,165,233,0.6)" stroke-width="1.5"/>
+            <!-- Mast -->
+            <line x1="180" y1="158" x2="180" y2="187"
+                  stroke="rgba(14,165,233,0.75)" stroke-width="1.5" stroke-linecap="round"/>
+            <!-- Main sail -->
+            <path d="M180,161 L196,177 L180,184 Z"
+                  fill="rgba(14,165,233,0.28)" stroke="rgba(14,165,233,0.55)" stroke-width="1"/>
+            <!-- Jib sail (small forward) -->
+            <path d="M180,165 L168,178 L180,182 Z"
+                  fill="rgba(56,189,248,0.18)" stroke="rgba(56,189,248,0.4)" stroke-width="1"/>
+
+            <!-- Circuit lines radiating from boat -->
+            <g stroke="rgba(14,165,233,0.4)" stroke-width="1" fill="none" stroke-linecap="round">
+              <polyline points="162,176 152,176 148,169"/>
+              <polyline points="198,176 208,176 212,169"/>
+              <polyline points="180,158 180,148 187,142"/>
+            </g>
+            <!-- Circuit terminal dots -->
+            <circle class="qs-data-1" cx="148" cy="169" r="2.8" fill="#0ea5e9"/>
+            <circle class="qs-data-2" cx="212" cy="169" r="2.8" fill="#38bdf8"/>
+            <circle class="qs-data-3" cx="187" cy="142" r="2.8" fill="#7dd3fc"/>
+            <!-- Center dot glow -->
+            <circle cx="180" cy="180" r="3" fill="#0ea5e9" filter="url(#qs-blur-soft)" opacity="0.8"/>
+          </g>
+
+          <!-- Corner data labels (floating appear/disappear) -->
+          <g font-family="monospace" font-size="8" fill="rgba(14,165,233,0.55)">
+            <text class="qs-data-4" x="100" y="108">DIGITAL</text>
+            <text class="qs-data-1" x="226" y="260">NÁUTICO</text>
+            <text class="qs-data-2" x="96"  y="260">ERP</text>
+            <text class="qs-data-3" x="228" y="108">IA</text>
+          </g>
+        </svg>
+      </div>
+
     </div>
   </div>
 </header>
@@ -64,111 +224,34 @@
 <!-- ═══ MISIÓN + VISIÓN ════════════════════════════════ -->
 <section>
   <div class="container">
-    <div class="nosotros-intro">
-
-      <div class="reveal">
-        <span class="label">Nuestra esencia</span>
-        <h2 class="display-md" style="margin:0.75rem 0 1.25rem;">
-          Propósito claro, ruta definida
-        </h2>
-        <p class="body-md" style="color:var(--text-muted);margin-bottom:2rem;">
-          ADAPTIA nace de la convicción de que las PyMEs del sector náutico
-          merecen la misma transformación digital que las grandes corporaciones,
-          adaptada a su escala, cultura y necesidades específicas.
-        </p>
-        <div class="nosotros-mv">
-          <div class="mv-card">
-            <h3>Misión</h3>
-            <p>Proporcionar acompañamiento estratégico continuo y transformación digital a las PyMEs náuticas para optimizar procesos operativos e implementar herramientas tecnológicas y sistemas ERP.</p>
-          </div>
-          <div class="mv-card">
-            <h3>Visión</h3>
-            <p>Consolidarnos como la consultora líder en transformación digital para PyMEs del sector náutico recreativo, con presencia y reconocimiento internacional.</p>
-          </div>
-          <div class="mv-card">
-            <h3>Diferenciador</h3>
-            <p>Somos pioneros en el sector náutico, ofrecemos capacitación basada en IA y operamos bajo una modalidad híbrida: estratégica y operativa al mismo tiempo.</p>
-          </div>
-          <div class="mv-card">
-            <h3>Enfoque</h3>
-            <p>No desaparecemos después de entregar un documento. Acompañamos mes a mes con métricas, ajustes y la certeza de que tu negocio navega en la dirección correcta.</p>
-          </div>
+    <div class="nosotros-essence reveal">
+      <span class="label">Nuestra esencia</span>
+      <h2 class="display-md" style="margin:0.75rem 0 1.25rem;">
+        Propósito claro, ruta definida
+      </h2>
+      <p class="body-md" style="color:var(--text-muted);margin-bottom:2rem;max-width:640px;">
+        ADAPTIA nace de la convicción de que las PyMEs del sector náutico
+        merecen la misma transformación digital que las grandes corporaciones,
+        adaptada a su escala, cultura y necesidades específicas.
+      </p>
+      <div class="nosotros-mv nosotros-mv--full">
+        <div class="mv-card">
+          <h3>Misión</h3>
+          <p>Proporcionar acompañamiento estratégico continuo y transformación digital a las PyMEs náuticas para optimizar procesos operativos e implementar herramientas tecnológicas y sistemas ERP.</p>
+        </div>
+        <div class="mv-card">
+          <h3>Visión</h3>
+          <p>Consolidarnos como la consultora líder en transformación digital para PyMEs del sector náutico recreativo, con presencia y reconocimiento internacional.</p>
+        </div>
+        <div class="mv-card">
+          <h3>Diferenciador</h3>
+          <p>Somos pioneros en el sector náutico, ofrecemos capacitación basada en IA y operamos bajo una modalidad híbrida: estratégica y operativa al mismo tiempo.</p>
+        </div>
+        <div class="mv-card">
+          <h3>Enfoque</h3>
+          <p>No desaparecemos después de entregar un documento. Acompañamos mes a mes con métricas, ajustes y la certeza de que tu negocio navega en la dirección correcta.</p>
         </div>
       </div>
-
-      <!-- Ilustración Robot IA -->
-      <div class="nosotros-boat-visual reveal right" aria-hidden="true" style="display:flex;justify-content:center;align-items:center;min-height:400px;position:relative;">
-        <!-- Resplandor de fondo -->
-        <div style="position:absolute;width:280px;height:280px;background:radial-gradient(circle,rgba(14,165,233,0.10) 0%,transparent 70%);border-radius:50%;pointer-events:none;"></div>
-        <svg viewBox="0 0 160 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:300px;" role="img" aria-label="Ilustración de robot de inteligencia artificial">
-          <defs>
-            <linearGradient id="ai-body" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#0d2340"/>
-              <stop offset="100%" stop-color="#061424"/>
-            </linearGradient>
-            <filter id="ai-glow" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
-              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-            <style>
-              @keyframes ai-float   { 0%,100%{transform:translateY(0)}  50%{transform:translateY(-10px)} }
-              @keyframes ai-blink-l { 0%,85%,100%{transform:scaleY(1)}  90%{transform:scaleY(0.07)} }
-              @keyframes ai-blink-r { 0%,88%,100%{transform:scaleY(1)}  93%{transform:scaleY(0.07)} }
-              @keyframes ai-ping    { 0%,100%{r:4px;opacity:.9} 50%{r:6.5px;opacity:.5} }
-              @keyframes ai-d1      { 0%,100%{opacity:.9}  50%{opacity:.3} }
-              @keyframes ai-d2      { 0%,100%{opacity:.5}  50%{opacity:1}  }
-              @keyframes ai-d3      { 0%,100%{opacity:.75} 33%{opacity:.2} }
-              .ai-float  { animation: ai-float   4s ease-in-out infinite; }
-              .ai-eye-l  { animation: ai-blink-l 6s ease-in-out infinite; transform-box:fill-box; transform-origin:center; }
-              .ai-eye-r  { animation: ai-blink-r 6s ease-in-out infinite; transform-box:fill-box; transform-origin:center; }
-              .ai-ping   { animation: ai-ping    1.8s ease-in-out infinite; }
-              .ai-d1     { animation: ai-d1      2s ease-in-out infinite; }
-              .ai-d2     { animation: ai-d2      2s ease-in-out infinite 0.4s; }
-              .ai-d3     { animation: ai-d3      2s ease-in-out infinite 0.8s; }
-            </style>
-          </defs>
-          <g class="ai-float">
-            <!-- Antena -->
-            <line x1="80" y1="30" x2="80" y2="12" stroke="rgba(14,165,233,0.6)" stroke-width="1.5" stroke-linecap="round"/>
-            <circle class="ai-ping" cx="80" cy="8" r="4" fill="#0ea5e9" filter="url(#ai-glow)"/>
-            <!-- Cabeza -->
-            <rect x="28" y="30" width="104" height="78" rx="14" fill="url(#ai-body)" stroke="rgba(14,165,233,0.55)" stroke-width="1.5"/>
-            <!-- Cuencas oculares -->
-            <rect x="40" y="50" width="30" height="20" rx="6" fill="rgba(1,8,16,0.9)" stroke="rgba(14,165,233,0.4)" stroke-width="1"/>
-            <rect x="90" y="50" width="30" height="20" rx="6" fill="rgba(1,8,16,0.9)" stroke="rgba(14,165,233,0.4)" stroke-width="1"/>
-            <!-- Ojos (parpadeo) -->
-            <rect class="ai-eye-l" x="42" y="52" width="26" height="16" rx="5" fill="#0ea5e9" filter="url(#ai-glow)" opacity="0.95"/>
-            <rect class="ai-eye-r" x="92" y="52" width="26" height="16" rx="5" fill="#38bdf8" filter="url(#ai-glow)" opacity="0.9"/>
-            <!-- Rejilla boca -->
-            <rect x="40" y="84" width="80" height="14" rx="5" fill="rgba(14,165,233,0.07)" stroke="rgba(14,165,233,0.28)" stroke-width="1"/>
-            <line x1="53"  y1="87.5" x2="53"  y2="94.5" stroke="rgba(14,165,233,0.5)" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="64"  y1="87.5" x2="64"  y2="94.5" stroke="rgba(14,165,233,0.5)" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="80"  y1="87.5" x2="80"  y2="94.5" stroke="rgba(14,165,233,0.5)" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="96"  y1="87.5" x2="96"  y2="94.5" stroke="rgba(14,165,233,0.5)" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="107" y1="87.5" x2="107" y2="94.5" stroke="rgba(14,165,233,0.5)" stroke-width="1.5" stroke-linecap="round"/>
-            <!-- Cuello -->
-            <rect x="66" y="108" width="28" height="12" rx="4" fill="rgba(14,165,233,0.12)" stroke="rgba(14,165,233,0.3)" stroke-width="1"/>
-            <!-- Cuerpo -->
-            <rect x="20" y="120" width="120" height="72" rx="16" fill="url(#ai-body)" stroke="rgba(14,165,233,0.5)" stroke-width="1.5"/>
-            <!-- Panel del cuerpo -->
-            <rect x="34" y="133" width="92" height="46" rx="9" fill="rgba(14,165,233,0.06)" stroke="rgba(14,165,233,0.2)" stroke-width="1"/>
-            <!-- Líneas de circuito -->
-            <g stroke="rgba(14,165,233,0.45)" stroke-width="1" fill="none" stroke-linecap="round">
-              <polyline points="42,147 55,147 55,160 68,160"/>
-              <polyline points="118,147 105,147 105,160 92,160"/>
-              <line x1="68" y1="153.5" x2="92" y2="153.5"/>
-            </g>
-            <!-- Puntos de estado -->
-            <circle class="ai-d1" cx="55"  cy="168" r="3.5" fill="#0ea5e9"/>
-            <circle class="ai-d2" cx="80"  cy="168" r="3.5" fill="#7dd3fc"/>
-            <circle class="ai-d3" cx="105" cy="168" r="3.5" fill="#0284c7"/>
-            <!-- Brazos -->
-            <rect x="0"   y="128" width="20" height="48" rx="8" fill="url(#ai-body)" stroke="rgba(14,165,233,0.35)" stroke-width="1.2"/>
-            <rect x="140" y="128" width="20" height="48" rx="8" fill="url(#ai-body)" stroke="rgba(14,165,233,0.35)" stroke-width="1.2"/>
-          </g>
-        </svg>
-      </div>
-
     </div>
   </div>
 </section>

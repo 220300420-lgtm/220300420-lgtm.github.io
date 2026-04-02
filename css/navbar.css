@@ -179,6 +179,31 @@
 .navbar__mobile-menu.open .nav-link:nth-child(4) { transition-delay: 0.24s; }
 .navbar__mobile-menu.open .nav-link:nth-child(5) { transition-delay: 0.30s; }
 
+/* Mobile social icons */
+.mobile-social {
+  display: flex;
+  gap: 1.75rem;
+  margin-top: 1rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.32s var(--ease-out) 0.38s,
+              transform 0.32s var(--ease-out) 0.38s;
+}
+.navbar__mobile-menu.open .mobile-social {
+  opacity: 1;
+  transform: none;
+}
+.mobile-social a {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  transition: color 0.22s var(--ease-out), transform 0.22s var(--ease-out);
+}
+.mobile-social a:hover {
+  color: var(--blue);
+  transform: translateY(-2px);
+}
+
 /* ─── RESPONSIVE ─── */
 @media (max-width: 900px) {
   .navbar__inner { gap: 0; }

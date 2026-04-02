@@ -34,6 +34,39 @@
 .page-hero h1  { margin: 0.75rem 0 1.25rem; }
 .page-hero p   { color: var(--text-muted); max-width: 520px; }
 
+/* ─── Nosotros hero split layout ─── */
+.nosotros-hero-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.nosotros-hero-inner .page-hero__content {
+  max-width: none;
+}
+.nosotros-hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.qs-glow-bg {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(14,165,233,0.09) 0%, transparent 68%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.qs-svg {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  display: block;
+}
+
 /* ═══ METODOLOGÍA ═══════════════════════════════════════════ */
 .metod-phases {
   padding: var(--space-xl) 0;
@@ -171,11 +204,17 @@ hr.separator {
   gap: 5rem;
   align-items: center;
 }
+.nosotros-essence {
+  padding: var(--space-xl) 0;
+}
 .nosotros-mv {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   margin-top: 2rem;
+}
+.nosotros-mv--full {
+  grid-template-columns: repeat(4, 1fr);
 }
 .mv-card {
   background: var(--bg-surface);
@@ -701,8 +740,10 @@ hr.separator {
   .metod-phase:nth-child(even) .metod-phase__text   { order: 1; }
   .metod-phase:nth-child(even) .metod-phase__visual { order: 2; }
   .nosotros-intro    { grid-template-columns: 1fr; gap: 3rem; }
+  .nosotros-hero-inner { grid-template-columns: 1fr; gap: 3rem; }
   .contact-grid      { grid-template-columns: 1fr; gap: 3rem; }
   .nosotros-mv       { grid-template-columns: 1fr 1fr; }
+  .nosotros-mv--full { grid-template-columns: repeat(2, 1fr); }
   .nosotros-boat-scene { height: 220px; }
 }
 @media (max-width: 768px) {
@@ -711,11 +752,13 @@ hr.separator {
     grid-template-columns: repeat(2, 1fr) !important;
   }
   .nosotros-intro { padding: var(--space-lg) 0; }
+  .nosotros-hero-visual { display: none; }
   .team-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 640px) {
   .form-row { grid-template-columns: 1fr; }
   .nosotros-mv { grid-template-columns: 1fr; }
+  .nosotros-mv--full { grid-template-columns: repeat(2, 1fr); }
   /* Nosotros values grid: 2-col → 1-col */
   .nosotros-diff > .container > div[style*="repeat(3"] {
     grid-template-columns: 1fr !important;
