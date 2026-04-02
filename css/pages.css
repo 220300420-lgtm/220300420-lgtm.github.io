@@ -427,195 +427,114 @@ hr.separator {
 .nosotros-diff::before { top: 0; }
 .nosotros-diff::after  { bottom: 0; }
 
-/* ═══ SEPARADOR ANIMADO (compartido) ════════════════════════ */
-.section-separator {
+/* ═══ HERO SPLIT LAYOUT (Metodología + Contacto) ═══════════ */
+.page-hero__row {
   position: relative;
-  padding: 3rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
-  flex-direction: column;
-  overflow: hidden;
-}
-.separator-line {
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--blue-border) 25%, var(--blue) 50%, var(--blue-border) 75%, transparent);
-  opacity: 0.45;
-}
-
-/* ─── ENGRANAJES (Metodología) ─── */
-.gears-scene {
-  position: relative;
-  width: 280px;
-  height: 200px;
-  margin: 1.5rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.gear {
-  position: absolute;
-  filter: drop-shadow(0 0 10px var(--blue-glow));
-}
-.gear--lg {
-  width: 110px; height: 110px;
-  left: 10px; top: 30px;
-  animation: gearSpinCW 12s linear infinite;
-}
-.gear--md {
-  width: 75px; height: 75px;
-  right: 30px; top: 15px;
-  animation: gearSpinCCW 8s linear infinite;
-}
-.gear--sm {
-  width: 55px; height: 55px;
-  right: 55px; bottom: 10px;
-  animation: gearSpinCW 6s linear infinite;
-}
-@keyframes gearSpinCW {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-@keyframes gearSpinCCW {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(-360deg); }
-}
-
-/* Partículas flotantes de los engranajes */
-.gears-particles {
-  position: absolute;
-  inset: 0;
-}
-.g-particle {
-  position: absolute;
-  width: 3px; height: 3px;
-  border-radius: 50%;
-  background: var(--blue);
-  opacity: 0;
-  animation: gParticleFloat 4s ease-in-out infinite;
-  animation-delay: calc(var(--d) * 0.65s);
-}
-.g-particle:nth-child(1) { left: 20%; top: 30%; }
-.g-particle:nth-child(2) { left: 60%; top: 15%; }
-.g-particle:nth-child(3) { left: 80%; top: 50%; }
-.g-particle:nth-child(4) { left: 35%; top: 75%; }
-.g-particle:nth-child(5) { left: 50%; top: 45%; }
-.g-particle:nth-child(6) { left: 70%; top: 70%; }
-@keyframes gParticleFloat {
-  0%,100% { opacity: 0; transform: translateY(0) scale(0.5); }
-  30%     { opacity: 0.7; }
-  50%     { opacity: 0.5; transform: translateY(-12px) scale(1); }
-  80%     { opacity: 0.2; }
-}
-
-/* ─── CARTA-BARCO (Contacto) ─── */
-.mail-boat-scene {
-  position: relative;
-  width: 100%;
-  max-width: 500px;
-  height: 140px;
-  margin: 1.5rem auto;
-  overflow: hidden;
-}
-
-.mail-envelope {
-  position: absolute;
-  top: 8px;
-  animation: mailFloat 20s linear infinite;
-  z-index: 3;
-  filter: drop-shadow(0 0 8px var(--blue-glow));
-}
-.mail-svg { width: 38px; height: auto; }
-@keyframes mailFloat {
-  0%   { left: -60px; transform: translateY(0) rotate(-5deg); }
-  15%  { transform: translateY(-8px) rotate(2deg); }
-  30%  { transform: translateY(0) rotate(-3deg); }
-  45%  { transform: translateY(-6px) rotate(1deg); }
-  60%  { transform: translateY(-2px) rotate(-2deg); }
-  75%  { transform: translateY(-7px) rotate(3deg); }
-  100% { left: calc(100% + 60px); transform: translateY(0) rotate(-5deg); }
-}
-
-.mail-boat {
-  position: absolute;
-  bottom: 22px;
-  animation: mailBoatSail 20s linear infinite;
   z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 4rem;
 }
-.mail-boat-svg { width: 52px; height: auto; }
-@keyframes mailBoatSail {
-  0%   { left: -80px; transform: rotate(-1deg) translateY(0); }
-  20%  { transform: rotate(1deg) translateY(-3px); }
-  40%  { transform: rotate(-1.5deg) translateY(-5px); }
-  60%  { transform: rotate(1deg) translateY(-2px); }
-  80%  { transform: rotate(-0.5deg) translateY(-4px); }
-  100% { left: calc(100% + 80px); transform: rotate(-1deg) translateY(0); }
-}
+.page-hero__row .page-hero__content { max-width: none; }
 
-/* Olas de fondo */
-.mail-waves {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 40px;
+.page-hero__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-visual-box {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  background: var(--bg-surface);
   overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.mail-wave-svg {
-  width: 200%;
-  height: 100%;
-  display: block;
-  animation: mailWaveScroll 8s linear infinite;
-}
-@keyframes mailWaveScroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-
-/* Estela brillante detrás del barco */
-.mail-trail {
+.hero-visual-box::before {
+  content: '';
   position: absolute;
   inset: 0;
+  background: radial-gradient(ellipse 65% 65% at 50% 50%, rgba(14,165,233,0.06), transparent 70%);
+}
+
+/* ─── ENGRANAJES — Animaciones de rotación ─── */
+.hero-gears-svg {
+  width: 88%;
+  height: 88%;
+  position: relative;
   z-index: 1;
+  filter: drop-shadow(0 0 12px rgba(14,165,233,0.18));
 }
-.mail-sparkle {
-  position: absolute;
-  width: 4px; height: 4px;
-  border-radius: 50%;
-  background: var(--blue);
-  bottom: 30px;
-  opacity: 0;
-  animation: sparkleTrail 20s linear infinite;
-  animation-delay: calc(var(--i) * 3.8s);
+.gear-a-rot {
+  transform-origin: 0px 0px;
+  animation: gearCW 18s linear infinite;
+  will-change: transform;
 }
-@keyframes sparkleTrail {
-  0%     { left: -40px; opacity: 0; transform: scale(0); }
-  3%     { opacity: 0.8; transform: scale(1); }
-  15%    { opacity: 0.3; transform: scale(0.6) translateY(-8px); }
-  25%    { opacity: 0; transform: scale(0) translateY(-15px); }
-  100%   { left: 80%; opacity: 0; }
+.gear-b-rot {
+  transform-origin: 0px 0px;
+  /* CCW, speed proportional: 18 * (28/44) ≈ 11.5s */
+  animation: gearCCW 11.5s linear infinite;
+  will-change: transform;
+}
+.gear-c-rot {
+  transform-origin: 0px 0px;
+  /* CW, speed proportional: 11.5 * (18/28) ≈ 7.4s */
+  animation: gearCW 7.4s linear infinite;
+  will-change: transform;
+}
+@keyframes gearCW  { to { transform: rotate(360deg);  } }
+@keyframes gearCCW { to { transform: rotate(-360deg); } }
+
+/* ─── CARTA EN EL MAR — Animaciones ─── */
+.hero-env-svg {
+  width: 88%;
+  height: 88%;
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
+.hero-env-float {
+  animation: envFloat 3.8s ease-in-out infinite;
+  will-change: transform;
+}
+@keyframes envFloat {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-11px); }
+}
+.hero-env-wave1 {
+  animation: envWave 7s linear infinite;
+  will-change: transform;
+}
+.hero-env-wave2 {
+  animation: envWave 11s linear infinite reverse;
+  will-change: transform;
+}
+@keyframes envWave {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-130px); }
 }
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .gear { animation: none !important; }
-  .g-particle { animation: none !important; }
-  .mail-envelope { animation: none !important; left: 45%; }
-  .mail-boat { animation: none !important; left: 40%; }
-  .mail-wave-svg { animation: none !important; }
-  .mail-sparkle { animation: none !important; }
+  .gear-a-rot, .gear-b-rot, .gear-c-rot { animation: none !important; }
+  .hero-env-float { animation: none !important; }
+  .hero-env-wave1, .hero-env-wave2 { animation: none !important; }
 }
 
-/* Responsive separadores */
+/* Responsive hero split */
+@media (max-width: 1024px) {
+  .page-hero__row { grid-template-columns: 1fr; gap: 2.5rem; }
+  .hero-visual-box { max-width: 340px; }
+}
 @media (max-width: 640px) {
-  .section-separator { padding: 2rem 0; }
-  .gears-scene { width: 200px; height: 150px; }
-  .gear--lg { width: 80px; height: 80px; }
-  .gear--md { width: 55px; height: 55px; }
-  .gear--sm { width: 40px; height: 40px; }
-  .mail-boat-scene { height: 110px; }
-  .mail-svg { width: 28px; }
-  .mail-boat-svg { width: 40px; }
+  .page-hero__row { gap: 2rem; }
+  .hero-visual-box { max-width: 280px; }
 }
 
 /* ═══ CONTACTO ═══════════════════════════════════════════════ */
