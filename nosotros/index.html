@@ -52,6 +52,8 @@
   </div>
 </header>
 
+<hr class="separator" />
+
 <!-- ═══ MISIÓN + VISIÓN ════════════════════════════════ -->
 <section>
   <div class="container">
@@ -87,59 +89,76 @@
         </div>
       </div>
 
-      <!-- Animación Abstracta Tecnológica (Orbe de conexiones) -->
-      <div class="nosotros-boat-visual reveal right" aria-hidden="true" style="display: flex; justify-content: center; align-items: center; min-height: 400px; position: relative;">
-        
-        <!-- Efecto de resplandor de fondo -->
-        <div style="position: absolute; width: 250px; height: 250px; background: radial-gradient(circle, rgba(14,165,233,0.15) 0%, transparent 70%); border-radius: 50%; animation: pulse-glow 4s infinite alternate;"></div>
-
-        <!-- SVG animado de red digital -->
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 350px; animation: rotate-slow 20s linear infinite;">
+      <!-- Ilustración Robot IA -->
+      <div class="nosotros-boat-visual reveal right" aria-hidden="true" style="display:flex;justify-content:center;align-items:center;min-height:400px;position:relative;">
+        <!-- Resplandor de fondo -->
+        <div style="position:absolute;width:280px;height:280px;background:radial-gradient(circle,rgba(14,165,233,0.10) 0%,transparent 70%);border-radius:50%;pointer-events:none;"></div>
+        <svg viewBox="0 0 160 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:300px;" role="img" aria-label="Ilustración de robot de inteligencia artificial">
           <defs>
-            <linearGradient id="orb-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="rgba(224,242,254,0.9)" />
-              <stop offset="50%" stop-color="rgba(14,165,233,0.8)" />
-              <stop offset="100%" stop-color="rgba(3,105,161,0.5)" />
+            <linearGradient id="ai-body" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#0d2340"/>
+              <stop offset="100%" stop-color="#061424"/>
             </linearGradient>
+            <filter id="ai-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
             <style>
-              @keyframes rotate-slow { 100% { transform: rotate(360deg); } }
-              @keyframes pulse-glow { 100% { transform: scale(1.2); opacity: 0.8; } }
-              @keyframes float-node { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }
-              .node { animation: float-node 3s ease-in-out infinite; }
-              .node-1 { animation-delay: 0s; }
-              .node-2 { animation-delay: 0.5s; }
-              .node-3 { animation-delay: 1s; }
-              .node-4 { animation-delay: 1.5s; }
+              @keyframes ai-float   { 0%,100%{transform:translateY(0)}  50%{transform:translateY(-10px)} }
+              @keyframes ai-blink-l { 0%,85%,100%{transform:scaleY(1)}  90%{transform:scaleY(0.07)} }
+              @keyframes ai-blink-r { 0%,88%,100%{transform:scaleY(1)}  93%{transform:scaleY(0.07)} }
+              @keyframes ai-ping    { 0%,100%{r:4px;opacity:.9} 50%{r:6.5px;opacity:.5} }
+              @keyframes ai-d1      { 0%,100%{opacity:.9}  50%{opacity:.3} }
+              @keyframes ai-d2      { 0%,100%{opacity:.5}  50%{opacity:1}  }
+              @keyframes ai-d3      { 0%,100%{opacity:.75} 33%{opacity:.2} }
+              .ai-float  { animation: ai-float   4s ease-in-out infinite; }
+              .ai-eye-l  { animation: ai-blink-l 6s ease-in-out infinite; transform-box:fill-box; transform-origin:center; }
+              .ai-eye-r  { animation: ai-blink-r 6s ease-in-out infinite; transform-box:fill-box; transform-origin:center; }
+              .ai-ping   { animation: ai-ping    1.8s ease-in-out infinite; }
+              .ai-d1     { animation: ai-d1      2s ease-in-out infinite; }
+              .ai-d2     { animation: ai-d2      2s ease-in-out infinite 0.4s; }
+              .ai-d3     { animation: ai-d3      2s ease-in-out infinite 0.8s; }
             </style>
           </defs>
-
-          <!-- Círculo base punteado -->
-          <circle cx="100" cy="100" r="80" fill="none" stroke="rgba(14,165,233,0.2)" stroke-width="1" stroke-dasharray="4 4" />
-          <circle cx="100" cy="100" r="60" fill="none" stroke="rgba(14,165,233,0.3)" stroke-width="0.5" />
-
-          <!-- Líneas de conexión (Red) -->
-          <g stroke="rgba(14,165,233,0.5)" stroke-width="1.5">
-            <line x1="100" y1="20" x2="160" y2="60" />
-            <line x1="160" y1="60" x2="140" y2="140" />
-            <line x1="140" y1="140" x2="60" y2="140" />
-            <line x1="60" y1="140" x2="40" y2="60" />
-            <line x1="40" y1="60" x2="100" y2="20" />
-            
-            <line x1="100" y1="20" x2="100" y2="100" />
-            <line x1="160" y1="60" x2="100" y2="100" />
-            <line x1="140" y1="140" x2="100" y2="100" />
-            <line x1="60" y1="140" x2="100" y2="100" />
-            <line x1="40" y1="60" x2="100" y2="100" />
+          <g class="ai-float">
+            <!-- Antena -->
+            <line x1="80" y1="30" x2="80" y2="12" stroke="rgba(14,165,233,0.6)" stroke-width="1.5" stroke-linecap="round"/>
+            <circle class="ai-ping" cx="80" cy="8" r="4" fill="#0ea5e9" filter="url(#ai-glow)"/>
+            <!-- Cabeza -->
+            <rect x="28" y="30" width="104" height="78" rx="14" fill="url(#ai-body)" stroke="rgba(14,165,233,0.55)" stroke-width="1.5"/>
+            <!-- Cuencas oculares -->
+            <rect x="40" y="50" width="30" height="20" rx="6" fill="rgba(1,8,16,0.9)" stroke="rgba(14,165,233,0.4)" stroke-width="1"/>
+            <rect x="90" y="50" width="30" height="20" rx="6" fill="rgba(1,8,16,0.9)" stroke="rgba(14,165,233,0.4)" stroke-width="1"/>
+            <!-- Ojos (parpadeo) -->
+            <rect class="ai-eye-l" x="42" y="52" width="26" height="16" rx="5" fill="#0ea5e9" filter="url(#ai-glow)" opacity="0.95"/>
+            <rect class="ai-eye-r" x="92" y="52" width="26" height="16" rx="5" fill="#38bdf8" filter="url(#ai-glow)" opacity="0.9"/>
+            <!-- Rejilla boca -->
+            <rect x="40" y="84" width="80" height="14" rx="5" fill="rgba(14,165,233,0.07)" stroke="rgba(14,165,233,0.28)" stroke-width="1"/>
+            <line x1="53"  y1="87.5" x2="53"  y2="94.5" stroke="rgba(14,165,233,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="64"  y1="87.5" x2="64"  y2="94.5" stroke="rgba(14,165,233,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="80"  y1="87.5" x2="80"  y2="94.5" stroke="rgba(14,165,233,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="96"  y1="87.5" x2="96"  y2="94.5" stroke="rgba(14,165,233,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="107" y1="87.5" x2="107" y2="94.5" stroke="rgba(14,165,233,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+            <!-- Cuello -->
+            <rect x="66" y="108" width="28" height="12" rx="4" fill="rgba(14,165,233,0.12)" stroke="rgba(14,165,233,0.3)" stroke-width="1"/>
+            <!-- Cuerpo -->
+            <rect x="20" y="120" width="120" height="72" rx="16" fill="url(#ai-body)" stroke="rgba(14,165,233,0.5)" stroke-width="1.5"/>
+            <!-- Panel del cuerpo -->
+            <rect x="34" y="133" width="92" height="46" rx="9" fill="rgba(14,165,233,0.06)" stroke="rgba(14,165,233,0.2)" stroke-width="1"/>
+            <!-- Líneas de circuito -->
+            <g stroke="rgba(14,165,233,0.45)" stroke-width="1" fill="none" stroke-linecap="round">
+              <polyline points="42,147 55,147 55,160 68,160"/>
+              <polyline points="118,147 105,147 105,160 92,160"/>
+              <line x1="68" y1="153.5" x2="92" y2="153.5"/>
+            </g>
+            <!-- Puntos de estado -->
+            <circle class="ai-d1" cx="55"  cy="168" r="3.5" fill="#0ea5e9"/>
+            <circle class="ai-d2" cx="80"  cy="168" r="3.5" fill="#7dd3fc"/>
+            <circle class="ai-d3" cx="105" cy="168" r="3.5" fill="#0284c7"/>
+            <!-- Brazos -->
+            <rect x="0"   y="128" width="20" height="48" rx="8" fill="url(#ai-body)" stroke="rgba(14,165,233,0.35)" stroke-width="1.2"/>
+            <rect x="140" y="128" width="20" height="48" rx="8" fill="url(#ai-body)" stroke="rgba(14,165,233,0.35)" stroke-width="1.2"/>
           </g>
-
-          <!-- Nodos luminosos -->
-          <circle cx="100" cy="100" r="12" fill="url(#orb-grad)" style="filter: drop-shadow(0 0 10px rgba(14,165,233,0.8));" />
-          
-          <circle cx="100" cy="20" r="6" fill="#38bdf8" class="node node-1" style="filter: drop-shadow(0 0 5px rgba(56,189,248,0.8));" />
-          <circle cx="160" cy="60" r="8" fill="#0ea5e9" class="node node-2" />
-          <circle cx="140" cy="140" r="5" fill="#bae6fd" class="node node-3" />
-          <circle cx="60" cy="140" r="7" fill="#0284c7" class="node node-4" />
-          <circle cx="40" cy="60" r="9" fill="#7dd3fc" class="node node-2" style="filter: drop-shadow(0 0 8px rgba(125,211,252,0.8));" />
         </svg>
       </div>
 
@@ -260,12 +279,9 @@
   </div>
 </section>
 
-<!-- ═══ SEPARADOR LUMINOSO ════════════════════════════ -->
-<div class="container" style="padding: 2rem 0 4rem 0;">
-  <div style="height: 1px; width: 100%; background: linear-gradient(90deg, transparent, rgba(14,165,233,0.5), transparent); position: relative;">
-    <!-- Brillo central -->
-    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 150px; height: 2px; box-shadow: 0 0 20px 3px rgba(14,165,233,0.8); background: rgba(224,242,254,0.9); border-radius: 50%;"></div>
-  </div>
+<!-- ═══ SEPARADOR ════════════════════════════════════ -->
+<div class="container" style="padding:2rem 0 3rem;">
+  <hr class="separator" />
 </div>
 
 <!-- ═══ PRESENCIA ═══════════════════════════════════════ -->
