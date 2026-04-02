@@ -5,6 +5,9 @@
 
 "use strict";
 
+/* ─── WhatsApp — referencia a la variable global de navbar.js ─── */
+const ADAPTIA_WA = window.ADAPTIA_WA || '52XXXXXXXXXX';
+
 /* ─────────────────────────────────────────────────────────────
    1. CURSOR PERSONALIZADO
 ───────────────────────────────────────────────────────────── */
@@ -19,15 +22,13 @@
   document.addEventListener('mousemove', e => {
     mx = e.clientX;
     my = e.clientY;
-    dot.style.left = mx + 'px';
-    dot.style.top  = my + 'px';
+    dot.style.transform = `translate(${mx}px, ${my}px)`;
   });
 
   (function tick() {
     rx += (mx - rx) * RING_SPEED;
     ry += (my - ry) * RING_SPEED;
-    ring.style.left = rx + 'px';
-    ring.style.top  = ry + 'px';
+    ring.style.transform = `translate(${rx}px, ${ry}px)`;
     requestAnimationFrame(tick);
   })();
 
@@ -199,7 +200,7 @@ window.openWA = function(entregable) {
   const text = encodeURIComponent(
     `Hola, me interesa el entregable: *${entregable}*. ¿Podrían darme más información?`
   );
-  window.open(`https://wa.me/52XXXXXXXXXX?text=${text}`, '_blank');
+  window.open(`https://wa.me/${ADAPTIA_WA}?text=${text}`, '_blank');
 };
 
 
@@ -313,8 +314,16 @@ window.initOcean = function(canvasId) {
     ctx.fillRect(0, surfaceY - 30, W, 60);
 
     if (!reducedMotion) t += 0.009;
-    requestAnimationFrame(frame);
+    if (isVisible) requestAnimationFrame(frame);
   }
+
+  /* Pausar animación cuando el canvas no es visible */
+  let isVisible = true;
+  const canvasObserver = new IntersectionObserver(entries => {
+    isVisible = entries[0].isIntersecting;
+    if (isVisible) requestAnimationFrame(frame);
+  }, { threshold: 0 });
+  canvasObserver.observe(canvas);
 
   frame();
 };
@@ -357,9 +366,20 @@ window.initOcean = function(canvasId) {
     const msg   = encodeURIComponent(
       `Hola, me interesa el entregable *${data.id} — ${data.name}*. ¿Podrían brindarme más información?`
     );
-    waBtn.href = `https://wa.me/52XXXXXXXXXX?text=${msg}`;
+    waBtn.href = `https://wa.me/${ADAPTIA_WA}?text=${msg}`;
 
     overlay.classList.add('open');
     document.body.style.overflow = 'hidden';
   };
+})();
+
+
+/* ─────────────────────────────────────────────────────────────
+   9. WA LINK HYDRATION — actualiza hrefs con data-wa-msg
+───────────────────────────────────────────────────────────── */
+(function hydrateWALinks() {
+  document.querySelectorAll('[data-wa-msg]').forEach(el => {
+    const msg = el.dataset.waMsg;
+    el.href = `https://wa.me/${ADAPTIA_WA}?text=${encodeURIComponent(msg)}`;
+  });
 })();
