@@ -36,7 +36,7 @@
   flex-shrink: 0;
 }
 .navbar__logo-img {
-  height: 36px;
+  height: 64px;
   width: auto;
   display: block;
   filter: drop-shadow(0 0 8px rgba(0, 71, 171, 0.5));
@@ -216,7 +216,7 @@
   }
 
   .navbar__logo-img {
-    height: 44px;
+    height: 56px;
   }
 
   .navbar__burger {
