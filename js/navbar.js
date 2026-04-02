@@ -5,8 +5,11 @@
 
 "use strict";
 
+/* ─── WhatsApp — fuente única de verdad ─── */
+window.ADAPTIA_WA = '52XXXXXXXXXX';
+
 (function injectLayout() {
-  const waNumber = '52XXXXXXXXXX';
+  const waNumber = window.ADAPTIA_WA;
 
   /* ─── NAVBAR HTML ─── */
   const navbarHTML = `
@@ -71,9 +74,9 @@
 
   /* ─── CURSOR HTML ─── */
   const cursorHTML = `
-    <div id="a-cursor"></div>
-    <div id="a-cursor-ring"></div>
-    <div class="grain"></div>
+    <div id="a-cursor" aria-hidden="true" style="pointer-events:none;"></div>
+    <div id="a-cursor-ring" aria-hidden="true" style="pointer-events:none;"></div>
+    <div class="grain" aria-hidden="true"></div>
   `;
 
   /* ─── MODAL PRODUCTO ─── */
@@ -157,7 +160,6 @@
             <h4>Contacto</h4>
             <ul>
               <li><a href="https://wa.me/${waNumber}" target="_blank">WhatsApp</a></li>
-              <li><a href="mailto:contacto@adaptia.mx">contacto@adaptia.mx</a></li>
               <li><a>Cancún, Quintana Roo</a></li>
               <li><a>México</a></li>
             </ul>
