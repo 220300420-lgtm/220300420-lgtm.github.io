@@ -31,44 +31,44 @@ window.ADAPTIA_WA = '52XXXXXXXXXX';
                 <div class="mega-menu__col">
                   <h4>Fase 1 · Diagnóstico</h4>
                   <a href="/servicios/fase-1-diagnostico" class="mega-menu__item">
-                    <span class="mega-menu__icon">🔎</span>
+                    <span class="mega-menu__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><path d="M11 8v3l2 2"/></svg></span>
                     <span><strong>Auditoría Operativa</strong><small>Detecta cuellos de botella críticos.</small></span>
                   </a>
                   <a href="/servicios/fase-1-diagnostico" class="mega-menu__item">
-                    <span class="mega-menu__icon">📊</span>
+                    <span class="mega-menu__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
                     <span><strong>KPIs Base</strong><small>Mide el punto de partida real.</small></span>
                   </a>
                 </div>
                 <div class="mega-menu__col">
                   <h4>Fase 2 · Capacitación</h4>
                   <a href="/servicios/fase-2-capacitacion" class="mega-menu__item">
-                    <span class="mega-menu__icon">🎓</span>
+                    <span class="mega-menu__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
                     <span><strong>Entrenamiento por Roles</strong><small>Habilidades prácticas por puesto.</small></span>
                   </a>
                   <a href="/servicios/fase-2-capacitacion" class="mega-menu__item">
-                    <span class="mega-menu__icon">🤖</span>
+                    <span class="mega-menu__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="11" rx="2"/><path d="M12 2v6M9 8V5a3 3 0 0 1 6 0v3"/><circle cx="8.5" cy="14" r="1" fill="currentColor"/><circle cx="15.5" cy="14" r="1" fill="currentColor"/></svg></span>
                     <span><strong>Asistente IA Interno</strong><small>Soporte continuo al equipo.</small></span>
                   </a>
                 </div>
                 <div class="mega-menu__col">
                   <h4>Fase 3 · Digitalización</h4>
                   <a href="/servicios/fase-3-digitalizacion" class="mega-menu__item">
-                    <span class="mega-menu__icon">🧩</span>
+                    <span class="mega-menu__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 7h4v4H7z"/></svg></span>
                     <span><strong>CRM + Automatizaciones</strong><small>Procesos conectados de punta a punta.</small></span>
                   </a>
                   <a href="/servicios/fase-3-digitalizacion" class="mega-menu__item">
-                    <span class="mega-menu__icon">🌐</span>
+                    <span class="mega-menu__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
                     <span><strong>Web y Captación</strong><small>Genera demanda de forma consistente.</small></span>
                   </a>
                 </div>
                 <div class="mega-menu__col">
                   <h4>Fase 4 · Implementación</h4>
                   <a href="/servicios/fase-4-implementacion" class="mega-menu__item">
-                    <span class="mega-menu__icon">⚙️</span>
+                    <span class="mega-menu__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/></svg></span>
                     <span><strong>Integración Total</strong><small>Unifica operación, ventas y control.</small></span>
                   </a>
                   <a href="/servicios/fase-4-implementacion" class="mega-menu__item">
-                    <span class="mega-menu__icon">📈</span>
+                    <span class="mega-menu__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></span>
                     <span><strong>Mejora Continua</strong><small>Optimiza con datos y seguimiento.</small></span>
                   </a>
                 </div>

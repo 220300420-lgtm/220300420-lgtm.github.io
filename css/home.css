@@ -457,6 +457,102 @@
   color: var(--text-faint);
 }
 
+/* ─── HERO ANIMATION — Compass & Particles ─── */
+.hero__compass {
+  position: absolute;
+  right: 6%;
+  top: 50%;
+  transform: translateY(-60%);
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0;
+  animation: compassReveal 1.5s var(--ease-out) 1.2s forwards;
+}
+.hero__compass-svg {
+  width: clamp(180px, 22vw, 340px);
+  height: auto;
+  animation: compassSpin 80s linear infinite;
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+@keyframes compassReveal {
+  from { opacity: 0; transform: translateY(-60%) scale(0.85); }
+  to   { opacity: 0.07; transform: translateY(-60%) scale(1); }
+}
+@keyframes compassSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.hero__particles {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  overflow: hidden;
+}
+.hero__particles span {
+  position: absolute;
+  bottom: 20%;
+  width: 2px; height: 2px;
+  border-radius: 50%;
+  background: var(--blue);
+  opacity: 0;
+  animation: heroParticle 8s ease-in infinite;
+}
+.hero__particles span:nth-child(1)  { left: 8%;  animation-delay: 0s;    animation-duration: 9s;   width: 3px; height: 3px; }
+.hero__particles span:nth-child(2)  { left: 18%; animation-delay: 1.5s;  animation-duration: 7s;   }
+.hero__particles span:nth-child(3)  { left: 32%; animation-delay: 3s;    animation-duration: 8.5s; width: 4px; height: 4px; }
+.hero__particles span:nth-child(4)  { left: 48%; animation-delay: 0.7s;  animation-duration: 6.5s; }
+.hero__particles span:nth-child(5)  { left: 62%; animation-delay: 2.2s;  animation-duration: 9.5s; width: 3px; height: 3px; }
+.hero__particles span:nth-child(6)  { left: 75%; animation-delay: 4s;    animation-duration: 7.5s; }
+.hero__particles span:nth-child(7)  { left: 88%; animation-delay: 1s;    animation-duration: 8s;   width: 4px; height: 4px; }
+.hero__particles span:nth-child(8)  { left: 22%; animation-delay: 5s;    animation-duration: 6s;   }
+.hero__particles span:nth-child(9)  { left: 55%; animation-delay: 3.5s;  animation-duration: 7.5s; width: 3px; height: 3px; }
+.hero__particles span:nth-child(10) { left: 40%; animation-delay: 6s;    animation-duration: 9s;   }
+@keyframes heroParticle {
+  0%   { opacity: 0; transform: translateY(0) translateX(0); }
+  8%   { opacity: 0.8; }
+  90%  { opacity: 0.2; }
+  100% { opacity: 0; transform: translateY(-200px) translateX(15px); }
+}
+
+/* Section separator for CTA sections */
+.cta-sep {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0.5rem 0;
+  overflow: hidden;
+}
+.cta-sep__line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-mid) 50%);
+}
+.cta-sep__line--r {
+  background: linear-gradient(90deg, var(--border-mid) 50%, transparent);
+}
+.cta-sep__diamond {
+  width: 8px; height: 8px;
+  background: var(--blue);
+  transform: rotate(45deg);
+  opacity: 0.5;
+  flex-shrink: 0;
+  box-shadow: 0 0 12px var(--blue);
+  animation: diamondPulse 3s ease-in-out infinite;
+}
+@keyframes diamondPulse {
+  0%,100% { opacity: 0.4; box-shadow: 0 0 6px var(--blue); }
+  50%     { opacity: 0.9; box-shadow: 0 0 16px var(--blue), 0 0 24px var(--blue-glow); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__compass-svg { animation: none; }
+  .hero__particles span { animation: none; }
+}
+
 /* ─── BARCO NAVEGANTE ─── */
 .hero__boat {
   position: absolute;
