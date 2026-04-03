@@ -87,6 +87,97 @@
 }
 .nav-link:hover::after { width: 100%; }
 
+/* ─── SERVICES MEGA MENU ─── */
+.navbar__item {
+  position: relative;
+}
+.mega-menu {
+  position: absolute;
+  top: calc(100% + 1rem);
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  width: min(1020px, calc(100vw - 3rem));
+  background: rgba(2, 12, 27, 0.96);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45), 0 0 0 1px var(--border);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  padding: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.24s var(--ease-out), transform 0.24s var(--ease-out);
+}
+.mega-menu::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  background: rgba(2, 12, 27, 0.96);
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+  transform: translateX(-50%) rotate(45deg);
+}
+.navbar__item--mega:hover .mega-menu,
+.navbar__item--mega:focus-within .mega-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+.mega-menu__col {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 0.9rem;
+}
+.mega-menu__col h4 {
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 0.65rem;
+}
+.mega-menu__item {
+  display: flex;
+  gap: 0.55rem;
+  align-items: flex-start;
+  padding: 0.55rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+.mega-menu__item:hover {
+  background: var(--bg-card);
+  border-color: var(--border-mid);
+  transform: translateY(-1px);
+}
+.mega-menu__icon {
+  font-size: 1rem;
+  line-height: 1.2;
+  margin-top: 0.1rem;
+}
+.mega-menu__item strong {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+.mega-menu__item small {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
 /* ─── RIGHT ACTIONS ─── */
 .navbar__right {
   display: flex;
@@ -210,6 +301,7 @@
   .navbar__links { display: none; }
   .navbar__burger { display: flex; }
   .navbar .btn  { display: none; }
+  .mega-menu { display: none; }
 
   .navbar__right {
     gap: 0.75rem;

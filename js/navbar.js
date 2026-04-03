@@ -25,7 +25,55 @@ window.ADAPTIA_WA = '52XXXXXXXXXX';
 
           <ul class="navbar__links">
             <li><a href="/" class="nav-link" data-page="index">Inicio</a></li>
-            <li><a href="/productos" class="nav-link" data-page="productos">Productos</a></li>
+            <li class="navbar__item navbar__item--mega">
+              <a href="/servicios" class="nav-link nav-link--services" data-page="servicios" aria-haspopup="true" aria-expanded="false">Servicios</a>
+              <div class="mega-menu" aria-label="Submenú de servicios">
+                <div class="mega-menu__col">
+                  <h4>Fase 1 · Diagnóstico</h4>
+                  <a href="/servicios/fase-1-diagnostico" class="mega-menu__item">
+                    <span class="mega-menu__icon">🔎</span>
+                    <span><strong>Auditoría Operativa</strong><small>Detecta cuellos de botella críticos.</small></span>
+                  </a>
+                  <a href="/servicios/fase-1-diagnostico" class="mega-menu__item">
+                    <span class="mega-menu__icon">📊</span>
+                    <span><strong>KPIs Base</strong><small>Mide el punto de partida real.</small></span>
+                  </a>
+                </div>
+                <div class="mega-menu__col">
+                  <h4>Fase 2 · Capacitación</h4>
+                  <a href="/servicios/fase-2-capacitacion" class="mega-menu__item">
+                    <span class="mega-menu__icon">🎓</span>
+                    <span><strong>Entrenamiento por Roles</strong><small>Habilidades prácticas por puesto.</small></span>
+                  </a>
+                  <a href="/servicios/fase-2-capacitacion" class="mega-menu__item">
+                    <span class="mega-menu__icon">🤖</span>
+                    <span><strong>Asistente IA Interno</strong><small>Soporte continuo al equipo.</small></span>
+                  </a>
+                </div>
+                <div class="mega-menu__col">
+                  <h4>Fase 3 · Digitalización</h4>
+                  <a href="/servicios/fase-3-digitalizacion" class="mega-menu__item">
+                    <span class="mega-menu__icon">🧩</span>
+                    <span><strong>CRM + Automatizaciones</strong><small>Procesos conectados de punta a punta.</small></span>
+                  </a>
+                  <a href="/servicios/fase-3-digitalizacion" class="mega-menu__item">
+                    <span class="mega-menu__icon">🌐</span>
+                    <span><strong>Web y Captación</strong><small>Genera demanda de forma consistente.</small></span>
+                  </a>
+                </div>
+                <div class="mega-menu__col">
+                  <h4>Fase 4 · Implementación</h4>
+                  <a href="/servicios/fase-4-implementacion" class="mega-menu__item">
+                    <span class="mega-menu__icon">⚙️</span>
+                    <span><strong>Integración Total</strong><small>Unifica operación, ventas y control.</small></span>
+                  </a>
+                  <a href="/servicios/fase-4-implementacion" class="mega-menu__item">
+                    <span class="mega-menu__icon">📈</span>
+                    <span><strong>Mejora Continua</strong><small>Optimiza con datos y seguimiento.</small></span>
+                  </a>
+                </div>
+              </div>
+            </li>
             <li><a href="/metodologia" class="nav-link" data-page="metodologia">Metodología</a></li>
             <li><a href="/nosotros"    class="nav-link" data-page="nosotros">Nosotros</a></li>
             <li><a href="/contacto"    class="nav-link" data-page="contacto">Contacto</a></li>
@@ -52,7 +100,7 @@ window.ADAPTIA_WA = '52XXXXXXXXXX';
     <!-- Mobile menu -->
     <div class="navbar__mobile-menu" id="mobileMenu">
       <a href="/"            class="nav-link">Inicio</a>
-      <a href="/productos"   class="nav-link">Productos</a>
+      <a href="/servicios"   class="nav-link">Servicios</a>
       <a href="/metodologia" class="nav-link">Metodología</a>
       <a href="/nosotros"    class="nav-link">Nosotros</a>
       <a href="/contacto"    class="nav-link">Contacto</a>

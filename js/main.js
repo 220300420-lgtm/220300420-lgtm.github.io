@@ -72,6 +72,8 @@ const ADAPTIA_WA = window.ADAPTIA_WA || '52XXXXXXXXXX';
   const nav    = document.querySelector('.navbar');
   const burger = document.querySelector('.navbar__burger');
   const mobile = document.querySelector('.navbar__mobile-menu');
+  const servicesLink = document.querySelector('.nav-link--services');
+  const servicesItem = document.querySelector('.navbar__item--mega');
   if (!nav) return;
 
   /* Scroll state */
@@ -90,6 +92,19 @@ const ADAPTIA_WA = window.ADAPTIA_WA || '52XXXXXXXXXX';
         burger.classList.remove('open');
         mobile.classList.remove('open');
       });
+    });
+  }
+
+  if (servicesLink && servicesItem) {
+    const setExpanded = (value) => servicesLink.setAttribute('aria-expanded', value ? 'true' : 'false');
+    servicesItem.addEventListener('mouseenter', () => setExpanded(true));
+    servicesItem.addEventListener('mouseleave', () => setExpanded(false));
+    servicesItem.addEventListener('focusin', () => setExpanded(true));
+    servicesItem.addEventListener('focusout', e => {
+      if (!servicesItem.contains(e.relatedTarget)) setExpanded(false);
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') setExpanded(false);
     });
   }
 
@@ -198,7 +213,7 @@ const ADAPTIA_WA = window.ADAPTIA_WA || '52XXXXXXXXXX';
 /* Helper global para abrir WA con mensaje contextual */
 window.openWA = function(entregable) {
   const text = encodeURIComponent(
-    `Hola, me interesa el entregable: *${entregable}*. ¿Podrían darme más información?`
+    `Hola, me interesa el servicio: *${entregable}*. ¿Podrían darme más información?`
   );
   window.open(`https://wa.me/${ADAPTIA_WA}?text=${text}`, '_blank');
 };
@@ -364,7 +379,7 @@ window.initOcean = function(canvasId) {
 
     const waBtn = overlay.querySelector('.product-modal__wa-btn');
     const msg   = encodeURIComponent(
-      `Hola, me interesa el entregable *${data.id} — ${data.name}*. ¿Podrían brindarme más información?`
+      `Hola, me interesa el servicio *${data.id} — ${data.name}*. ¿Podrían brindarme más información?`
     );
     waBtn.href = `https://wa.me/${ADAPTIA_WA}?text=${msg}`;
 
