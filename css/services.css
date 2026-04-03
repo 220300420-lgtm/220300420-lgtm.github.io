@@ -609,3 +609,161 @@
   .phase-hero { padding: 8rem 0 3rem; }
   .tools-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* ── Nautical Animation ─────────────────────────────────── */
+.services-hero__animation {
+  position: relative;
+  z-index: 1;
+  margin-top: 2.5rem;
+}
+.nautical-journey {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.ocean-waves {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.wave1 { animation: undulate 6s ease-in-out infinite alternate; transform-origin: center bottom; }
+.wave2 { animation: undulate 8s ease-in-out infinite alternate-reverse; transform-origin: center bottom; }
+.boat { animation: sail 12s linear infinite; }
+@keyframes undulate {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(15px); }
+}
+@keyframes sail {
+  0%   { transform: translate(100px, 90px) rotate(-5deg); }
+  33%  { transform: translate(300px, 110px) rotate(5deg); }
+  66%  { transform: translate(500px, 80px) rotate(-5deg); }
+  100% { transform: translate(700px, 120px) rotate(0deg); }
+}
+.phase-node {
+  animation: pulse-node 3s ease-in-out infinite;
+}
+.node-2 { animation-delay: 0.75s; }
+.node-3 { animation-delay: 1.5s; }
+.node-4 { animation-delay: 2.25s; }
+@keyframes pulse-node {
+  0%, 100% { r: 10; opacity: 1; }
+  50%       { r: 14; opacity: 0.7; }
+}
+
+/* ── Deliverable Cards ──────────────────────────────────── */
+.deliverables-wrapper {
+  padding: var(--space-xl) 0 0;
+}
+.deliverables-head {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.deliverables-head h2 { margin: 0.5rem 0 0.75rem; }
+.deliverables-head p  { color: var(--text-muted); max-width: 620px; margin: 0 auto; }
+.deliverables-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1.5rem;
+}
+.deliverable-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  transition: transform 0.3s ease, border-color 0.25s, box-shadow 0.25s;
+}
+.deliverable-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--blue);
+  box-shadow: var(--shadow-glow);
+}
+.deliverable-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+.deliverable-header .d-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.deliverable-header h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.35;
+}
+.deliverable-header .d-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--blue);
+  background: rgba(14,165,233,0.12);
+  border: 1px solid rgba(14,165,233,0.25);
+  border-radius: 20px;
+  padding: 0.15rem 0.55rem;
+  margin-bottom: 0.3rem;
+}
+.deliverable-problem {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+.deliverable-problem strong {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 0.35rem;
+}
+.deliverable-includes h5 {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin: 0 0 0.75rem;
+}
+.deliverable-includes ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.deliverable-includes ul li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary, #cbd5e1);
+  line-height: 1.5;
+}
+.deliverable-includes ul li::before {
+  content: "•";
+  color: var(--blue);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 700;
+}
+.deliverable-tool {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+.deliverable-tool strong { color: var(--blue); }
+
+@media (max-width: 760px) {
+  .deliverables-grid { grid-template-columns: 1fr; }
+}
