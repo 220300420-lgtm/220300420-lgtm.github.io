@@ -35,27 +35,120 @@
       <h1 class="display-lg reveal delay-1">Una metodología robusta en 4 fases</h1>
       <p class="body-lg reveal delay-2">Transformamos la operación de tu negocio náutico desde el diagnóstico estratégico hasta la implementación integral con procesos digitalizados, equipos capacitados y control de resultados.</p>
     </div>
-    <div class="services-hero__animation reveal delay-3">
-      <div class="nautical-journey">
-        <svg viewBox="0 0 800 200" class="ocean-waves" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <!-- Olas de fondo -->
-          <path class="wave wave1" d="M0,100 C150,200 350,0 500,100 C650,200 800,50 800,50 L800,200 L0,200 Z" fill="#032b43" opacity="0.5"/>
-          <path class="wave wave2" d="M0,120 C200,40 400,200 600,120 C700,80 800,150 800,150 L800,200 L0,200 Z" fill="#044b7a" opacity="0.8"/>
-          <!-- Línea de ruta punteada -->
-          <path d="M100,110 C175,120 225,130 300,130 C375,130 425,100 500,100 C575,100 625,135 700,140" fill="none" stroke="#00d4ff" stroke-width="1.5" stroke-dasharray="6 5" opacity="0.6"/>
-          <!-- Nodos de las 4 fases -->
-          <circle class="phase-node node-1" cx="100" cy="110" r="10" fill="#00d4ff"/>
-          <text x="84" y="143" fill="#fff" font-size="12" font-family="sans-serif">Fase 1</text>
-          <circle class="phase-node node-2" cx="300" cy="130" r="10" fill="#00d4ff"/>
-          <text x="284" y="163" fill="#fff" font-size="12" font-family="sans-serif">Fase 2</text>
-          <circle class="phase-node node-3" cx="500" cy="100" r="10" fill="#00d4ff"/>
-          <text x="484" y="133" fill="#fff" font-size="12" font-family="sans-serif">Fase 3</text>
-          <circle class="phase-node node-4" cx="700" cy="140" r="10" fill="#00d4ff"/>
-          <text x="684" y="173" fill="#fff" font-size="12" font-family="sans-serif">Fase 4</text>
-          <!-- Barco animado recorriendo los nodos -->
-          <g class="boat">
-            <path d="M-15,0 L15,0 L10,10 L-10,10 Z" fill="#fff"/>
-            <path d="M-5,0 L-5,-15 L10,-5 Z" fill="#00d4ff"/>
+    <div class="services-hero__animation reveal delay-3" aria-hidden="true">
+      <div class="nj-wrapper">
+        <svg viewBox="0 0 900 280" class="nj-svg" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="nj-hull" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="rgba(14,165,233,0.90)"/>
+              <stop offset="50%"  stop-color="rgba(3,105,161,0.93)"/>
+              <stop offset="100%" stop-color="rgba(2,58,100,0.96)"/>
+            </linearGradient>
+            <linearGradient id="nj-sail-g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%"   stop-color="rgba(224,242,254,0.78)"/>
+              <stop offset="55%"  stop-color="rgba(14,165,233,0.48)"/>
+              <stop offset="100%" stop-color="rgba(3,105,161,0.20)"/>
+            </linearGradient>
+            <linearGradient id="nj-sea" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="#021f38"/>
+              <stop offset="100%" stop-color="#010810"/>
+            </linearGradient>
+            <radialGradient id="nj-ng" cx="50%" cy="50%" r="50%">
+              <stop offset="0%"   stop-color="rgba(14,165,233,0.55)"/>
+              <stop offset="100%" stop-color="rgba(14,165,233,0)"/>
+            </radialGradient>
+            <filter id="nj-gf" x="-40%" y="-40%" width="180%" height="180%">
+              <feGaussianBlur stdDeviation="3" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+
+          <!-- Sky -->
+          <rect width="900" height="280" fill="#010810"/>
+
+          <!-- Stars -->
+          <circle class="nj-star" cx="28"  cy="14" r="1"   fill="rgba(200,230,255,0.7)"/>
+          <circle class="nj-star nj-star--b" cx="90"  cy="38" r="1.2" fill="rgba(14,165,233,0.8)"/>
+          <circle class="nj-star nj-star--c" cx="180" cy="18" r="0.8" fill="rgba(200,230,255,0.5)"/>
+          <circle class="nj-star nj-star--d" cx="260" cy="50" r="1"   fill="rgba(200,230,255,0.4)"/>
+          <circle class="nj-star" cx="370" cy="22" r="1.3" fill="rgba(14,165,233,0.65)"/>
+          <circle class="nj-star nj-star--b" cx="470" cy="40" r="0.9" fill="rgba(200,230,255,0.55)"/>
+          <circle class="nj-star nj-star--c" cx="550" cy="12" r="1.1" fill="rgba(14,165,233,0.6)"/>
+          <circle class="nj-star nj-star--d" cx="650" cy="35" r="0.8" fill="rgba(200,230,255,0.45)"/>
+          <circle class="nj-star" cx="740" cy="16" r="1"   fill="rgba(200,230,255,0.65)"/>
+          <circle class="nj-star nj-star--b" cx="830" cy="44" r="1.2" fill="rgba(14,165,233,0.5)"/>
+          <circle class="nj-star nj-star--c" cx="880" cy="20" r="0.8" fill="rgba(200,230,255,0.6)"/>
+          <circle class="nj-star" cx="60"  cy="62" r="0.8" fill="rgba(200,230,255,0.3)"/>
+          <circle class="nj-star nj-star--d" cx="155" cy="74" r="1"   fill="rgba(14,165,233,0.4)"/>
+          <circle class="nj-star nj-star--b" cx="330" cy="60" r="0.9" fill="rgba(200,230,255,0.35)"/>
+          <circle class="nj-star nj-star--c" cx="500" cy="68" r="0.8" fill="rgba(14,165,233,0.5)"/>
+          <circle class="nj-star" cx="720" cy="58" r="1"   fill="rgba(200,230,255,0.4)"/>
+          <circle class="nj-star nj-star--d" cx="855" cy="70" r="0.9" fill="rgba(200,230,255,0.3)"/>
+
+          <!-- Subtle grid (sky) -->
+          <line x1="0" y1="95" x2="900" y2="95" stroke="rgba(14,165,233,0.04)" stroke-width="0.5"/>
+          <line x1="0" y1="140" x2="900" y2="140" stroke="rgba(14,165,233,0.04)" stroke-width="0.5"/>
+
+          <!-- Ocean fill with wave -->
+          <path class="nj-ocean" d="M0,188 C120,178 270,198 450,188 C630,178 780,198 900,188 L900,280 L0,280 Z" fill="url(#nj-sea)"/>
+          <!-- Second wave layer -->
+          <path class="nj-w2" d="M0,200 C150,192 300,208 460,200 C620,192 760,208 900,200" fill="none" stroke="rgba(14,165,233,0.12)" stroke-width="1.5"/>
+
+          <!-- Route dashed path -->
+          <path d="M130,186 C210,183 295,181 385,182 C470,183 535,184 630,184 C705,184 762,181 828,183"
+                fill="none" stroke="rgba(14,165,233,0.45)" stroke-width="1.5" stroke-dasharray="5 5"/>
+
+          <!-- Node 1 — Diagnóstico -->
+          <circle class="nj-node-glow" cx="130" cy="186" r="24" fill="url(#nj-ng)"/>
+          <circle class="nj-node" cx="130" cy="186" r="13" fill="rgba(14,165,233,0.18)" stroke="rgba(14,165,233,0.75)" stroke-width="1.5" filter="url(#nj-gf)"/>
+          <circle cx="130" cy="186" r="5" fill="#0EA5E9"/>
+          <text x="130" y="167" text-anchor="middle" fill="rgba(224,242,254,0.92)" font-size="9.5" font-family="sans-serif" font-weight="700" letter-spacing="0.06em">FASE 1</text>
+          <text x="130" y="157" text-anchor="middle" fill="rgba(14,165,233,0.75)" font-size="8.5" font-family="sans-serif">Diagnóstico</text>
+
+          <!-- Node 2 — Capacitación -->
+          <circle class="nj-node-glow nj-node-glow-2" cx="385" cy="182" r="24" fill="url(#nj-ng)"/>
+          <circle class="nj-node nj-node-2" cx="385" cy="182" r="13" fill="rgba(14,165,233,0.18)" stroke="rgba(14,165,233,0.75)" stroke-width="1.5" filter="url(#nj-gf)"/>
+          <circle cx="385" cy="182" r="5" fill="#0EA5E9"/>
+          <text x="385" y="163" text-anchor="middle" fill="rgba(224,242,254,0.92)" font-size="9.5" font-family="sans-serif" font-weight="700" letter-spacing="0.06em">FASE 2</text>
+          <text x="385" y="153" text-anchor="middle" fill="rgba(14,165,233,0.75)" font-size="8.5" font-family="sans-serif">Capacitación</text>
+
+          <!-- Node 3 — Digitalización -->
+          <circle class="nj-node-glow nj-node-glow-3" cx="630" cy="184" r="24" fill="url(#nj-ng)"/>
+          <circle class="nj-node nj-node-3" cx="630" cy="184" r="13" fill="rgba(14,165,233,0.18)" stroke="rgba(14,165,233,0.75)" stroke-width="1.5" filter="url(#nj-gf)"/>
+          <circle cx="630" cy="184" r="5" fill="#0EA5E9"/>
+          <text x="630" y="165" text-anchor="middle" fill="rgba(224,242,254,0.92)" font-size="9.5" font-family="sans-serif" font-weight="700" letter-spacing="0.06em">FASE 3</text>
+          <text x="630" y="155" text-anchor="middle" fill="rgba(14,165,233,0.75)" font-size="8.5" font-family="sans-serif">Digitalización</text>
+
+          <!-- Node 4 — Implementación -->
+          <circle class="nj-node-glow nj-node-glow-4" cx="828" cy="183" r="24" fill="url(#nj-ng)"/>
+          <circle class="nj-node nj-node-4" cx="828" cy="183" r="13" fill="rgba(14,165,233,0.18)" stroke="rgba(14,165,233,0.75)" stroke-width="1.5" filter="url(#nj-gf)"/>
+          <circle cx="828" cy="183" r="5" fill="#0EA5E9"/>
+          <text x="828" y="164" text-anchor="middle" fill="rgba(224,242,254,0.92)" font-size="9.5" font-family="sans-serif" font-weight="700" letter-spacing="0.06em">FASE 4</text>
+          <text x="828" y="154" text-anchor="middle" fill="rgba(14,165,233,0.75)" font-size="8.5" font-family="sans-serif">Implementación</text>
+
+          <!-- Boat wake trail (before boat so it renders below) -->
+          <ellipse class="nj-wake" cx="-12" cy="197" rx="22" ry="3"
+            fill="none" stroke="rgba(14,165,233,0.3)" stroke-width="1"/>
+
+          <!-- High-quality boat (origin = waterline center) -->
+          <g class="nj-boat" style="filter:drop-shadow(0 4px 12px rgba(14,165,233,0.45)) drop-shadow(0 0 24px rgba(14,165,233,0.22));">
+            <g class="nj-boat-body">
+              <!-- Hull (below waterline) -->
+              <path d="M-42,0 Q-46,11 -44,15 L44,15 Q46,11 42,0 Q0,-5 -42,0Z"
+                    fill="url(#nj-hull)" stroke="rgba(200,230,255,0.30)" stroke-width="0.8"/>
+              <!-- Waterline stripe -->
+              <line x1="-32" y1="7" x2="32" y2="7"
+                    stroke="rgba(200,230,255,0.18)" stroke-width="0.8"/>
+              <!-- Mast -->
+              <line x1="-2" y1="0" x2="-2" y2="-46"
+                    stroke="rgba(220,240,255,0.88)" stroke-width="1.5"/>
+              <!-- Main sail -->
+              <path d="M-2,-46 Q32,-24 30,0 L-2,0Z"
+                    fill="url(#nj-sail-g)" stroke="rgba(200,230,255,0.22)" stroke-width="0.7"/>
+              <!-- Jib sail -->
+              <path d="M-2,-30 L-40,0 L-2,0Z"
+                    fill="rgba(200,230,255,0.30)" stroke="rgba(200,230,255,0.14)" stroke-width="0.6"/>
+            </g>
           </g>
         </svg>
       </div>
