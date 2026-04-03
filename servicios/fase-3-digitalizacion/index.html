@@ -23,15 +23,99 @@
     <span></span><span></span><span></span><span></span>
   </div>
   <div class="container">
-    <div class="phase-hero__content">
-      <span class="label reveal">Fase 3 &middot; Digitalización</span>
-      <h1 class="display-lg reveal delay-1">Sistemas conectados para escalar</h1>
-      <p class="body-lg reveal delay-2">Transformamos procesos manuales en flujos digitales integrados: CRM configurado para el ciclo náutico, automatizaciones que no descansan, analítica accionable y captación digital que trabaja por ti las 24 horas.</p>
+    <div class="phase-hero__inner">
+      <div class="phase-hero__content">
+        <span class="label reveal">Fase 3 &middot; Digitalización</span>
+        <h1 class="display-lg reveal delay-1">Sistemas conectados para escalar</h1>
+        <p class="body-lg reveal delay-2">Transformamos procesos manuales en flujos digitales integrados: CRM configurado para el ciclo náutico, automatizaciones que no descansan, analítica accionable y captación digital que trabaja por ti las 24 horas.</p>
+      </div>
+      <div class="phase-hero__anim" aria-hidden="true">
+        <!-- Data-network animation — Digitalización -->
+        <svg viewBox="0 0 260 240" class="phase-anim-svg" xmlns="http://www.w3.org/2000/svg">
+          <!-- Connection lines (drawn before nodes so nodes appear on top) -->
+          <line x1="130" y1="120" x2="55"  y2="60"  stroke="rgba(167,139,250,0.25)" stroke-width="1.2"/>
+          <line x1="130" y1="120" x2="205" y2="60"  stroke="rgba(167,139,250,0.25)" stroke-width="1.2"/>
+          <line x1="130" y1="120" x2="55"  y2="180" stroke="rgba(167,139,250,0.25)" stroke-width="1.2"/>
+          <line x1="130" y1="120" x2="205" y2="180" stroke="rgba(167,139,250,0.25)" stroke-width="1.2"/>
+          <line x1="55"  y1="60"  x2="205" y2="60"  stroke="rgba(167,139,250,0.14)" stroke-width="1"/>
+          <line x1="55"  y1="180" x2="205" y2="180" stroke="rgba(167,139,250,0.14)" stroke-width="1"/>
+          <!-- Outer ring -->
+          <circle cx="130" cy="120" r="108" fill="none" stroke="rgba(167,139,250,0.07)" stroke-width="1"/>
+          <!-- Moving data packets (circles travelling along paths) -->
+          <!-- Packet A-to-B  (130,120 → 55,60) -->
+          <circle class="dig-packet dig-pk1" r="3" fill="#a78bfa">
+            <animateMotion dur="2.8s" repeatCount="indefinite" begin="0s">
+              <mpath href="#dig-path-ab"/>
+            </animateMotion>
+          </circle>
+          <!-- Packet B-to-A  (55,60 → 130,120) -->
+          <circle class="dig-packet dig-pk2" r="3" fill="#a78bfa">
+            <animateMotion dur="2.8s" repeatCount="indefinite" begin="1.4s">
+              <mpath href="#dig-path-ba"/>
+            </animateMotion>
+          </circle>
+          <!-- Packet A-to-C  (130,120 → 205,60) -->
+          <circle class="dig-packet dig-pk3" r="3" fill="#a78bfa">
+            <animateMotion dur="2.8s" repeatCount="indefinite" begin="0.7s">
+              <mpath href="#dig-path-ac"/>
+            </animateMotion>
+          </circle>
+          <!-- Packet A-to-D  (130,120 → 55,180) -->
+          <circle class="dig-packet dig-pk4" r="3" fill="#a78bfa">
+            <animateMotion dur="2.8s" repeatCount="indefinite" begin="0s">
+              <mpath href="#dig-path-ad"/>
+            </animateMotion>
+          </circle>
+          <!-- Packet D-to-E  (55,180 → 205,180) -->
+          <circle class="dig-packet dig-pk5" r="2.5" fill="#a78bfa">
+            <animateMotion dur="3.5s" repeatCount="indefinite" begin="1s">
+              <mpath href="#dig-path-de"/>
+            </animateMotion>
+          </circle>
+          <!-- Packet C-to-E  (205,60 → 205,180) -->
+          <circle class="dig-packet dig-pk6" r="2.5" fill="#a78bfa">
+            <animateMotion dur="3s" repeatCount="indefinite" begin="0.5s">
+              <mpath href="#dig-path-ce"/>
+            </animateMotion>
+          </circle>
+          <!-- Hidden paths for animateMotion -->
+          <defs>
+            <path id="dig-path-ab" d="M130,120 L55,60"/>
+            <path id="dig-path-ba" d="M55,60 L130,120"/>
+            <path id="dig-path-ac" d="M130,120 L205,60"/>
+            <path id="dig-path-ad" d="M130,120 L55,180"/>
+            <path id="dig-path-de" d="M55,180 L205,180"/>
+            <path id="dig-path-ce" d="M205,60 L205,180"/>
+          </defs>
+          <!-- Nodes -->
+          <!-- Center hub -->
+          <circle class="dig-node dig-n1" cx="130" cy="120" r="16" fill="rgba(167,139,250,0.18)" stroke="rgba(167,139,250,0.7)" stroke-width="1.5"/>
+          <circle cx="130" cy="120" r="6" fill="#a78bfa"/>
+          <!-- Top-left -->
+          <circle class="dig-node dig-n2" cx="55" cy="60" r="11" fill="rgba(167,139,250,0.15)" stroke="rgba(167,139,250,0.55)" stroke-width="1.2"/>
+          <circle cx="55" cy="60" r="4.5" fill="#a78bfa"/>
+          <!-- Top-right -->
+          <circle class="dig-node dig-n3" cx="205" cy="60" r="11" fill="rgba(167,139,250,0.15)" stroke="rgba(167,139,250,0.55)" stroke-width="1.2"/>
+          <circle cx="205" cy="60" r="4.5" fill="#a78bfa"/>
+          <!-- Bottom-left -->
+          <circle class="dig-node dig-n4" cx="55" cy="180" r="11" fill="rgba(167,139,250,0.15)" stroke="rgba(167,139,250,0.55)" stroke-width="1.2"/>
+          <circle cx="55" cy="180" r="4.5" fill="#a78bfa"/>
+          <!-- Bottom-right -->
+          <circle class="dig-node dig-n5" cx="205" cy="180" r="11" fill="rgba(167,139,250,0.15)" stroke="rgba(167,139,250,0.55)" stroke-width="1.2"/>
+          <circle cx="205" cy="180" r="4.5" fill="#a78bfa"/>
+          <!-- Labels -->
+          <text x="130" y="145" text-anchor="middle" fill="rgba(167,139,250,0.7)" font-size="8" font-family="sans-serif">CRM</text>
+          <text x="55"  y="49"  text-anchor="middle" fill="rgba(167,139,250,0.55)" font-size="7.5" font-family="sans-serif">Auto</text>
+          <text x="205" y="49"  text-anchor="middle" fill="rgba(167,139,250,0.55)" font-size="7.5" font-family="sans-serif">Lead</text>
+          <text x="55"  y="199" text-anchor="middle" fill="rgba(167,139,250,0.55)" font-size="7.5" font-family="sans-serif">KPI</text>
+          <text x="205" y="199" text-anchor="middle" fill="rgba(167,139,250,0.55)" font-size="7.5" font-family="sans-serif">Web</text>
+        </svg>
+      </div>
     </div>
   </div>
 </header>
 
-<section class="phase-stats">
+<section class="phase-stats phase-stats--dig">
   <div class="container">
     <div class="phase-stats__grid">
       <article class="stat-card reveal">
@@ -383,6 +467,19 @@
     </div>
   </div>
 </section>
+
+<div class="faq-divider">
+  <div class="container">
+    <div class="faq-divider__inner">
+      <span class="faq-divider__line"></span>
+      <span class="faq-divider__badge">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <span>Preguntas Frecuentes</span>
+      </span>
+      <span class="faq-divider__line faq-divider__line--r"></span>
+    </div>
+  </div>
+</div>
 
 <section class="phase-faq">
   <div class="container">

@@ -26,7 +26,6 @@
   opacity: 0.35;
 }
 .services-hero__content {
-  max-width: 780px;
   position: relative;
   z-index: 1;
 }
@@ -259,24 +258,11 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.9rem;
 }
-.stat-card {
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 1.1rem;
-}
-.stat-card__value {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  color: var(--blue);
-  line-height: 1;
-  margin-bottom: 0.4rem;
-}
-.stat-card__label {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  line-height: 1.5;
-}
+/* Phase colour tokens — set on .phase-stats--* */
+.phase-stats--diag { --phase-color: #38bdf8; --phase-color-dim: rgba(56,189,248,0.14); }
+.phase-stats--cap  { --phase-color: #34d399; --phase-color-dim: rgba(52,211,153,0.14); }
+.phase-stats--dig  { --phase-color: #a78bfa; --phase-color-dim: rgba(167,139,250,0.14); }
+.phase-stats--imp  { --phase-color: #fb923c; --phase-color-dim: rgba(251,146,60,0.14); }
 
 .phase-cta {
   padding: 0 0 var(--space-xl);
@@ -474,39 +460,53 @@
   background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 1.4rem;
+  padding: 2rem 1.5rem 1.75rem;
   text-align: center;
   transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
   position: relative;
   overflow: hidden;
 }
+/* Coloured top accent bar */
+.stat-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--phase-color, var(--blue)) 40%, var(--phase-color, var(--blue)) 60%, transparent);
+  opacity: 0.75;
+}
+/* Hover background glow from top */
 .stat-card::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 60% 60% at 50% 0%, var(--blue-subtle), transparent 70%);
+  background: radial-gradient(ellipse 70% 55% at 50% 0%, var(--phase-color-dim, var(--blue-subtle)), transparent 70%);
   opacity: 0;
   transition: opacity 0.3s;
 }
-.stat-card:hover { border-color: var(--border-mid); transform: translateY(-3px); box-shadow: var(--shadow-glow); }
+.stat-card:hover { border-color: var(--border-mid); transform: translateY(-4px); box-shadow: 0 8px 40px rgba(14,165,233,0.18); }
 .stat-card:hover::before { opacity: 1; }
 .stat-card__value {
   font-family: var(--font-display);
-  font-size: 2.4rem;
-  color: var(--blue);
+  font-size: 3.5rem;
+  color: var(--phase-color, var(--blue));
   line-height: 1;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.03em;
   position: relative;
 }
 .stat-card__suffix {
-  font-size: 1.4rem;
-  opacity: 0.75;
+  font-size: 2rem;
+  opacity: 0.7;
+  letter-spacing: 0;
 }
 .stat-card__label {
-  font-size: 0.82rem;
+  font-size: 0.83rem;
   color: var(--text-muted);
-  line-height: 1.55;
+  line-height: 1.58;
   position: relative;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
 }
 
 /* ═══ PHASE SERVICES SEPARATOR ══════════════════════════════ */
@@ -603,53 +603,298 @@
   .phase-services__grid { grid-template-columns: 1fr; }
   .phase-stats__grid { grid-template-columns: 1fr; }
   .tools-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .phase-hero__inner { grid-template-columns: 1fr; }
+  .phase-hero__anim  { display: none; }
+  .services-hero .container { grid-template-columns: 1fr; }
+  .services-hero__animation { margin-top: 2rem; }
 }
 @media (max-width: 640px) {
   .services-hero,
   .phase-hero { padding: 8rem 0 3rem; }
   .tools-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat-card__value { font-size: 2.8rem; }
 }
 
-/* ── Nautical Animation ─────────────────────────────────── */
+/* ═══ SERVICES HERO TWO-COLUMN LAYOUT ══════════════════════ */
+.services-hero .container {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
 .services-hero__animation {
   position: relative;
   z-index: 1;
-  margin-top: 2.5rem;
+  margin-top: 0;
 }
-.nautical-journey {
+
+/* ═══ NEW NAUTICAL JOURNEY ANIMATION ══════════════════════════ */
+.nj-wrapper {
   width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #010810;
+  border: 1px solid var(--border);
+  box-shadow: 0 0 60px rgba(14,165,233,0.08), inset 0 0 40px rgba(14,165,233,0.04);
 }
-.ocean-waves {
+.nj-svg {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
 }
-.wave1 { animation: undulate 6s ease-in-out infinite alternate; transform-origin: center bottom; }
-.wave2 { animation: undulate 8s ease-in-out infinite alternate-reverse; transform-origin: center bottom; }
-.boat { animation: sail 12s linear infinite; }
-@keyframes undulate {
-  0%   { transform: translateY(0); }
-  100% { transform: translateY(15px); }
+
+/* Stars */
+.nj-star { animation: njStarTwinkle 3s ease-in-out infinite alternate; }
+.nj-star--b { animation-duration: 4s; animation-delay: 0.8s; }
+.nj-star--c { animation-duration: 2.5s; animation-delay: 1.5s; }
+.nj-star--d { animation-duration: 5s; animation-delay: 0.3s; }
+@keyframes njStarTwinkle {
+  from { opacity: 0.3; }
+  to   { opacity: 1; }
 }
-@keyframes sail {
-  0%   { transform: translate(100px, 90px) rotate(-5deg); }
-  33%  { transform: translate(300px, 110px) rotate(5deg); }
-  66%  { transform: translate(500px, 80px) rotate(-5deg); }
-  100% { transform: translate(700px, 120px) rotate(0deg); }
+
+/* Ocean waves */
+.nj-ocean { animation: njUndulate 7s ease-in-out infinite alternate; transform-origin: center bottom; }
+.nj-w2    { animation: njUndulate 9s ease-in-out infinite alternate-reverse; transform-origin: center bottom; }
+@keyframes njUndulate {
+  from { transform: translateY(0); }
+  to   { transform: translateY(8px); }
 }
-.phase-node {
-  animation: pulse-node 3s ease-in-out infinite;
+
+/* Phase nodes */
+.nj-node        { animation: njNodePulse 3s ease-in-out infinite; }
+.nj-node-2      { animation-delay: 0.75s; }
+.nj-node-3      { animation-delay: 1.5s; }
+.nj-node-4      { animation-delay: 2.25s; }
+@keyframes njNodePulse {
+  0%, 100% { r: 13; opacity: 0.9; }
+  50%       { r: 16; opacity: 0.6; }
 }
-.node-2 { animation-delay: 0.75s; }
-.node-3 { animation-delay: 1.5s; }
-.node-4 { animation-delay: 2.25s; }
-@keyframes pulse-node {
-  0%, 100% { r: 10; opacity: 1; }
-  50%       { r: 14; opacity: 0.7; }
+.nj-node-glow { animation: njGlowPulse 3s ease-in-out infinite; }
+.nj-node-glow-2 { animation-delay: 0.75s; }
+.nj-node-glow-3 { animation-delay: 1.5s; }
+.nj-node-glow-4 { animation-delay: 2.25s; }
+@keyframes njGlowPulse {
+  0%, 100% { r: 24; opacity: 0.25; }
+  50%       { r: 32; opacity: 0.55; }
+}
+
+/* Boat sailing animation */
+.nj-boat {
+  animation: njBoatSail 18s linear infinite;
+}
+.nj-boat-body {
+  animation: njBoatBob 4s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+@keyframes njBoatSail {
+  0%    { transform: translate(-70px, 188px) rotate(0deg); }
+  8%    { transform: translate(30px, 185px) rotate(2deg); }
+  18%   { transform: translate(130px, 188px) rotate(-1deg); }
+  30%   { transform: translate(250px, 183px) rotate(3deg); }
+  44%   { transform: translate(380px, 186px) rotate(-2deg); }
+  57%   { transform: translate(500px, 183px) rotate(2deg); }
+  68%   { transform: translate(630px, 186px) rotate(-1deg); }
+  78%   { transform: translate(730px, 183px) rotate(2deg); }
+  87%   { transform: translate(825px, 186px) rotate(-1deg); }
+  100%  { transform: translate(970px, 188px) rotate(1deg); }
+}
+@keyframes njBoatBob {
+  0%, 100% { transform: rotate(-1.5deg) translateY(0); }
+  33%      { transform: rotate(1.5deg) translateY(-3px); }
+  66%      { transform: rotate(-2deg) translateY(2px); }
+}
+
+/* Boat wake trail */
+.nj-wake {
+  animation: njBoatSail 18s linear infinite;
+  opacity: 0.35;
+}
+
+/* ═══ PHASE HERO TWO-COLUMN LAYOUT ════════════════════════════ */
+.phase-hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 280px);
+  gap: 3.5rem;
+  align-items: center;
+}
+.phase-hero__anim {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.phase-anim-svg {
+  width: 260px;
+  height: 260px;
+  overflow: visible;
+}
+
+/* ── Phase 1 — Diagnóstico (Radar) ─────────────────────── */
+.ra-group {
+  transform-origin: 120px 120px;
+  animation: raSweep 4s linear infinite;
+}
+@keyframes raSweep {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.ra-blip {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: raBlip 3.2s ease-in-out infinite;
+}
+.ra-b1 { animation-delay: 0s; }
+.ra-b2 { animation-delay: 0.8s; }
+.ra-b3 { animation-delay: 1.6s; }
+.ra-b4 { animation-delay: 2.4s; }
+@keyframes raBlip {
+  0%, 100% { opacity: 0; transform: scale(0.4); }
+  20%, 55%  { opacity: 1; transform: scale(1.8); }
+  75%       { opacity: 0.5; transform: scale(1); }
+}
+.ra-center-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: raCenterPulse 2.5s ease-in-out infinite;
+}
+@keyframes raCenterPulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50%       { transform: scale(1.8); opacity: 0.15; }
+}
+
+/* ── Phase 2 — Capacitación (Progress Bars) ────────────── */
+.cap-bar {
+  transform-box: fill-box;
+  transform-origin: 0% 50%;
+  animation: capBarFill 5s ease-in-out infinite;
+}
+.cap-bar-1 { animation-delay: 0s; }
+.cap-bar-2 { animation-delay: 0.35s; }
+.cap-bar-3 { animation-delay: 0.7s; }
+.cap-bar-4 { animation-delay: 1.05s; }
+@keyframes capBarFill {
+  0%, 5%   { transform: scaleX(0); opacity: 0; }
+  10%      { opacity: 1; }
+  55%, 80% { transform: scaleX(var(--bar-max, 1)); opacity: 1; }
+  90%,100% { transform: scaleX(0); opacity: 0; }
+}
+.cap-pct {
+  animation: capPctFade 5s ease-in-out infinite;
+}
+.cap-pct-1 { animation-delay: 0s; }
+.cap-pct-2 { animation-delay: 0.35s; }
+.cap-pct-3 { animation-delay: 0.7s; }
+.cap-pct-4 { animation-delay: 1.05s; }
+@keyframes capPctFade {
+  0%, 10% { opacity: 0; }
+  25%, 75% { opacity: 1; }
+  90%, 100% { opacity: 0; }
+}
+
+/* ── Phase 3 — Digitalización (Data Network) ───────────── */
+.dig-node {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: digNodePulse 2.5s ease-in-out infinite;
+}
+.dig-n1 { animation-delay: 0s; }
+.dig-n2 { animation-delay: 0.4s; }
+.dig-n3 { animation-delay: 0.8s; }
+.dig-n4 { animation-delay: 1.2s; }
+.dig-n5 { animation-delay: 1.6s; }
+@keyframes digNodePulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50%       { transform: scale(1.35); opacity: 1; }
+}
+.dig-packet {
+  animation: digPacketMove 3s linear infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.dig-pk1 { animation-delay: 0s; }
+.dig-pk2 { animation-delay: 0.75s; }
+.dig-pk3 { animation-delay: 1.5s; }
+.dig-pk4 { animation-delay: 2.25s; }
+.dig-pk5 { animation-delay: 0.4s; }
+.dig-pk6 { animation-delay: 1.8s; }
+@keyframes digPacketMove {
+  0%   { opacity: 0; offset-distance: 0%; transform: scale(0.5); }
+  10%  { opacity: 1; transform: scale(1); }
+  85%  { opacity: 1; }
+  100% { opacity: 0; offset-distance: 100%; transform: scale(0.5); }
+}
+
+/* ── Phase 4 — Implementación (Gears) ──────────────────── */
+.gear-1 {
+  transform-origin: 82px 133px;
+  animation: gearSpin 10s linear infinite;
+}
+.gear-2 {
+  transform-origin: 172px 133px;
+  animation: gearSpin 6.67s linear infinite reverse;
+}
+.gear-3 {
+  transform-origin: 172px 72px;
+  animation: gearSpin 4.17s linear infinite;
+}
+@keyframes gearSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.gear-check {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: gearCheck 4s ease-in-out infinite;
+}
+@keyframes gearCheck {
+  0%, 30% { opacity: 0; transform: scale(0.5); }
+  50%, 80% { opacity: 1; transform: scale(1); }
+  95%, 100% { opacity: 0; }
+}
+
+/* ═══ FAQ DIVIDER ════════════════════════════════════════════ */
+.faq-divider {
+  padding: 3rem 0 0;
+}
+.faq-divider__inner {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.faq-divider__line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-mid) 50%);
+}
+.faq-divider__line--r {
+  background: linear-gradient(270deg, transparent, var(--border-mid) 50%);
+}
+.faq-divider__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-mid);
+  border-radius: 50px;
+  padding: 0.55rem 1.3rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--blue);
+  white-space: nowrap;
+  box-shadow: 0 0 24px var(--blue-glow);
+  animation: faqBadgePulse 4s ease-in-out infinite;
+}
+@keyframes faqBadgePulse {
+  0%, 100% { box-shadow: 0 0 24px var(--blue-glow); }
+  50%      { box-shadow: 0 0 40px rgba(14,165,233,0.38); }
 }
 
 /* ── Deliverable Cards ──────────────────────────────────── */

@@ -23,15 +23,44 @@
     <span></span><span></span><span></span><span></span>
   </div>
   <div class="container">
-    <div class="phase-hero__content">
-      <span class="label reveal">Fase 1 &middot; Diagnóstico</span>
-      <h1 class="display-lg reveal delay-1">Entender antes de ejecutar</h1>
-      <p class="body-lg reveal delay-2">Mapeamos la realidad operativa de tu empresa náutica: procesos, tiempos, fricciones, dependencias y pérdidas invisibles. Sin claridad no hay transformación real.</p>
+    <div class="phase-hero__inner">
+      <div class="phase-hero__content">
+        <span class="label reveal">Fase 1 &middot; Diagnóstico</span>
+        <h1 class="display-lg reveal delay-1">Entender antes de ejecutar</h1>
+        <p class="body-lg reveal delay-2">Mapeamos la realidad operativa de tu empresa náutica: procesos, tiempos, fricciones, dependencias y pérdidas invisibles. Sin claridad no hay transformación real.</p>
+      </div>
+      <div class="phase-hero__anim" aria-hidden="true">
+        <!-- Radar animation — Diagnóstico -->
+        <svg viewBox="0 0 240 240" class="phase-anim-svg" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="120" cy="120" r="114" fill="none" stroke="rgba(56,189,248,0.06)" stroke-width="1"/>
+          <circle cx="120" cy="120" r="86"  fill="none" stroke="rgba(56,189,248,0.09)" stroke-width="1"/>
+          <circle cx="120" cy="120" r="57"  fill="none" stroke="rgba(56,189,248,0.13)" stroke-width="1"/>
+          <circle cx="120" cy="120" r="29"  fill="none" stroke="rgba(56,189,248,0.20)" stroke-width="1.5"/>
+          <line x1="120" y1="4"   x2="120" y2="236" stroke="rgba(56,189,248,0.09)" stroke-width="0.7"/>
+          <line x1="4"   y1="120" x2="236" y2="120" stroke="rgba(56,189,248,0.09)" stroke-width="0.7"/>
+          <line x1="39"  y1="39"  x2="201" y2="201" stroke="rgba(56,189,248,0.05)" stroke-width="0.7"/>
+          <line x1="201" y1="39"  x2="39"  y2="201" stroke="rgba(56,189,248,0.05)" stroke-width="0.7"/>
+          <!-- Rotating radar sweep -->
+          <g class="ra-group">
+            <path d="M120,120 L120,6 A114,114 0 0,1 192,42 Z" fill="rgba(56,189,248,0.14)"/>
+            <line x1="120" y1="120" x2="234" y2="120" stroke="rgba(56,189,248,0.80)" stroke-width="1.5" opacity="0.9"/>
+          </g>
+          <!-- Detection blips -->
+          <circle class="ra-blip ra-b1" cx="167" cy="78"  r="3.5" fill="#38bdf8"/>
+          <circle class="ra-blip ra-b2" cx="85"  cy="155" r="4"   fill="#38bdf8"/>
+          <circle class="ra-blip ra-b3" cx="158" cy="165" r="3"   fill="#38bdf8"/>
+          <circle class="ra-blip ra-b4" cx="68"  cy="95"  r="3.5" fill="#38bdf8"/>
+          <!-- Center target -->
+          <circle class="ra-center-pulse" cx="120" cy="120" r="14" fill="none" stroke="rgba(56,189,248,0.4)" stroke-width="1"/>
+          <circle cx="120" cy="120" r="5" fill="#38bdf8" opacity="0.95"/>
+          <circle cx="120" cy="120" r="2" fill="#fff" opacity="0.9"/>
+        </svg>
+      </div>
     </div>
   </div>
 </header>
 
-<section class="phase-stats">
+<section class="phase-stats phase-stats--diag">
   <div class="container">
     <div class="phase-stats__grid">
       <article class="stat-card reveal">
@@ -233,6 +262,19 @@
     </div>
   </div>
 </section>
+
+<div class="faq-divider">
+  <div class="container">
+    <div class="faq-divider__inner">
+      <span class="faq-divider__line"></span>
+      <span class="faq-divider__badge">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <span>Preguntas Frecuentes</span>
+      </span>
+      <span class="faq-divider__line faq-divider__line--r"></span>
+    </div>
+  </div>
+</div>
 
 <section class="phase-faq">
   <div class="container">
