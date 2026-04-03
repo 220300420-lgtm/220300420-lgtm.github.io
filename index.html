@@ -51,6 +51,43 @@
   <div class="hero__grid"></div>
   <div class="hero__horizon"></div>
 
+  <!-- Partículas flotantes -->
+  <div class="hero__particles" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- Rosa náutica animada -->
+  <div class="hero__compass" aria-hidden="true">
+    <svg class="hero__compass-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" fill="none">
+      <circle cx="100" cy="100" r="96" stroke="rgba(14,165,233,0.6)" stroke-width="1"/>
+      <circle cx="100" cy="100" r="72" stroke="rgba(14,165,233,0.4)" stroke-width="0.7"/>
+      <circle cx="100" cy="100" r="48" stroke="rgba(14,165,233,0.35)" stroke-width="0.7"/>
+      <circle cx="100" cy="100" r="24" stroke="rgba(14,165,233,0.5)" stroke-width="0.7"/>
+      <!-- N S E W arms -->
+      <line x1="100" y1="4" x2="100" y2="196" stroke="rgba(14,165,233,0.35)" stroke-width="0.7"/>
+      <line x1="4" y1="100" x2="196" y2="100" stroke="rgba(14,165,233,0.35)" stroke-width="0.7"/>
+      <line x1="29" y1="29" x2="171" y2="171" stroke="rgba(14,165,233,0.22)" stroke-width="0.7"/>
+      <line x1="171" y1="29" x2="29" y2="171" stroke="rgba(14,165,233,0.22)" stroke-width="0.7"/>
+      <!-- North arrow -->
+      <path d="M100 10 L106 90 L100 80 L94 90 Z" fill="rgba(14,165,233,0.65)"/>
+      <!-- South arrow -->
+      <path d="M100 190 L94 110 L100 120 L106 110 Z" fill="rgba(14,165,233,0.30)"/>
+      <!-- East arrow -->
+      <path d="M190 100 L110 94 L120 100 L110 106 Z" fill="rgba(14,165,233,0.30)"/>
+      <!-- West arrow -->
+      <path d="M10 100 L90 106 L80 100 L90 94 Z" fill="rgba(14,165,233,0.30)"/>
+      <!-- Center dot -->
+      <circle cx="100" cy="100" r="5" fill="rgba(14,165,233,0.7)"/>
+      <circle cx="100" cy="100" r="2.5" fill="rgba(14,165,233,1)"/>
+      <!-- Tick marks -->
+      <line x1="100" y1="32" x2="100" y2="42" stroke="rgba(14,165,233,0.5)" stroke-width="1"/>
+      <line x1="100" y1="158" x2="100" y2="168" stroke="rgba(14,165,233,0.5)" stroke-width="1"/>
+      <line x1="32" y1="100" x2="42" y2="100" stroke="rgba(14,165,233,0.5)" stroke-width="1"/>
+      <line x1="158" y1="100" x2="168" y2="100" stroke="rgba(14,165,233,0.5)" stroke-width="1"/>
+    </svg>
+  </div>
+
   <!-- Barco navegante — z-index 4, encima de las capas de oscuridad -->
   <div class="hero__boat" aria-hidden="true">
     <div class="hero__boat-sail">
@@ -402,6 +439,13 @@
 <!-- ═══════════════════════════════════════════════════════════
      CTA FINAL
 ══════════════════════════════════════════════════════════════ -->
+<div class="container">
+  <div class="cta-sep">
+    <div class="cta-sep__line"></div>
+    <div class="cta-sep__diamond"></div>
+    <div class="cta-sep__line cta-sep__line--r"></div>
+  </div>
+</div>
 <section class="cta-final">
   <div class="cta-final__bg"></div>
   <div class="container">
