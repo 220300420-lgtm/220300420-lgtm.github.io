@@ -603,16 +603,37 @@
   .phase-services__grid { grid-template-columns: 1fr; }
   .phase-stats__grid { grid-template-columns: 1fr; }
   .tools-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .phase-hero__inner { grid-template-columns: 1fr; }
-  .phase-hero__anim  { display: none; }
-  .services-hero .container { grid-template-columns: 1fr; }
-  .services-hero__animation { margin-top: 2rem; }
+  /* Stack text above animation on mobile */
+  .phase-hero__inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .phase-hero__anim {
+    display: flex;
+    justify-content: center;
+  }
+  .phase-anim-svg {
+    width: 200px;
+    height: 200px;
+  }
+  /* Services hero: stack text above animation */
+  .services-hero .container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .services-hero__animation { margin-top: 0; }
 }
 @media (max-width: 640px) {
   .services-hero,
   .phase-hero { padding: 8rem 0 3rem; }
   .tools-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .stat-card__value { font-size: 2.8rem; }
+  .phase-anim-svg { width: 160px; height: 160px; }
+  .deliverable-card { padding: 1.25rem; }
+  .deliverables-grid { gap: 1rem; }
+  .phase-stats__grid { gap: 0.75rem; }
+  .phase-services__grid { gap: 0.75rem; }
+  .phase-overview__grid { gap: 0.75rem; }
 }
 
 /* ═══ SERVICES HERO TWO-COLUMN LAYOUT ══════════════════════ */
@@ -909,7 +930,7 @@
 .deliverables-head p  { color: var(--text-muted); max-width: 620px; margin: 0 auto; }
 .deliverables-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
   gap: 1.5rem;
 }
 .deliverable-card {
@@ -933,8 +954,16 @@
   border-bottom: 1px solid var(--border);
 }
 .deliverable-header .d-icon {
-  font-size: 1.6rem;
-  line-height: 1;
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: 12px;
+  background: rgba(14,165,233,0.10);
+  border: 1px solid rgba(14,165,233,0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue);
   flex-shrink: 0;
 }
 .deliverable-header h4 {
