@@ -98,6 +98,7 @@ const ADAPTIA_WA = window.ADAPTIA_WA || '52XXXXXXXXXX';
   if (servicesLink && servicesItem) {
     const megaMenu = servicesItem.querySelector('.mega-menu');
     let closeTimer = null;
+    let resizeTimer = null;
 
     const positionArrow = () => {
       if (!megaMenu) return;
@@ -105,6 +106,12 @@ const ADAPTIA_WA = window.ADAPTIA_WA || '52XXXXXXXXXX';
       const menuRect    = megaMenu.getBoundingClientRect();
       const arrowLeft   = triggerRect.left + triggerRect.width / 2 - menuRect.left;
       megaMenu.style.setProperty('--arrow-left', arrowLeft + 'px');
+    };
+
+    const closeMenu = () => {
+      if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; }
+      servicesItem.classList.remove('menu-open');
+      servicesLink.setAttribute('aria-expanded', 'false');
     };
 
     const openMenu = () => {
@@ -116,9 +123,7 @@ const ADAPTIA_WA = window.ADAPTIA_WA || '52XXXXXXXXXX';
 
     const scheduleClose = () => {
       closeTimer = setTimeout(() => {
-        servicesItem.classList.remove('menu-open');
-        servicesLink.setAttribute('aria-expanded', 'false');
-        closeTimer = null;
+        closeMenu();
       }, 150);
     };
 
@@ -136,15 +141,14 @@ const ADAPTIA_WA = window.ADAPTIA_WA || '52XXXXXXXXXX';
     });
 
     document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') {
-        if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; }
-        servicesItem.classList.remove('menu-open');
-        servicesLink.setAttribute('aria-expanded', 'false');
-      }
+      if (e.key === 'Escape') closeMenu();
     });
 
     window.addEventListener('resize', () => {
-      if (servicesItem.classList.contains('menu-open')) positionArrow();
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        if (servicesItem.classList.contains('menu-open')) positionArrow();
+      }, 100);
     }, { passive: true });
   }
 
