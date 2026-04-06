@@ -26,6 +26,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
+  position: relative;
 }
 
 /* ─── LOGO ─── */
@@ -91,6 +92,10 @@
 .navbar__item {
   position: relative;
 }
+/* Mega-menu item uses .navbar__inner as positioning context to keep menu in viewport */
+.navbar__item--mega {
+  position: static;
+}
 .mega-menu {
   position: absolute;
   top: calc(100% + 1rem);
@@ -115,7 +120,7 @@
   content: '';
   position: absolute;
   top: -8px;
-  left: 50%;
+  left: var(--arrow-left, 50%);
   width: 14px;
   height: 14px;
   background: rgba(2, 12, 27, 0.96);
@@ -124,7 +129,8 @@
   transform: translateX(-50%) rotate(45deg);
 }
 .navbar__item--mega:hover .mega-menu,
-.navbar__item--mega:focus-within .mega-menu {
+.navbar__item--mega:focus-within .mega-menu,
+.navbar__item--mega.menu-open .mega-menu {
   opacity: 1;
   pointer-events: auto;
   transform: translateX(-50%) translateY(0);

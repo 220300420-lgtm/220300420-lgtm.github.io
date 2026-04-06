@@ -96,16 +96,60 @@ const ADAPTIA_WA = window.ADAPTIA_WA || '52XXXXXXXXXX';
   }
 
   if (servicesLink && servicesItem) {
-    const setExpanded = (value) => servicesLink.setAttribute('aria-expanded', value ? 'true' : 'false');
-    servicesItem.addEventListener('mouseenter', () => setExpanded(true));
-    servicesItem.addEventListener('mouseleave', () => setExpanded(false));
-    servicesItem.addEventListener('focusin', () => setExpanded(true));
+    const megaMenu = servicesItem.querySelector('.mega-menu');
+    let closeTimer = null;
+    let resizeTimer = null;
+
+    const positionArrow = () => {
+      if (!megaMenu) return;
+      const triggerRect = servicesLink.getBoundingClientRect();
+      const menuRect    = megaMenu.getBoundingClientRect();
+      const arrowLeft   = triggerRect.left + triggerRect.width / 2 - menuRect.left;
+      megaMenu.style.setProperty('--arrow-left', arrowLeft + 'px');
+    };
+
+    const closeMenu = () => {
+      if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; }
+      servicesItem.classList.remove('menu-open');
+      servicesLink.setAttribute('aria-expanded', 'false');
+    };
+
+    const openMenu = () => {
+      if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; }
+      servicesItem.classList.add('menu-open');
+      servicesLink.setAttribute('aria-expanded', 'true');
+      positionArrow();
+    };
+
+    const scheduleClose = () => {
+      closeTimer = setTimeout(() => {
+        closeMenu();
+      }, 150);
+    };
+
+    servicesItem.addEventListener('mouseenter', openMenu);
+    servicesItem.addEventListener('mouseleave', scheduleClose);
+
+    if (megaMenu) {
+      megaMenu.addEventListener('mouseenter', openMenu);
+      megaMenu.addEventListener('mouseleave', scheduleClose);
+    }
+
+    servicesItem.addEventListener('focusin', openMenu);
     servicesItem.addEventListener('focusout', e => {
-      if (!servicesItem.contains(e.relatedTarget)) setExpanded(false);
+      if (!servicesItem.contains(e.relatedTarget)) scheduleClose();
     });
+
     document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') setExpanded(false);
+      if (e.key === 'Escape') closeMenu();
     });
+
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        if (servicesItem.classList.contains('menu-open')) positionArrow();
+      }, 100);
+    }, { passive: true });
   }
 
   /* Active link based on current page */
