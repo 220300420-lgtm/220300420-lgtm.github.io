@@ -375,6 +375,16 @@ ADAPTIA.i18n = {
     'services.tool.gws':       'Operación colaborativa',
     'services.tool.clarity':   'Comportamiento web',
 
+    /* SVG timeline labels */
+    'services.svg.fase1.num':  'FASE 1',
+    'services.svg.fase1.name': 'Diagnóstico',
+    'services.svg.fase2.num':  'FASE 2',
+    'services.svg.fase2.name': 'Capacitación',
+    'services.svg.fase3.num':  'FASE 3',
+    'services.svg.fase3.name': 'Digitalización',
+    'services.svg.fase4.num':  'FASE 4',
+    'services.svg.fase4.name': 'Implementación',
+
     /* ── FASE 1 — DIAGNÓSTICO ── */
     'fase1.hero.label': 'Fase 1 · Diagnóstico',
     'fase1.hero.title': 'Entender antes de ejecutar',
@@ -691,6 +701,46 @@ ADAPTIA.i18n = {
     'services.cta.title': 'Let\'s talk today',
     'services.cta.desc':  'Each service can be contracted individually or as part of a comprehensive plan. Tell us your situation and we\'ll put together a proposal.',
     'services.cta.btn':   'Inquire via WhatsApp',
+
+    /* ── SERVICIOS INDEX PAGE ── */
+    'services.index.hero.label': 'ADAPTIA Services',
+    'services.index.hero.title': 'A robust 4-phase methodology',
+    'services.index.hero.sub':   'We transform your nautical business operations from strategic diagnosis to full implementation with digitized processes, trained teams and results-driven control.',
+    'services.index.p1.title': 'Diagnosis',
+    'services.index.p1.desc':  'We perform a deep dive into your operation: we interview your team, map every critical process and identify the invisible friction points costing you time, money and clients. At the end you receive an executive diagnostic report with a prioritized roadmap, ready to execute from day one.',
+    'services.index.p1.cta':   'Explore the phase',
+    'services.index.p2.title': 'Training',
+    'services.index.p2.desc':  'We transform your company\'s tacit knowledge into replicable protocols and role-based training. We combine live operational manuals, micro-videos of critical tasks, practical assessments and an AI assistant trained on your processes. Result: autonomous team with fewer errors and higher speed from the first shift.',
+    'services.index.p2.cta':   'Explore the phase',
+    'services.index.p3.title': 'Digitalization',
+    'services.index.p3.desc':  'We connect your operation with the right digital tools: CRM configured for your nautical sales cycle, automations that eliminate repetitive tasks, lead-generation landing pages and real-time KPI dashboards. Each tool integrates with your team\'s actual workflow to maximize adoption and results from month one.',
+    'services.index.p3.cta':   'Explore the phase',
+    'services.index.p4.title': 'Implementation',
+    'services.index.p4.desc':  'We consolidate everything into an integrated and sustainable business operating system. We connect CRM, web, automations and reporting in a frictionless architecture, establish data governance, train process owners and guarantee continuous improvement with monthly KPI review cycles and an evolving optimization backlog.',
+    'services.index.p4.cta':   'Explore the phase',
+    'services.index.tools.label': 'Transparency & Tools',
+    'services.index.tools.title': 'Technologies we use to deliver with precision',
+    'services.index.tools.sub':   'We work with a proven stack for operations, marketing, automation and measurement.',
+    'services.tool.notion':    'Documentation & SOPs',
+    'services.tool.clientify': 'Commercial CRM',
+    'services.tool.make':      'Automations',
+    'services.tool.wp':        'Web & landing pages',
+    'services.tool.ga':        'Digital analytics',
+    'services.tool.gtm':       'Tag management & tracking',
+    'services.tool.looker':    'KPI dashboards',
+    'services.tool.manychat':  'Chatbots for lead capture',
+    'services.tool.gws':       'Collaborative operations',
+    'services.tool.clarity':   'Web behavior analytics',
+
+    /* SVG timeline labels */
+    'services.svg.fase1.num':  'PHASE 1',
+    'services.svg.fase1.name': 'Diagnosis',
+    'services.svg.fase2.num':  'PHASE 2',
+    'services.svg.fase2.name': 'Training',
+    'services.svg.fase3.num':  'PHASE 3',
+    'services.svg.fase3.name': 'Digitalization',
+    'services.svg.fase4.num':  'PHASE 4',
+    'services.svg.fase4.name': 'Implementation',
 
     /* Product card CTA */
     'products.card.cta': 'Inquire via WhatsApp →',
