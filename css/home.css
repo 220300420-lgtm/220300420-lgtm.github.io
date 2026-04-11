@@ -11,6 +11,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
+  padding-top: clamp(6rem, 14vh, 10rem); /* clear fixed navbar on short viewports */
   padding-bottom: 8vh;
   overflow: hidden;
 }
@@ -96,6 +97,8 @@
   margin-bottom: 1.75rem;
   opacity: 0;
   animation: fadeSlideUp 1s var(--ease-out) 0.5s forwards;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 .hero__title .line {
   display: block;
