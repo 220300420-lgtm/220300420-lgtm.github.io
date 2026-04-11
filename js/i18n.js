@@ -187,6 +187,7 @@ ADAPTIA.i18n = {
 
     'contact.map.label': 'Ubicación',
     'contact.map.title': 'Malecón Américas, Cancún',
+    'contact.map.open':  'Abrir en Google Maps',
     'services.hero.title': 'Nuestros servicios<br/>ADAPTIA',
     'services.hero.sub':   'Cada servicio está organizado en 4 fases metodológicas. Haz clic en cualquiera para conocer los detalles y consultar por WhatsApp.',
     'services.chip.base':  'Base — esencial',
@@ -689,6 +690,7 @@ ADAPTIA.i18n = {
 
     'contact.map.label': 'Location',
     'contact.map.title': 'Malecón Américas, Cancún',
+    'contact.map.open':  'Open in Google Maps',
 
     /* ── SERVICIOS / ENTREGABLES PAGE ── */
     'services.hero.label': 'Technical catalog',
