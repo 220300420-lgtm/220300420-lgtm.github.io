@@ -77,7 +77,9 @@ ADAPTIA.i18n = {
 
     /* ── HOME PAGE ── */
     'home.hero.badge':  'Consultoría Especializada · Sector Náutico Recreativo',
-    'home.hero.title':  '<span class="line"><span>Transformación</span></span><span class="line"><span>digital para tu <span class="accent">negocio</span></span></span>',
+    'home.hero.title.line1':   'Transformación',
+    'home.hero.title.line2':   'digital para tu ',
+    'home.hero.title.accent':  'negocio',
     'home.hero.sub':    'Llevamos PyMEs náuticas del caos operativo a la claridad digital. Diagnóstico profundo, capacitación con IA y 20 servicios especializados que transformarán a tu empresa o negocio.',
     'home.hero.btn1':   'Ver los servicios',
     'home.hero.btn2':   'Conocer la metodología',
@@ -576,7 +578,9 @@ ADAPTIA.i18n = {
 
     /* ── HOME PAGE ── */
     'home.hero.badge':  'Specialized Consulting · Recreational Nautical Sector',
-    'home.hero.title':  '<span class="line"><span>Digital</span></span><span class="line"><span>transformation for your <span class="accent">business</span></span></span>',
+    'home.hero.title.line1':   'Digital',
+    'home.hero.title.line2':   'transformation for your ',
+    'home.hero.title.accent':  'business',
     'home.hero.sub':    'We take nautical SMEs from operational chaos to digital clarity. Deep diagnostics, AI-powered training, and 20 specialized services that will transform your company.',
     'home.hero.btn1':   'View services',
     'home.hero.btn2':   'Learn the methodology',

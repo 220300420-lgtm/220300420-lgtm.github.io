@@ -101,12 +101,12 @@
   display: block;
   overflow: hidden;
 }
-.hero__title .line span {
+.hero__title .line > span {
   display: block;
   animation: clipUp 0.9s var(--ease-out) both;
 }
-.hero__title .line:nth-child(2) span { animation-delay: 0.12s; }
-.hero__title .line:nth-child(3) span { animation-delay: 0.24s; }
+.hero__title .line:nth-child(2) > span { animation-delay: 0.12s; }
+.hero__title .line:nth-child(3) > span { animation-delay: 0.24s; }
 
 @keyframes clipUp {
   from { transform: translateY(110%); }
