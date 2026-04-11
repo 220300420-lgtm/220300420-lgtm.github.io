@@ -70,10 +70,10 @@ ADAPTIA.i18n = {
     'footer.terms':       'Términos y Condiciones',
     'footer.privacy':     'Política de Privacidad',
     'footer.whatsapp':    'WhatsApp',
-    'footer.city':        'Cancún, Quintana Roo',
+    'footer.city':        'Blvd. Kukulcán Km 4, Malecón Américas',
     'footer.country':     'México',
     'footer.copy':        '© 2025 ADAPTIA Consultoría. Todos los derechos reservados.',
-    'footer.location':    'Cancún, MX — Sector Náutico Recreativo',
+    'footer.location':    'Cancún, Q.R. 77500 — Sector Náutico Recreativo',
 
     /* ── HOME PAGE ── */
     'home.hero.badge':  'Consultoría Especializada · Sector Náutico Recreativo',
@@ -135,7 +135,7 @@ ADAPTIA.i18n = {
     'home.cta.desc':  'Agenda una sesión de diagnóstico inicial. En 45 minutos identificamos tus principales áreas de oportunidad y te presentamos una propuesta priorizada.',
     'home.cta.btn1':  'Agendar por WhatsApp',
     'home.cta.btn2':  'Ver formulario de contacto',
-    'home.cta.loc':   'Cancún, Quintana Roo, México \u00a0·\u00a0 Atención en Español e Inglés',
+    'home.cta.loc':   'Blvd. Kukulcán Km 4, Malecón Américas, Cancún, Q.R. \u00a0·\u00a0 Atención en Español e Inglés',
 
     /* ── CONTACTO PAGE ── */
     'contact.hero.label': 'Conversemos',
@@ -148,7 +148,7 @@ ADAPTIA.i18n = {
     'contact.wa.label':       'WhatsApp — respuesta en <2 horas',
     'contact.wa.val':         '+52 (998) XXX-XXXX',
     'contact.location.label': 'Sede',
-    'contact.location.val':   'Cancún, Quintana Roo, México',
+    'contact.location.val':   'Blvd. Kukulcán Km 4, L-22, Malecón Américas, Cancún, Q.R. 77500',
     'contact.hours.label':    'Horario de atención',
     'contact.hours.val':      'Lun–Vie  9:00 – 21:00 EST',
     'contact.langs':          'Atendemos en <strong style="color:var(--text-primary);">Español e Inglés</strong>. Clientes internacionales bienvenidos.',
@@ -183,10 +183,7 @@ ADAPTIA.i18n = {
     'contact.form.opt.full':     'Plan integral completo',
 
     'contact.map.label': 'Ubicación',
-    'contact.map.title': 'Cancún, Quintana Roo',
-
-    /* ── SERVICIOS / ENTREGABLES PAGE ── */
-    'services.hero.label': 'Catálogo técnico',
+    'contact.map.title': 'Malecón Américas, Cancún',
     'services.hero.title': 'Nuestros servicios<br/>ADAPTIA',
     'services.hero.sub':   'Cada servicio está organizado en 4 fases metodológicas. Haz clic en cualquiera para conocer los detalles y consultar por WhatsApp.',
     'services.chip.base':  'Base — esencial',
@@ -292,10 +289,10 @@ ADAPTIA.i18n = {
     'footer.terms':       'Terms & Conditions',
     'footer.privacy':     'Privacy Policy',
     'footer.whatsapp':    'WhatsApp',
-    'footer.city':        'Cancún, Quintana Roo',
+    'footer.city':        'Blvd. Kukulcán Km 4, Malecón Américas',
     'footer.country':     'Mexico',
     'footer.copy':        '© 2025 ADAPTIA Consulting. All rights reserved.',
-    'footer.location':    'Cancún, MX — Recreational Nautical Sector',
+    'footer.location':    'Cancún, Q.R. 77500 — Recreational Nautical Sector',
 
     /* ── HOME PAGE ── */
     'home.hero.badge':  'Specialized Consulting · Recreational Nautical Sector',
@@ -357,7 +354,7 @@ ADAPTIA.i18n = {
     'home.cta.desc':  'Book an initial diagnostic session. In 45 minutes we identify your main opportunities and present a prioritized proposal.',
     'home.cta.btn1':  'Book via WhatsApp',
     'home.cta.btn2':  'View contact form',
-    'home.cta.loc':   'Cancún, Quintana Roo, Mexico \u00a0·\u00a0 Service in Spanish & English',
+    'home.cta.loc':   'Blvd. Kukulcán Km 4, Malecón Américas, Cancún, Q.R. \u00a0·\u00a0 Service in Spanish & English',
 
     /* ── CONTACTO PAGE ── */
     'contact.hero.label': 'Let\'s Talk',
@@ -370,7 +367,7 @@ ADAPTIA.i18n = {
     'contact.wa.label':       'WhatsApp — reply within <2 hours',
     'contact.wa.val':         '+52 (998) XXX-XXXX',
     'contact.location.label': 'Office',
-    'contact.location.val':   'Cancún, Quintana Roo, Mexico',
+    'contact.location.val':   'Blvd. Kukulcán Km 4, L-22, Malecón Américas, Cancún, Q.R. 77500',
     'contact.hours.label':    'Business hours',
     'contact.hours.val':      'Mon–Fri  9:00 – 21:00 EST',
     'contact.langs':          'We serve in <strong style="color:var(--text-primary);">Spanish and English</strong>. International clients welcome.',
@@ -405,7 +402,7 @@ ADAPTIA.i18n = {
     'contact.form.opt.full':     'Full comprehensive plan',
 
     'contact.map.label': 'Location',
-    'contact.map.title': 'Cancún, Quintana Roo',
+    'contact.map.title': 'Malecón Américas, Cancún',
 
     /* ── SERVICIOS / ENTREGABLES PAGE ── */
     'services.hero.label': 'Technical catalog',
