@@ -6,7 +6,7 @@
 "use strict";
 
 /* ─── WhatsApp — fuente única de verdad ─── */
-window.ADAPTIA_WA = '52XXXXXXXXXX';
+window.ADAPTIA_WA = '529983909502';
 
 (function injectLayout() {
   const waNumber = window.ADAPTIA_WA;
