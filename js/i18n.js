@@ -125,7 +125,7 @@ ADAPTIA.i18n = {
     'home.why5.title': 'Visión Internacional',
     'home.why5.desc':  'Desde Cancún construimos metodologías escalables con proyección hacia marinas del Caribe, Golfo de México y Latinoamérica. Diseñado para crecer contigo.',
     'home.why6.title': 'Herramientas Reales',
-    'home.why6.desc':  'Clientify, Make, Kommo, Looker Studio, n8n. Herramientas probadas en entornos reales. No teoria: implementación concreta con resultados medibles desde el mes uno.',
+    'home.why6.desc':  'Clientify, Make, Kommo, Looker Studio, n8n. Herramientas probadas en entornos reales. No teoría: implementación concreta con resultados medibles desde el mes uno.',
 
     'home.partners.label': 'Ecosistema',
     'home.partners.title': 'Nuestros Partners',
@@ -512,8 +512,8 @@ ADAPTIA.applyLang = function(lang) {
   }
 
   /* update WA float tooltip aria-label if present */
-  var waBtn = document.querySelector('.wa-btn');
-  if (waBtn) {
-    waBtn.setAttribute('aria-label', lang === 'en' ? 'WhatsApp' : 'WhatsApp');
+  const waBtn = document.querySelector('.wa-btn');
+  if (waBtn && dict['wa.tooltip']) {
+    waBtn.setAttribute('aria-label', dict['wa.tooltip']);
   }
 };

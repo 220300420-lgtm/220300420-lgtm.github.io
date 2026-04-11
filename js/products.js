@@ -296,113 +296,114 @@ ADAPTIA.products = [
 ];
 
 /* ─── RENDERIZADOR DE CARD ─── */
-ADAPTIA.renderCard = function(product, options) {
-  options = options || {};
-  var full      = options.full      || false;
-  var featured  = options.featured  || false;
-  var featClass = featured ? ' p-card--featured' : '';
-  var fullClass = full     ? ' full'             : '';
+ADAPTIA.renderCard = function(product, options = {}) {
+  const { full = false, featured = false } = options;
+  const featClass = featured ? ' p-card--featured' : '';
+  const fullClass = full     ? ' full'             : '';
 
-  var lang = (window.ADAPTIA && window.ADAPTIA.lang) ? window.ADAPTIA.lang : 'es';
-  var name  = (lang === 'en' && product.nameEn)  ? product.nameEn  : product.name;
-  var desc  = (lang === 'en' && product.descEn)  ? product.descEn  : product.desc;
-  var phase = (lang === 'en' && product.phaseEn) ? product.phaseEn : product.phase;
-  var ctaTxt = (lang === 'en') ? 'Inquire via WhatsApp \u2192' : 'Consultar por WhatsApp \u2192';
+  const lang  = (window.ADAPTIA && window.ADAPTIA.lang) ? window.ADAPTIA.lang : 'es';
+  const name  = (lang === 'en' && product.nameEn)  ? product.nameEn  : product.name;
+  const desc  = (lang === 'en' && product.descEn)  ? product.descEn  : product.desc;
+  const phase = (lang === 'en' && product.phaseEn) ? product.phaseEn : product.phase;
+  const ctaTxt = (lang === 'en') ? 'Inquire via WhatsApp \u2192' : 'Consultar por WhatsApp \u2192';
 
-  return '<div class="p-card' + featClass + fullClass + '"' +
-         ' onclick="openProductModal(ADAPTIA.products.find(function(p){return p.id===\'' + product.id + '\';}))">' +
-         '<div class="p-card__top">' +
-           '<span class="p-card__id">' + product.id + '</span>' +
-           '<div class="p-card__badges">' +
-             '<span class="chip chip-' + product.chipClass + '">' + product.tier + '</span>' +
-           '</div>' +
-         '</div>' +
-         '<span class="p-card__phase ' + product.phaseColor + '">' + phase + '</span>' +
-         '<div class="p-card__name">' + name + '</div>' +
-         (full ? '<p class="p-card__desc">' + desc + '</p>' : '') +
-         (full ? '<div class="p-card__cta">' + ctaTxt + '</div>' : '') +
-         '</div>';
+  return `
+    <div class="p-card${featClass}${fullClass}"
+         onclick="openProductModal(ADAPTIA.products.find(p => p.id === '${product.id}'))">
+      <div class="p-card__top">
+        <span class="p-card__id">${product.id}</span>
+        <div class="p-card__badges">
+          <span class="chip chip-${product.chipClass}">${product.tier}</span>
+        </div>
+      </div>
+      <span class="p-card__phase ${product.phaseColor}">${phase}</span>
+      <div class="p-card__name">${name}</div>
+      ${full ? `<p class="p-card__desc">${desc}</p>` : ''}
+      ${full ? `<div class="p-card__cta">${ctaTxt}</div>` : ''}
+    </div>
+  `;
 };
 
 /* ─── RENDER GRIDS DE HOME (preview — 8 cards) ─── */
 ADAPTIA.renderHomeGrid = function(containerId) {
-  var container = document.getElementById(containerId);
+  const container = document.getElementById(containerId);
   if (!container) return;
 
-  var preview = ADAPTIA.products.slice(0, 8);
-  container.innerHTML = preview.map(function(p) { return ADAPTIA.renderCard(p, { full: false }); }).join('');
+  const preview = ADAPTIA.products.slice(0, 8);
+  container.innerHTML = preview.map(p => ADAPTIA.renderCard(p, { full: false })).join('');
 };
 
 /* ─── RENDER COMPLETO POR FASE (entregables.html) ─── */
 ADAPTIA.renderCatalog = function(containerId) {
-  var container = document.getElementById(containerId);
+  const container = document.getElementById(containerId);
   if (!container) return;
 
-  var lang = (window.ADAPTIA && window.ADAPTIA.lang) ? window.ADAPTIA.lang : 'es';
-  var dict = (window.ADAPTIA && window.ADAPTIA.i18n) ? (window.ADAPTIA.i18n[lang] || {}) : {};
+  const lang = (window.ADAPTIA && window.ADAPTIA.lang) ? window.ADAPTIA.lang : 'es';
+  const dict = (window.ADAPTIA && window.ADAPTIA.i18n) ? (window.ADAPTIA.i18n[lang] || {}) : {};
 
-  var phases = [
+  const phases = [
     { num: 1, nameKey: 'products.phase1.name', descKey: 'products.phase1.desc', numClass: 'phase-1-num' },
     { num: 2, nameKey: 'products.phase2.name', descKey: 'products.phase2.desc', numClass: 'phase-2-num' },
     { num: 3, nameKey: 'products.phase3.name', descKey: 'products.phase3.desc', numClass: 'phase-3-num' },
     { num: 4, nameKey: 'products.phase4.name', descKey: 'products.phase4.desc', numClass: 'phase-4-num' },
   ];
 
-  var phaseLabel = (lang === 'en') ? 'Phase' : 'Fase';
+  const phaseLabel = (lang === 'en') ? 'Phase' : 'Fase';
 
-  container.innerHTML = phases.map(function(phase) {
-    var phaseName = dict[phase.nameKey] || phase.nameKey;
-    var phaseDesc = dict[phase.descKey] || phase.descKey;
-    var phaseProducts = ADAPTIA.products.filter(function(p) { return p.phaseNum === phase.num; });
-    var cards = phaseProducts.map(function(p) { return ADAPTIA.renderCard(p, { full: true }); }).join('');
-    return '<div class="catalog__phase-section reveal" data-phase="' + phase.num + '">' +
-           '<div class="catalog__phase-header">' +
-             '<div class="catalog__phase-num ' + phase.numClass + '">' + phase.num + '</div>' +
-             '<div class="catalog__phase-info">' +
-               '<div class="catalog__phase-name">' + phaseLabel + ' ' + phase.num + ': ' + phaseName + '</div>' +
-               '<div class="catalog__phase-desc">' + phaseDesc + '</div>' +
-             '</div>' +
-           '</div>' +
-           '<div class="catalog__grid">' + cards + '</div>' +
-           '</div>';
+  container.innerHTML = phases.map(phase => {
+    const phaseName = dict[phase.nameKey] || phase.nameKey;
+    const phaseDesc = dict[phase.descKey] || phase.descKey;
+    const phaseProducts = ADAPTIA.products.filter(p => p.phaseNum === phase.num);
+    const cards = phaseProducts.map(p => ADAPTIA.renderCard(p, { full: true })).join('');
+    return `
+      <div class="catalog__phase-section reveal" data-phase="${phase.num}">
+        <div class="catalog__phase-header">
+          <div class="catalog__phase-num ${phase.numClass}">${phase.num}</div>
+          <div class="catalog__phase-info">
+            <div class="catalog__phase-name">${phaseLabel} ${phase.num}: ${phaseName}</div>
+            <div class="catalog__phase-desc">${phaseDesc}</div>
+          </div>
+        </div>
+        <div class="catalog__grid">${cards}</div>
+      </div>
+    `;
   }).join('');
 };
 
 /* ─── FILTROS DE ENTREGABLES ─── */
 ADAPTIA.initFilters = function() {
-  var filterBtns = document.querySelectorAll('.filter-btn');
-  var typeBtns   = document.querySelectorAll('.type-btn');
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const typeBtns   = document.querySelectorAll('.type-btn');
 
-  var activePhase = 'all';
-  var activeTier  = 'all';
+  let activePhase = 'all';
+  let activeTier  = 'all';
 
   function applyFilters() {
-    document.querySelectorAll('.catalog__phase-section').forEach(function(section) {
-      var phaseNum = section.dataset.phase;
-      var phaseMatch = activePhase === 'all' || activePhase === phaseNum;
+    document.querySelectorAll('.catalog__phase-section').forEach(section => {
+      const phaseNum = section.dataset.phase;
+      const phaseMatch = activePhase === 'all' || activePhase === phaseNum;
       section.classList.toggle('hidden', !phaseMatch);
     });
 
-    document.querySelectorAll('.p-card').forEach(function(card) {
-      var chipEl = card.querySelector('.chip');
-      var tier = chipEl ? chipEl.textContent.trim().toLowerCase() : '';
-      var tierMatch = activeTier === 'all' || tier === activeTier;
+    document.querySelectorAll('.p-card').forEach(card => {
+      const tier = card.querySelector('.chip')?.textContent?.trim().toLowerCase();
+      const tierMatch = activeTier === 'all' || tier === activeTier;
       card.classList.toggle('filtered-out', !tierMatch);
     });
   }
 
-  filterBtns.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      filterBtns.forEach(function(b) { b.classList.remove('active'); });
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       activePhase = btn.dataset.phase;
       applyFilters();
     });
   });
 
-  typeBtns.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      typeBtns.forEach(function(b) { b.classList.remove('active'); });
+  typeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      typeBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       activeTier = btn.dataset.tier;
       applyFilters();
