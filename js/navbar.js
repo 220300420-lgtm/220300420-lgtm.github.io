@@ -24,59 +24,59 @@ window.ADAPTIA_WA = '52XXXXXXXXXX';
           </a>
 
           <ul class="navbar__links">
-            <li><a href="/" class="nav-link" data-page="index">Inicio</a></li>
+            <li><a href="/" class="nav-link" data-page="index" data-i18n="nav.home">Inicio</a></li>
             <li class="navbar__item navbar__item--mega">
-              <a href="/servicios" class="nav-link nav-link--services" data-page="servicios" aria-haspopup="true" aria-expanded="false">Servicios</a>
+              <a href="/servicios" class="nav-link nav-link--services" data-page="servicios" aria-haspopup="true" aria-expanded="false" data-i18n="nav.services">Servicios</a>
               <div class="mega-menu" aria-label="Submenú de servicios">
                 <div class="mega-menu__col">
-                  <h4>Fase 1 · Diagnóstico</h4>
+                  <h4 data-i18n="nav.phase1.header">Fase 1 · Diagnóstico</h4>
                   <a href="/servicios/fase-1-diagnostico" class="mega-menu__item">
                     <span class="mega-menu__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><path d="M11 8v3l2 2"/></svg></span>
-                    <span><strong>Auditoría Operativa</strong><small>Detecta cuellos de botella críticos.</small></span>
+                    <span><strong data-i18n="nav.m1.title">Auditoría Operativa</strong><small data-i18n="nav.m1.desc">Detecta cuellos de botella críticos.</small></span>
                   </a>
                   <a href="/servicios/fase-1-diagnostico" class="mega-menu__item">
                     <span class="mega-menu__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
-                    <span><strong>KPIs Base</strong><small>Mide el punto de partida real.</small></span>
+                    <span><strong data-i18n="nav.m2.title">KPIs Base</strong><small data-i18n="nav.m2.desc">Mide el punto de partida real.</small></span>
                   </a>
                 </div>
                 <div class="mega-menu__col">
-                  <h4>Fase 2 · Capacitación</h4>
+                  <h4 data-i18n="nav.phase2.header">Fase 2 · Capacitación</h4>
                   <a href="/servicios/fase-2-capacitacion" class="mega-menu__item">
                     <span class="mega-menu__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
-                    <span><strong>Entrenamiento por Roles</strong><small>Habilidades prácticas por puesto.</small></span>
+                    <span><strong data-i18n="nav.m3.title">Entrenamiento por Roles</strong><small data-i18n="nav.m3.desc">Habilidades prácticas por puesto.</small></span>
                   </a>
                   <a href="/servicios/fase-2-capacitacion" class="mega-menu__item">
                     <span class="mega-menu__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="11" rx="2"/><path d="M12 2v6M9 8V5a3 3 0 0 1 6 0v3"/><circle cx="8.5" cy="14" r="1" fill="currentColor"/><circle cx="15.5" cy="14" r="1" fill="currentColor"/></svg></span>
-                    <span><strong>Asistente IA Interno</strong><small>Soporte continuo al equipo.</small></span>
+                    <span><strong data-i18n="nav.m4.title">Asistente IA Interno</strong><small data-i18n="nav.m4.desc">Soporte continuo al equipo.</small></span>
                   </a>
                 </div>
                 <div class="mega-menu__col">
-                  <h4>Fase 3 · Digitalización</h4>
+                  <h4 data-i18n="nav.phase3.header">Fase 3 · Digitalización</h4>
                   <a href="/servicios/fase-3-digitalizacion" class="mega-menu__item">
                     <span class="mega-menu__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 7h4v4H7z"/></svg></span>
-                    <span><strong>CRM + Automatizaciones</strong><small>Procesos conectados de punta a punta.</small></span>
+                    <span><strong data-i18n="nav.m5.title">CRM + Automatizaciones</strong><small data-i18n="nav.m5.desc">Procesos conectados de punta a punta.</small></span>
                   </a>
                   <a href="/servicios/fase-3-digitalizacion" class="mega-menu__item">
                     <span class="mega-menu__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
-                    <span><strong>Web y Captación</strong><small>Genera demanda de forma consistente.</small></span>
+                    <span><strong data-i18n="nav.m6.title">Web y Captación</strong><small data-i18n="nav.m6.desc">Genera demanda de forma consistente.</small></span>
                   </a>
                 </div>
                 <div class="mega-menu__col">
-                  <h4>Fase 4 · Implementación</h4>
+                  <h4 data-i18n="nav.phase4.header">Fase 4 · Implementación</h4>
                   <a href="/servicios/fase-4-implementacion" class="mega-menu__item">
                     <span class="mega-menu__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/></svg></span>
-                    <span><strong>Integración Total</strong><small>Unifica operación, ventas y control.</small></span>
+                    <span><strong data-i18n="nav.m7.title">Integración Total</strong><small data-i18n="nav.m7.desc">Unifica operación, ventas y control.</small></span>
                   </a>
                   <a href="/servicios/fase-4-implementacion" class="mega-menu__item">
                     <span class="mega-menu__icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></span>
-                    <span><strong>Mejora Continua</strong><small>Optimiza con datos y seguimiento.</small></span>
+                    <span><strong data-i18n="nav.m8.title">Mejora Continua</strong><small data-i18n="nav.m8.desc">Optimiza con datos y seguimiento.</small></span>
                   </a>
                 </div>
               </div>
             </li>
-            <li><a href="/metodologia" class="nav-link" data-page="metodologia">Metodología</a></li>
-            <li><a href="/nosotros"    class="nav-link" data-page="nosotros">Nosotros</a></li>
-            <li><a href="/contacto"    class="nav-link" data-page="contacto">Contacto</a></li>
+            <li><a href="/metodologia" class="nav-link" data-page="metodologia" data-i18n="nav.methodology">Metodología</a></li>
+            <li><a href="/nosotros"    class="nav-link" data-page="nosotros"    data-i18n="nav.about">Nosotros</a></li>
+            <li><a href="/contacto"    class="nav-link" data-page="contacto"    data-i18n="nav.contact">Contacto</a></li>
           </ul>
 
           <div class="navbar__right">
@@ -84,8 +84,8 @@ window.ADAPTIA_WA = '52XXXXXXXXXX';
               <button class="lang-btn active" data-lang="es">ES</button>
               <button class="lang-btn"        data-lang="en">EN</button>
             </div>
-            <a href="https://wa.me/${waNumber}?text=Hola%2C%20quiero%20agendar%20una%20sesión%20con%20ADAPTIA"
-               target="_blank" class="btn btn-primary btn-sm">
+            <a href="https://wa.me/${waNumber}?text=Hola%2C%20quiero%20agendar%20una%20sesi%C3%B3n%20con%20ADAPTIA"
+               target="_blank" class="btn btn-primary btn-sm" data-i18n="nav.cta">
               Agendar sesión →
             </a>
             <div class="navbar__burger" id="burger">
@@ -99,11 +99,11 @@ window.ADAPTIA_WA = '52XXXXXXXXXX';
 
     <!-- Mobile menu -->
     <div class="navbar__mobile-menu" id="mobileMenu">
-      <a href="/"            class="nav-link">Inicio</a>
-      <a href="/servicios"   class="nav-link">Servicios</a>
-      <a href="/metodologia" class="nav-link">Metodología</a>
-      <a href="/nosotros"    class="nav-link">Nosotros</a>
-      <a href="/contacto"    class="nav-link">Contacto</a>
+      <a href="/"            class="nav-link" data-i18n="nav.mob.home">Inicio</a>
+      <a href="/servicios"   class="nav-link" data-i18n="nav.mob.services">Servicios</a>
+      <a href="/metodologia" class="nav-link" data-i18n="nav.mob.methodology">Metodología</a>
+      <a href="/nosotros"    class="nav-link" data-i18n="nav.mob.about">Nosotros</a>
+      <a href="/contacto"    class="nav-link" data-i18n="nav.mob.contact">Contacto</a>
       <div class="mobile-social">
         <a href="https://www.instagram.com/adaptiaconsultoria?igsh=aTcycHd2aXNiYnoz&utm_source=qr" target="_blank" aria-label="Instagram" rel="noopener noreferrer">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12c0 3.259.014 3.668.072 4.948.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24c3.259 0 3.668-.014 4.948-.072 1.277-.06 2.148-.261 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.689.072-4.948 0-3.259-.014-3.667-.072-4.947-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
@@ -124,7 +124,7 @@ window.ADAPTIA_WA = '52XXXXXXXXXX';
   /* ─── WHATSAPP FLOAT ─── */
   const waHTML = `
     <div class="wa-float">
-      <div class="wa-tooltip">¿Tienes preguntas? Conversemos ahora</div>
+      <div class="wa-tooltip" data-i18n="wa.tooltip">¿Tienes preguntas? Conversemos ahora</div>
       <a href="https://wa.me/${waNumber}?text=Hola%2C%20me%20interesa%20conocer%20los%20servicios%20de%20ADAPTIA%20Consultoría"
          target="_blank" class="wa-btn" aria-label="WhatsApp">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
@@ -157,7 +157,7 @@ window.ADAPTIA_WA = '52XXXXXXXXXX';
             <polyline points="8 6 2 12 8 18"/>
           </svg>
           <div>
-            <span class="product-modal__tool-label">Herramienta Digital</span>
+            <span class="product-modal__tool-label" data-i18n="modal.tool.label">Herramienta Digital</span>
             <span class="product-modal__tool-name">—</span>
           </div>
           <span class="chip product-modal__badge" style="margin-left:auto">Base</span>
@@ -166,7 +166,7 @@ window.ADAPTIA_WA = '52XXXXXXXXXX';
           <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.273.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885m8.538-17.096A12.01 12.01 0 0 0 12.052 1.25C5.45 1.25.074 6.626.071 13.228c0 2.112.551 4.175 1.6 5.992L0 24l4.89-1.282c1.766.953 3.754 1.455 5.795 1.456h.004c6.602 0 11.978-5.376 11.981-11.978a11.96 11.96 0 0 0-3.518-8.497"/>
           </svg>
-          Consultar por WhatsApp
+          <span data-i18n="modal.wa.btn">Consultar por WhatsApp</span>
         </a>
       </div>
     </div>
@@ -179,7 +179,7 @@ window.ADAPTIA_WA = '52XXXXXXXXXX';
         <div class="footer__grid">
           <div class="footer__brand">
             <img src="/assets/img/logo.png" alt="ADAPTIA Consultoría" class="footer__logo" />
-            <p class="footer__tagline">
+            <p class="footer__tagline" data-i18n="footer.tagline">
               Consultoría de transformación digital especializada en PyMEs del
               sector náutico recreativo. Estrategia, tecnología y acompañamiento continuo.
             </p>
@@ -200,37 +200,37 @@ window.ADAPTIA_WA = '52XXXXXXXXXX';
           </div>
 
           <div class="footer__col">
-            <h4>Empresa</h4>
+            <h4 data-i18n="footer.col.company">Empresa</h4>
             <ul>
-              <li><a href="/nosotros">Nosotros</a></li>
-              <li><a href="/metodologia">Metodología</a></li>
-              <li><a href="/contacto">Contacto</a></li>
+              <li><a href="/nosotros" data-i18n="footer.nosotros">Nosotros</a></li>
+              <li><a href="/metodologia" data-i18n="footer.metodologia">Metodología</a></li>
+              <li><a href="/contacto" data-i18n="footer.contacto">Contacto</a></li>
             </ul>
           </div>
 
           <div class="footer__col">
-            <h4>Legal</h4>
+            <h4 data-i18n="footer.col.legal">Legal</h4>
             <ul>
-              <li><a href="/terminos-y-condiciones">Términos y Condiciones</a></li>
-              <li><a href="/politica-de-privacidad">Política de Privacidad</a></li>
+              <li><a href="/terminos-y-condiciones" data-i18n="footer.terms">Términos y Condiciones</a></li>
+              <li><a href="/politica-de-privacidad" data-i18n="footer.privacy">Política de Privacidad</a></li>
             </ul>
           </div>
 
           <div class="footer__col">
-            <h4>Contacto</h4>
+            <h4 data-i18n="footer.col.contact">Contacto</h4>
             <ul>
-              <li><a href="https://wa.me/${waNumber}" target="_blank">WhatsApp</a></li>
-              <li><a>Cancún, Quintana Roo</a></li>
-              <li><a>México</a></li>
+              <li><a href="https://wa.me/${waNumber}" target="_blank" data-i18n="footer.whatsapp">WhatsApp</a></li>
+              <li><a data-i18n="footer.city">Cancún, Quintana Roo</a></li>
+              <li><a data-i18n="footer.country">México</a></li>
             </ul>
           </div>
         </div>
 
         <div class="footer__bottom">
-          <span class="footer__copy">© 2025 ADAPTIA Consultoría. Todos los derechos reservados.</span>
+          <span class="footer__copy" data-i18n="footer.copy">© 2025 ADAPTIA Consultoría. Todos los derechos reservados.</span>
           <span class="footer__location">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:0.3rem;" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Cancún, MX — Sector Náutico Recreativo
+            <span data-i18n="footer.location">Cancún, MX — Sector Náutico Recreativo</span>
           </span>
         </div>
       </div>

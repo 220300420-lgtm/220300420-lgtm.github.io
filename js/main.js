@@ -229,12 +229,18 @@ const ADAPTIA_WA = window.ADAPTIA_WA || '52XXXXXXXXXX';
   const btns = document.querySelectorAll('.lang-btn');
   if (!btns.length) return;
 
-  btns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      btns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      document.documentElement.lang = btn.dataset.lang;
-      /* TODO: swap text content via i18n map */
+  /* Apply saved / default language on page load */
+  const savedLang = (window.ADAPTIA && window.ADAPTIA.lang) ? window.ADAPTIA.lang : 'es';
+  if (window.ADAPTIA && typeof window.ADAPTIA.applyLang === 'function') {
+    window.ADAPTIA.applyLang(savedLang);
+  }
+
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const lang = btn.dataset.lang;
+      if (window.ADAPTIA && typeof window.ADAPTIA.applyLang === 'function') {
+        window.ADAPTIA.applyLang(lang);
+      }
     });
   });
 })();
@@ -411,21 +417,27 @@ window.initOcean = function(canvasId) {
   });
 
   window.openProductModal = function(data) {
+    var lang = (window.ADAPTIA && window.ADAPTIA.lang) ? window.ADAPTIA.lang : 'es';
+    var name  = (lang === 'en' && data.nameEn)  ? data.nameEn  : data.name;
+    var desc  = (lang === 'en' && data.descEn)  ? data.descEn  : data.desc;
+    var phase = (lang === 'en' && data.phaseEn) ? data.phaseEn : data.phase;
+    var waTxt = (lang === 'en')
+      ? 'Hello, I\'m interested in the service *' + data.id + ' \u2014 ' + name + '*. Could you provide more information?'
+      : 'Hola, me interesa el servicio *' + data.id + ' \u2014 ' + name + '*. \u00bfPodr\u00edan brindarme m\u00e1s informaci\u00f3n?';
+
     overlay.querySelector('.product-modal__id').textContent   = data.id;
-    overlay.querySelector('.product-modal__name').textContent = data.name;
+    overlay.querySelector('.product-modal__name').textContent = name;
     overlay.querySelector('.product-modal__phase').innerHTML  =
-      `<span class="chip chip-${data.chipClass}">${data.phase}</span>`;
-    overlay.querySelector('.product-modal__desc').textContent = data.desc;
+      '<span class="chip chip-' + data.chipClass + '">' + phase + '</span>';
+    overlay.querySelector('.product-modal__desc').textContent = desc;
     overlay.querySelector('.product-modal__tool-name').textContent = data.tool;
     overlay.querySelector('.product-modal__badge').className  =
-      `chip chip-${data.chipClass}`;
+      'chip chip-' + data.chipClass;
     overlay.querySelector('.product-modal__badge').textContent = data.tier;
 
-    const waBtn = overlay.querySelector('.product-modal__wa-btn');
-    const msg   = encodeURIComponent(
-      `Hola, me interesa el servicio *${data.id} — ${data.name}*. ¿Podrían brindarme más información?`
-    );
-    waBtn.href = `https://wa.me/${ADAPTIA_WA}?text=${msg}`;
+    var waBtn = overlay.querySelector('.product-modal__wa-btn');
+    var msg   = encodeURIComponent(waTxt);
+    waBtn.href = 'https://wa.me/' + ADAPTIA_WA + '?text=' + msg;
 
     overlay.classList.add('open');
     document.body.style.overflow = 'hidden';
