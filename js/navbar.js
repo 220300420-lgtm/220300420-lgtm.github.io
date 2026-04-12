@@ -5,11 +5,7 @@
 
 "use strict";
 
-/* ─── WhatsApp — fuente única de verdad ─── */
-window.ADAPTIA_WA = '529983909502';
-
 (function injectLayout() {
-  const waNumber = window.ADAPTIA_WA;
 
   /* ─── NAVBAR HTML ─── */
   const navbarHTML = `
@@ -84,8 +80,8 @@ window.ADAPTIA_WA = '529983909502';
               <button class="lang-btn active" data-lang="es">ES</button>
               <button class="lang-btn"        data-lang="en">EN</button>
             </div>
-            <a href="https://wa.me/${waNumber}?text=Hola%2C%20quiero%20agendar%20una%20sesi%C3%B3n%20con%20ADAPTIA"
-               target="_blank" class="btn btn-primary btn-sm" data-i18n="nav.cta">
+            <a href="/contacto"
+               class="btn btn-primary btn-sm" data-i18n="nav.cta">
               Agendar sesión →
             </a>
             <div class="navbar__burger" id="burger">
@@ -121,19 +117,6 @@ window.ADAPTIA_WA = '529983909502';
     </div>
   `;
 
-  /* ─── WHATSAPP FLOAT ─── */
-  const waHTML = `
-    <div class="wa-float">
-      <div class="wa-tooltip" data-i18n="wa.tooltip">¿Tienes preguntas? Conversemos ahora</div>
-      <a href="https://wa.me/${waNumber}?text=Hola%2C%20me%20interesa%20conocer%20los%20servicios%20de%20ADAPTIA%20Consultoría"
-         target="_blank" class="wa-btn" aria-label="WhatsApp">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.273.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885m8.538-17.096A12.01 12.01 0 0 0 12.052 1.25C5.45 1.25.074 6.626.071 13.228c0 2.112.551 4.175 1.6 5.992L0 24l4.89-1.282c1.766.953 3.754 1.455 5.795 1.456h.004c6.602 0 11.978-5.376 11.981-11.978a11.96 11.96 0 0 0-3.518-8.497"/>
-        </svg>
-      </a>
-    </div>
-  `;
-
   /* ─── CURSOR HTML ─── */
   const cursorHTML = `
     <div id="a-cursor" aria-hidden="true" style="pointer-events:none;"></div>
@@ -162,11 +145,8 @@ window.ADAPTIA_WA = '529983909502';
           </div>
           <span class="chip product-modal__badge" style="margin-left:auto">Base</span>
         </div>
-        <a href="#" target="_blank" class="product-modal__wa-btn">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.273.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885m8.538-17.096A12.01 12.01 0 0 0 12.052 1.25C5.45 1.25.074 6.626.071 13.228c0 2.112.551 4.175 1.6 5.992L0 24l4.89-1.282c1.766.953 3.754 1.455 5.795 1.456h.004c6.602 0 11.978-5.376 11.981-11.978a11.96 11.96 0 0 0-3.518-8.497"/>
-          </svg>
-          <span data-i18n="modal.wa.btn">Consultar por WhatsApp</span>
+        <a href="/contacto" class="product-modal__contact-btn">
+          <span data-i18n="modal.contact.btn">Consultar con CENBOT</span>
         </a>
       </div>
     </div>
@@ -219,7 +199,7 @@ window.ADAPTIA_WA = '529983909502';
           <div class="footer__col">
             <h4 data-i18n="footer.col.contact">Contacto</h4>
             <ul>
-              <li><a href="https://wa.me/${waNumber}" target="_blank" data-i18n="footer.whatsapp">WhatsApp</a></li>
+              <li><a href="/contacto" data-i18n="footer.contact.link">Contacto</a></li>
               <li><a data-i18n="footer.city">Cancún, Quintana Roo</a></li>
               <li><a data-i18n="footer.country">México</a></li>
             </ul>
@@ -245,12 +225,19 @@ window.ADAPTIA_WA = '529983909502';
   const navPlaceholder = document.getElementById('nav-placeholder');
   if (navPlaceholder) navPlaceholder.outerHTML = navbarHTML;
 
-  const waPlaceholder = document.getElementById('wa-placeholder');
-  if (waPlaceholder) waPlaceholder.outerHTML = waHTML;
-
   const modalPlaceholder = document.getElementById('modal-placeholder');
   if (modalPlaceholder) modalPlaceholder.outerHTML = modalHTML;
 
   const footerPlaceholder = document.getElementById('footer-placeholder');
   if (footerPlaceholder) footerPlaceholder.outerHTML = footerHTML;
+
+  /* ─── CENBOT (Botpress) ─── */
+  var bpInject = document.createElement('script');
+  bpInject.src = 'https://cdn.botpress.cloud/webchat/v3.6/inject.js';
+  document.body.appendChild(bpInject);
+
+  var bpConfig = document.createElement('script');
+  bpConfig.src = 'https://files.bpcontent.cloud/2026/04/11/23/20260411233626-M3C4RLUM.js';
+  bpConfig.defer = true;
+  document.body.appendChild(bpConfig);
 })();

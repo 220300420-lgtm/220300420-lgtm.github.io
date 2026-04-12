@@ -305,7 +305,7 @@ ADAPTIA.renderCard = function(product, options = {}) {
   const name  = (lang === 'en' && product.nameEn)  ? product.nameEn  : product.name;
   const desc  = (lang === 'en' && product.descEn)  ? product.descEn  : product.desc;
   const phase = (lang === 'en' && product.phaseEn) ? product.phaseEn : product.phase;
-  const ctaTxt = (lang === 'en') ? 'Inquire via WhatsApp \u2192' : 'Consultar por WhatsApp \u2192';
+  const ctaTxt = (lang === 'en') ? 'Inquire \u2192' : 'Consultar \u2192';
 
   return `
     <div class="p-card${featClass}${fullClass}"

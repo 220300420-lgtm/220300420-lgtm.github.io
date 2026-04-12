@@ -52,12 +52,9 @@ ADAPTIA.i18n = {
     'nav.mob.about':       'Nosotros',
     'nav.mob.contact':     'Contacto',
 
-    /* ── WHATSAPP FLOAT ── */
-    'wa.tooltip': '¿Tienes preguntas? Conversemos ahora',
-
     /* ── MODAL ── */
     'modal.tool.label': 'Herramienta Digital',
-    'modal.wa.btn':     'Consultar por WhatsApp',
+    'modal.contact.btn': 'Consultar con CENBOT',
 
     /* ── FOOTER ── */
     'footer.tagline':     'Consultoría de transformación digital especializada en PyMEs del sector náutico recreativo. Estrategia, tecnología y acompañamiento continuo.',
@@ -69,7 +66,7 @@ ADAPTIA.i18n = {
     'footer.contacto':    'Contacto',
     'footer.terms':       'Términos y Condiciones',
     'footer.privacy':     'Política de Privacidad',
-    'footer.whatsapp':    'WhatsApp',
+    'footer.contact.link': 'Contacto',
     'footer.city':        'Blvd. Kukulcán Km 4, Malecón Américas',
     'footer.country':     'México',
     'footer.copy':        '© 2025 ADAPTIA Consultoría. Todos los derechos reservados.',
@@ -136,20 +133,20 @@ ADAPTIA.i18n = {
     'home.cta.label': 'Siguiente paso',
     'home.cta.title': '¿Listo para navegar en la dirección correcta?',
     'home.cta.desc':  'Agenda una sesión de diagnóstico inicial. En 45 minutos identificamos tus principales áreas de oportunidad y te presentamos una propuesta priorizada.',
-    'home.cta.btn1':  'Agendar por WhatsApp',
+    'home.cta.btn1':  'Agendar sesión',
     'home.cta.btn2':  'Ver formulario de contacto',
     'home.cta.loc':   'Blvd. Kukulcán Km 4, Malecón Américas, Cancún, Q.R. \u00a0·\u00a0 Atención en Español e Inglés',
 
     /* ── CONTACTO PAGE ── */
     'contact.hero.label': 'Conversemos',
     'contact.hero.title': 'Empieza tu<br/>transformación',
-    'contact.hero.sub':   'Agenda tu sesión de diagnóstico con nosotros. Escríbenos por WhatsApp o completa el formulario y te contactamos en menos de 24 horas.',
+    'contact.hero.sub':   'Agenda tu sesión de diagnóstico con nosotros. Escríbenos a través de CENBOT o completa el formulario y te contactamos en menos de 24 horas.',
 
     'contact.methods.label':  'Canales de contacto',
     'contact.methods.title':  'La forma más rápida de empezar',
-    'contact.methods.desc':   'Preferimos conversaciones directas. El WhatsApp tiene respuesta en menos de 2 horas en horario de oficina. El formulario es ideal si quieres detallar tu situación antes de hablar.',
-    'contact.wa.label':       'WhatsApp — respuesta en <2 horas',
-    'contact.wa.val':         '+52 (998) 390-9502',
+    'contact.methods.desc':   'Preferimos conversaciones directas. CENBOT responde en tiempo real. El formulario es ideal si quieres detallar tu situación antes de hablar.',
+    'contact.wa.label':       'CENBOT — chat en línea',
+    'contact.wa.val':         'Disponible 24/7 en esta página',
     'contact.location.label': 'Sede',
     'contact.location.val':   'Blvd. Kukulcán Km 4, L-22, Malecón Américas, Cancún, Q.R. 77500',
     'contact.hours.label':    'Horario de atención',
@@ -160,12 +157,12 @@ ADAPTIA.i18n = {
     'contact.form.sub':      'Respondemos en menos de 24 horas con una propuesta o invitación a llamada.',
     'contact.form.name':     'Nombre *',
     'contact.form.company':  'Empresa / Marina *',
-    'contact.form.phone':    'WhatsApp / Teléfono',
+    'contact.form.phone':    'Teléfono',
     'contact.form.type':     'Tipo de negocio',
     'contact.form.interest': 'Entregable de interés',
     'contact.form.message':  'Mensaje (opcional)',
-    'contact.form.submit':   'Enviar por WhatsApp',
-    'contact.form.note':     'Al enviar, se abrirá WhatsApp con el mensaje pre-completado.<br/>Sin pagos online. Sin spam.',
+    'contact.form.submit':   'Enviar consulta',
+    'contact.form.note':     'Recibiremos tu mensaje y te contactaremos en horario de oficina.<br/>Sin pagos online. Sin spam.',
     'contact.form.name.ph':     'Tu nombre completo',
     'contact.form.company.ph':  'Nombre del negocio',
     'contact.form.phone.ph':    '+52 (998) 390-9502',
@@ -208,10 +205,10 @@ ADAPTIA.i18n = {
     'services.cta.label': '¿Te interesa algún servicio?',
     'services.cta.title': 'Hablemos hoy mismo',
     'services.cta.desc':  'Cada servicio puede contratarse de forma individual o como parte de un plan integral. Cuéntanos cuál es tu situación y te armamos una propuesta.',
-    'services.cta.btn':   'Consultar por WhatsApp',
+    'services.cta.btn':   'Consultar',
 
     /* Product card CTA */
-    'products.card.cta': 'Consultar por WhatsApp →',
+    'products.card.cta': 'Consultar →',
 
     /* Phase section headers */
     'products.phase1.name': 'Diagnóstico',
@@ -555,12 +552,9 @@ ADAPTIA.i18n = {
     'nav.mob.about':       'About Us',
     'nav.mob.contact':     'Contact',
 
-    /* ── WHATSAPP FLOAT ── */
-    'wa.tooltip': 'Have questions? Let\'s talk now',
-
     /* ── MODAL ── */
     'modal.tool.label': 'Digital Tool',
-    'modal.wa.btn':     'Inquire via WhatsApp',
+    'modal.contact.btn': 'Ask CENBOT',
 
     /* ── FOOTER ── */
     'footer.tagline':     'Digital transformation consulting specialized in SMEs of the recreational nautical sector. Strategy, technology and continuous support.',
@@ -572,7 +566,7 @@ ADAPTIA.i18n = {
     'footer.contacto':    'Contact',
     'footer.terms':       'Terms & Conditions',
     'footer.privacy':     'Privacy Policy',
-    'footer.whatsapp':    'WhatsApp',
+    'footer.contact.link': 'Contact',
     'footer.city':        'Blvd. Kukulcán Km 4, Malecón Américas',
     'footer.country':     'Mexico',
     'footer.copy':        '© 2025 ADAPTIA Consulting. All rights reserved.',
@@ -639,20 +633,20 @@ ADAPTIA.i18n = {
     'home.cta.label': 'Next step',
     'home.cta.title': 'Ready to navigate in the right direction?',
     'home.cta.desc':  'Book an initial diagnostic session. In 45 minutes we identify your main opportunities and present a prioritized proposal.',
-    'home.cta.btn1':  'Book via WhatsApp',
+    'home.cta.btn1':  'Book a session',
     'home.cta.btn2':  'View contact form',
     'home.cta.loc':   'Blvd. Kukulcán Km 4, Malecón Américas, Cancún, Q.R. \u00a0·\u00a0 Service in Spanish & English',
 
     /* ── CONTACTO PAGE ── */
     'contact.hero.label': 'Let\'s Talk',
     'contact.hero.title': 'Start your<br/>transformation',
-    'contact.hero.sub':   'Book your diagnostic session with us. Message us on WhatsApp or fill out the form and we\'ll contact you within 24 hours.',
+    'contact.hero.sub':   'Book your diagnostic session with us. Chat with CENBOT or fill out the form and we\'ll contact you within 24 hours.',
 
     'contact.methods.label':  'Contact channels',
     'contact.methods.title':  'The fastest way to get started',
-    'contact.methods.desc':   'We prefer direct conversations. WhatsApp is answered within 2 hours during business hours. The form is ideal if you want to detail your situation before speaking.',
-    'contact.wa.label':       'WhatsApp — reply within <2 hours',
-    'contact.wa.val':         '+52 (998) 390-9502',
+    'contact.methods.desc':   'We prefer direct conversations. CENBOT replies in real time. The form is ideal if you want to detail your situation before speaking.',
+    'contact.wa.label':       'CENBOT — online chat',
+    'contact.wa.val':         'Available 24/7 on this page',
     'contact.location.label': 'Office',
     'contact.location.val':   'Blvd. Kukulcán Km 4, L-22, Malecón Américas, Cancún, Q.R. 77500',
     'contact.hours.label':    'Business hours',
@@ -663,12 +657,12 @@ ADAPTIA.i18n = {
     'contact.form.sub':      'We reply within 24 hours with a proposal or an invitation to call.',
     'contact.form.name':     'Name *',
     'contact.form.company':  'Company / Marina *',
-    'contact.form.phone':    'WhatsApp / Phone',
+    'contact.form.phone':    'Phone',
     'contact.form.type':     'Business type',
     'contact.form.interest': 'Service of interest',
     'contact.form.message':  'Message (optional)',
-    'contact.form.submit':   'Send via WhatsApp',
-    'contact.form.note':     'Submitting will open WhatsApp with a pre-filled message.<br/>No online payments. No spam.',
+    'contact.form.submit':   'Send inquiry',
+    'contact.form.note':     'We\'ll receive your message and contact you during business hours.<br/>No online payments. No spam.',
     'contact.form.name.ph':     'Your full name',
     'contact.form.company.ph':  'Business name',
     'contact.form.phone.ph':    '+52 (998) 390-9502',
@@ -714,7 +708,7 @@ ADAPTIA.i18n = {
     'services.cta.label': 'Interested in a service?',
     'services.cta.title': 'Let\'s talk today',
     'services.cta.desc':  'Each service can be contracted individually or as part of a comprehensive plan. Tell us your situation and we\'ll put together a proposal.',
-    'services.cta.btn':   'Inquire via WhatsApp',
+    'services.cta.btn':   'Inquire',
 
     /* ── SERVICIOS INDEX PAGE ── */
     'services.index.hero.label': 'ADAPTIA Services',
@@ -757,7 +751,7 @@ ADAPTIA.i18n = {
     'services.svg.fase4.name': 'Implementation',
 
     /* Product card CTA */
-    'products.card.cta': 'Inquire via WhatsApp →',
+    'products.card.cta': 'Inquire →',
 
     /* Phase section headers */
     'products.phase1.name': 'Diagnosis',
@@ -1238,9 +1232,4 @@ ADAPTIA.applyLang = function(lang) {
     }
   }
 
-  /* update WA float tooltip aria-label if present */
-  const waBtn = document.querySelector('.wa-btn');
-  if (waBtn && dict['wa.tooltip']) {
-    waBtn.setAttribute('aria-label', dict['wa.tooltip']);
-  }
 };
