@@ -1125,4 +1125,15 @@
   .phase-hero__inner { gap: 2rem; }
   .phase-hero__anim  { padding: 1.25rem; }
   .phase-anim-svg    { width: 180px; height: 180px; }
+  /* Reduce CTA box padding on mobile */
+  .phase-cta__box { padding: 1.5rem 1.25rem; }
+  /* Align FAQ button icon to top so it stays visible when question text wraps */
+  .faq-btn { align-items: flex-start; }
+  .faq-btn span:last-child { margin-top: 0.15rem; }
+}
+@media (max-width: 480px) {
+  /* Shrink FAQ divider badge on very narrow screens to prevent overflow */
+  .faq-divider__badge { padding: 0.45rem 0.9rem; font-size: 0.65rem; gap: 0.4rem; }
+  /* Ensure faq question text breaks cleanly on narrow screens */
+  .faq-btn span:first-child { word-break: break-word; overflow-wrap: break-word; }
 }
