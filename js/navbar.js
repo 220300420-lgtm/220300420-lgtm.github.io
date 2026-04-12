@@ -234,10 +234,10 @@
   /* ─── CENBOT (Botpress) ─── */
   var bpInject = document.createElement('script');
   bpInject.src = 'https://cdn.botpress.cloud/webchat/v3.6/inject.js';
+  bpInject.onload = function () {
+    var bpConfig = document.createElement('script');
+    bpConfig.src = 'https://files.bpcontent.cloud/2026/04/11/23/20260411233626-M3C4RLUM.js';
+    document.body.appendChild(bpConfig);
+  };
   document.body.appendChild(bpInject);
-
-  var bpConfig = document.createElement('script');
-  bpConfig.src = 'https://files.bpcontent.cloud/2026/04/11/23/20260411233626-M3C4RLUM.js';
-  bpConfig.defer = true;
-  document.body.appendChild(bpConfig);
 })();
