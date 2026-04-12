@@ -29,9 +29,15 @@
     requestAnimationFrame(tick);
   })();
 
-  document.addEventListener('mouseleave', () => {
-    dot.style.opacity  = '0';
-    ring.style.opacity = '0';
+  document.addEventListener('mouseleave', e => {
+    /* Only hide when truly leaving the viewport (e.g. mouse exits window edge).
+       When the mouse enters a child iframe (like the Botpress widget) this event
+       also fires but the coordinates are still inside the viewport — skip it. */
+    if (e.clientX <= 0 || e.clientY <= 0 ||
+        e.clientX >= window.innerWidth || e.clientY >= window.innerHeight) {
+      dot.style.opacity  = '0';
+      ring.style.opacity = '0';
+    }
   });
   document.addEventListener('mouseenter', () => {
     dot.style.opacity  = '1';

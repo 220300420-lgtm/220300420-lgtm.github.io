@@ -144,7 +144,7 @@ ADAPTIA.i18n = {
 
     'contact.methods.label':  'Canales de contacto',
     'contact.methods.title':  'La forma más rápida de empezar',
-    'contact.methods.desc':   'Preferimos conversaciones directas. CENBOT responde en tiempo real. El formulario es ideal si quieres detallar tu situación antes de hablar.',
+    'contact.methods.desc':   'Preferimos conversaciones directas. CENBOT responde en tiempo real, 24/7. También puedes contactarnos por los canales que ves aquí.',
     'contact.wa.label':       'CENBOT — chat en línea',
     'contact.wa.val':         'Disponible 24/7 en esta página',
     'contact.location.label': 'Sede',
@@ -644,7 +644,7 @@ ADAPTIA.i18n = {
 
     'contact.methods.label':  'Contact channels',
     'contact.methods.title':  'The fastest way to get started',
-    'contact.methods.desc':   'We prefer direct conversations. CENBOT replies in real time. The form is ideal if you want to detail your situation before speaking.',
+    'contact.methods.desc':   'We prefer direct conversations. CENBOT replies in real time, 24/7. You can also reach us through the channels listed here.',
     'contact.wa.label':       'CENBOT — online chat',
     'contact.wa.val':         'Available 24/7 on this page',
     'contact.location.label': 'Office',

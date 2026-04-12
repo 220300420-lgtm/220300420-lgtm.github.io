@@ -361,19 +361,33 @@
   transform-origin: bottom right;
   transition: transform 0.22s var(--ease-out), filter 0.22s var(--ease-out);
   z-index: 8000;
+  /* Prevent native cursor from reappearing over the launcher button */
+  cursor: none !important;
 }
 #bp-web-widget-container:hover {
   transform: scale(0.82) translateY(-4px);
   filter: drop-shadow(0 8px 24px rgba(14,165,233,0.28));
 }
+/* Ensure custom cursor elements sit above the widget at all times */
+#a-cursor      { z-index: 9999 !important; }
+#a-cursor-ring { z-index: 9998 !important; }
+
 @media (max-width: 900px) {
   #bp-web-widget-container {
-    transform: scale(0.75);
     transform-origin: bottom right;
     z-index: 8000;
+    /* On mobile the chat panel must not fill the entire screen */
+    max-width: calc(100vw - 16px) !important;
+    max-height: 75vh !important;
+    overflow: hidden !important;
   }
-  #bp-web-widget-container:hover {
-    transform: scale(0.75) translateY(-4px);
+  /* Target the inner iframe / panel that Botpress injects on mobile */
+  #bp-web-widget-container iframe,
+  #bp-web-widget-container > div,
+  [id^="bp-web-widget"] {
+    max-width: calc(100vw - 16px) !important;
+    max-height: 75vh !important;
+    width: min(360px, calc(100vw - 16px)) !important;
   }
 }
 
