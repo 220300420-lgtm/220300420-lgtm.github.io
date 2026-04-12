@@ -127,9 +127,6 @@ ADAPTIA.i18n = {
     'home.why6.title': 'Herramientas Reales',
     'home.why6.desc':  'Clientify, Make, Kommo, Looker Studio, n8n. Herramientas probadas en entornos reales. No teoría: implementación concreta con resultados medibles desde el mes uno.',
 
-    'home.partners.label': 'Ecosistema',
-    'home.partners.title': 'Nuestros Partners',
-
     'home.cta.label': 'Siguiente paso',
     'home.cta.title': '¿Listo para navegar en la dirección correcta?',
     'home.cta.desc':  'Agenda una sesión de diagnóstico inicial. En 45 minutos identificamos tus principales áreas de oportunidad y te presentamos una propuesta priorizada.',
@@ -626,9 +623,6 @@ ADAPTIA.i18n = {
     'home.why5.desc':  'From Cancún we build scalable methodologies with a projection toward marinas in the Caribbean, Gulf of Mexico and Latin America. Designed to grow with you.',
     'home.why6.title': 'Real-World Tools',
     'home.why6.desc':  'Clientify, Make, Kommo, Looker Studio, n8n. Tools proven in real environments. No theory: concrete implementation with measurable results from month one.',
-
-    'home.partners.label': 'Ecosystem',
-    'home.partners.title': 'Our Partners',
 
     'home.cta.label': 'Next step',
     'home.cta.title': 'Ready to navigate in the right direction?',
