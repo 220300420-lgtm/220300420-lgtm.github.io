@@ -5,9 +5,6 @@
 
 "use strict";
 
-/* ─── WhatsApp — referencia a la variable global de navbar.js ─── */
-const ADAPTIA_WA = window.ADAPTIA_WA || '52XXXXXXXXXX';
-
 /* ─────────────────────────────────────────────────────────────
    1. CURSOR PERSONALIZADO
 ───────────────────────────────────────────────────────────── */
@@ -247,29 +244,6 @@ const ADAPTIA_WA = window.ADAPTIA_WA || '52XXXXXXXXXX';
 
 
 /* ─────────────────────────────────────────────────────────────
-   6. WHATSAPP FLOAT
-───────────────────────────────────────────────────────────── */
-(function initWA() {
-  const tooltip = document.querySelector('.wa-tooltip');
-  if (!tooltip) return;
-
-  /* Esconder tooltip después de 6s */
-  setTimeout(() => {
-    tooltip.style.opacity = '0';
-    tooltip.style.pointerEvents = 'none';
-  }, 6000);
-})();
-
-/* Helper global para abrir WA con mensaje contextual */
-window.openWA = function(entregable) {
-  const text = encodeURIComponent(
-    `Hola, me interesa el servicio: *${entregable}*. ¿Podrían darme más información?`
-  );
-  window.open(`https://wa.me/${ADAPTIA_WA}?text=${text}`, '_blank');
-};
-
-
-/* ─────────────────────────────────────────────────────────────
    7. OCEAN CANVAS — Hero index.html
 ───────────────────────────────────────────────────────────── */
 window.initOcean = function(canvasId) {
@@ -421,9 +395,6 @@ window.initOcean = function(canvasId) {
     var name  = (lang === 'en' && data.nameEn)  ? data.nameEn  : data.name;
     var desc  = (lang === 'en' && data.descEn)  ? data.descEn  : data.desc;
     var phase = (lang === 'en' && data.phaseEn) ? data.phaseEn : data.phase;
-    var waTxt = (lang === 'en')
-      ? 'Hello, I\'m interested in the service *' + data.id + ' \u2014 ' + name + '*. Could you provide more information?'
-      : 'Hola, me interesa el servicio *' + data.id + ' \u2014 ' + name + '*. \u00bfPodr\u00edan brindarme m\u00e1s informaci\u00f3n?';
 
     overlay.querySelector('.product-modal__id').textContent   = data.id;
     overlay.querySelector('.product-modal__name').textContent = name;
@@ -435,22 +406,7 @@ window.initOcean = function(canvasId) {
       'chip chip-' + data.chipClass;
     overlay.querySelector('.product-modal__badge').textContent = data.tier;
 
-    var waBtn = overlay.querySelector('.product-modal__wa-btn');
-    var msg   = encodeURIComponent(waTxt);
-    waBtn.href = 'https://wa.me/' + ADAPTIA_WA + '?text=' + msg;
-
     overlay.classList.add('open');
     document.body.style.overflow = 'hidden';
   };
-})();
-
-
-/* ─────────────────────────────────────────────────────────────
-   9. WA LINK HYDRATION — actualiza hrefs con data-wa-msg
-───────────────────────────────────────────────────────────── */
-(function hydrateWALinks() {
-  document.querySelectorAll('[data-wa-msg]').forEach(el => {
-    const msg = el.dataset.waMsg;
-    el.href = `https://wa.me/${ADAPTIA_WA}?text=${encodeURIComponent(msg)}`;
-  });
 })();

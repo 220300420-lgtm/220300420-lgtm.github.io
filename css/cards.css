@@ -286,14 +286,14 @@
   font-size: 0.85rem;
   color: var(--blue);
 }
-.product-modal__wa-btn {
+.product-modal__contact-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
   width: 100%;
   padding: 0.9rem;
-  background: #25D366;
+  background: var(--blue);
   border-radius: var(--radius-md);
   color: #fff;
   font-weight: 700;
@@ -301,8 +301,8 @@
   transition: all 0.22s;
   text-decoration: none;
 }
-.product-modal__wa-btn:hover {
-  background: #1fba58;
+.product-modal__contact-btn:hover {
+  background: var(--blue-mid);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(37,211,102,0.35);
+  box-shadow: 0 8px 24px rgba(14,165,233,0.35);
 }
