@@ -575,6 +575,12 @@
   color: var(--text-primary);
   cursor: pointer;
 }
+.faq-btn span:first-child {
+  flex: 1;
+  min-width: 0;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
 .faq-btn span:last-child {
   color: var(--blue);
   transition: transform 0.22s var(--ease-out);
@@ -1121,19 +1127,29 @@
     height: 220px;
   }
 }
+@media (max-width: 768px) {
+  /* Reduce CTA box padding on tablets */
+  .phase-cta__box { padding: 1.5rem; }
+  /* Reduce FAQ divider top spacing */
+  .faq-divider { padding-top: 2rem; }
+  /* Reduce section separator spacing */
+  .section-sep { padding: 1rem 0; }
+}
 @media (max-width: 640px) {
   .phase-hero__inner { gap: 2rem; }
   .phase-hero__anim  { padding: 1.25rem; }
   .phase-anim-svg    { width: 180px; height: 180px; }
-  /* Reduce CTA box padding on mobile */
-  .phase-cta__box { padding: 1.5rem 1.25rem; }
+  /* Further reduce CTA box padding on small mobile */
+  .phase-cta__box { padding: 1.25rem; }
   /* Align FAQ button icon to top so it stays visible when question text wraps */
   .faq-btn { align-items: flex-start; }
   .faq-btn span:last-child { margin-top: 0.15rem; }
+  /* Reduce FAQ divider top spacing further */
+  .faq-divider { padding-top: 1.5rem; }
 }
 @media (max-width: 480px) {
   /* Shrink FAQ divider badge on very narrow screens to prevent overflow */
   .faq-divider__badge { padding: 0.45rem 0.9rem; font-size: 0.65rem; gap: 0.4rem; }
-  /* Ensure faq question text breaks cleanly on narrow screens */
-  .faq-btn span:first-child { word-break: break-word; overflow-wrap: break-word; }
+  /* Reduce FAQ divider top spacing on very small screens */
+  .faq-divider { padding-top: 1.25rem; }
 }
