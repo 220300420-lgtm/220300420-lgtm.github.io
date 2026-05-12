@@ -132,7 +132,6 @@ ADAPTIA.i18n = {
     'home.cta.title': '¿Listo para navegar en la dirección correcta?',
     'home.cta.desc':  'Agenda una sesión de diagnóstico inicial. En 45 minutos identificamos tus principales áreas de oportunidad y te presentamos una propuesta priorizada.',
     'home.cta.btn1':  'Agendar sesión',
-    'home.cta.btn1.href': 'https://wa.me/5219983909502?text=Hola,%20me%20gustar%C3%ADa%20agendar%20una%20sesi%C3%B3n',
     'home.cta.btn2':  'Ir a página de contacto',
     'home.cta.loc':   'Av. Tulum (Blvd. Luis Donaldo Colosio), Mzn. 1 Lte. 3 SM 8, C.P. 77504, Cancún, Q.R. \u00a0·\u00a0 Atención en Español e Inglés',
 
@@ -643,7 +642,6 @@ ADAPTIA.i18n = {
     'home.cta.title': 'Ready to navigate in the right direction?',
     'home.cta.desc':  'Book an initial diagnostic session. In 45 minutes we identify your main opportunities and present a prioritized proposal.',
     'home.cta.btn1':  'Book a session',
-    'home.cta.btn1.href': 'https://wa.me/5219983909502?text=Hello,%20I%20would%20like%20to%20schedule%20a%20session',
     'home.cta.btn2':  'Go to contact page',
     'home.cta.loc':   'Av. Tulum (Blvd. Luis Donaldo Colosio), Block 1 Lot 3 SM 8, P.C. 77504, Cancún, Q.R. \u00a0·\u00a0 Service in Spanish & English',
 
