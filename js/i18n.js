@@ -142,8 +142,10 @@ ADAPTIA.i18n = {
     'contact.methods.label':  'Canales de contacto',
     'contact.methods.title':  'La forma más rápida de empezar',
     'contact.methods.desc':   'Preferimos conversaciones directas. Escríbenos por WhatsApp para atenderte de inmediato.',
-    'contact.wa.label':       'WhatsApp directo',
+    'contact.wa.label':       'Contáctanos por WhatsApp',
     'contact.wa.val':         '+52 1 998 390 9502',
+    'contact.wa.href':        'https://wa.me/5219983909502?text=Hola,%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n',
+    'contact.wa.aria':        'Contáctanos por WhatsApp al +52 1 998 390 9502',
     'contact.location.label': 'Sede',
     'contact.location.val':   'Av. Tulum (también conocida como Blvd. Luis Donaldo Colosio), Manzana 1, Lote 3, Supermanzana 8, C.P. 77504, Cancún, Quintana Roo.',
     'contact.hours.label':    'Horario de atención',
@@ -649,8 +651,10 @@ ADAPTIA.i18n = {
     'contact.methods.label':  'Contact channels',
     'contact.methods.title':  'The fastest way to get started',
     'contact.methods.desc':   'We prefer direct conversations. Message us on WhatsApp for immediate assistance.',
-    'contact.wa.label':       'Direct WhatsApp',
+    'contact.wa.label':       'Contact us on WhatsApp',
     'contact.wa.val':         '+52 1 998 390 9502',
+    'contact.wa.href':        'https://wa.me/5219983909502?text=Hello,%20I%20would%20like%20more%20information',
+    'contact.wa.aria':        'Contact us on WhatsApp at +52 1 998 390 9502',
     'contact.location.label': 'Office',
     'contact.location.val':   'Av. Tulum (also known as Blvd. Luis Donaldo Colosio), Block 1, Lot 3, Super-block 8, P.C. 77504, Cancún, Quintana Roo.',
     'contact.hours.label':    'Business hours',
@@ -1219,6 +1223,18 @@ ADAPTIA.applyLang = function(lang) {
   document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
     var key = el.dataset.i18nPlaceholder;
     if (dict[key] !== undefined) el.placeholder = dict[key];
+  });
+
+  /* href attributes */
+  document.querySelectorAll('[data-i18n-href]').forEach(function(el) {
+    var key = el.dataset.i18nHref;
+    if (dict[key] !== undefined) el.setAttribute('href', dict[key]);
+  });
+
+  /* aria-label attributes */
+  document.querySelectorAll('[data-i18n-aria-label]').forEach(function(el) {
+    var key = el.dataset.i18nAriaLabel;
+    if (dict[key] !== undefined) el.setAttribute('aria-label', dict[key]);
   });
 
   /* optgroup labels (data-i18n-label attribute) */

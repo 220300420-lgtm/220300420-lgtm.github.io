@@ -610,6 +610,15 @@ hr.separator {
   background: var(--bg-card);
   transform: translateX(4px);
 }
+.contact-method--whatsapp {
+  border-color: rgba(37, 211, 102, 0.45);
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.12), rgba(16, 185, 129, 0.08) 65%, var(--bg-surface));
+  box-shadow: 0 8px 26px rgba(37, 211, 102, 0.14);
+}
+.contact-method--whatsapp:hover {
+  border-color: #25D366;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.2);
+}
 .contact-method__icon {
   width: 40px; height: 40px;
   border-radius: var(--radius-sm);
