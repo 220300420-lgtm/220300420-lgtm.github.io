@@ -80,7 +80,7 @@
               <button class="lang-btn active" data-lang="es">ES</button>
               <button class="lang-btn"        data-lang="en">EN</button>
             </div>
-            <a href="https://wa.me/5219983909502?text=Hola%20/%20Hello,%20I%20would%20like%20to%20schedule%20a%20session"
+            <a href="https://wa.me/5219983909502"
                class="btn btn-primary btn-sm" data-i18n="nav.cta" data-i18n-href="nav.cta.href">
               Agendar sesión →
             </a>
